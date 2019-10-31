@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydl.mapper.农村基本情况统计Mapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.农村基本情况统计">
+    <id column="编号" jdbcType="INTEGER" property="编号" />
+    <result column="县市区" jdbcType="VARCHAR" property="县市区" />
+    <result column="乡镇个数_个" jdbcType="INTEGER" property="乡镇个数个" />
+    <result column="村民委员会_个" jdbcType="INTEGER" property="村民委员会个" />
+    <result column="居民委员会_个" jdbcType="INTEGER" property="居民委员会个" />
+    <result column="村民小组_个" jdbcType="INTEGER" property="村民小组个" />
+    <result column="自来水受益村数_个" jdbcType="INTEGER" property="自来水受益村数个" />
+    <result column="通有线电视村数_个" jdbcType="INTEGER" property="通有线电视村数个" />
+    <result column="通宽带村数_个" jdbcType="INTEGER" property="通宽带村数个" />
+    <result column="乡_镇村户数_万户" jdbcType="REAL" property="乡镇村户数万户" />
+    <result column="乡_镇村人口数_万人" jdbcType="REAL" property="乡镇村人口数万人" />
+    <result column="乡_镇村人口数_男_万人" jdbcType="REAL" property="乡镇村人口数男万人" />
+    <result column="乡_镇村人口数_女_万人" jdbcType="REAL" property="乡镇村人口数女万人" />
+    <result column="乡_镇村劳动力资源数_万人" jdbcType="REAL" property="乡镇村劳动力资源数万人" />
+    <result column="乡_镇村劳动力资源数_男_万人" jdbcType="REAL" property="乡镇村劳动力资源数男万人" />
+    <result column="乡_镇村劳动力资源数_女_万人" jdbcType="REAL" property="乡镇村劳动力资源数女万人" />
+    <result column="乡_镇村从业人员数_万人" jdbcType="REAL" property="乡镇村从业人员数万人" />
+    <result column="乡_镇村从业人员数_男_万人" jdbcType="REAL" property="乡镇村从业人员数男万人" />
+    <result column="乡_镇村从业人员数_农业从业人员_万人" jdbcType="REAL" property="乡镇村从业人员数农业从业人员万人" />
+    <result column="乡_镇村从业人员数_女_万人" jdbcType="REAL" property="乡镇村从业人员数女万人" />
+    <result column="乡_镇村从业人员数_农业从业人员_万人1" jdbcType="REAL" property="乡镇村从业人员数农业从业人员万人1" />
+    <result column="耕地_公顷" jdbcType="INTEGER" property="耕地公顷" />
+    <result column="园地_公顷" jdbcType="INTEGER" property="园地公顷" />
+    <result column="林地_公顷" jdbcType="INTEGER" property="林地公顷" />
+    <result column="草地_公顷" jdbcType="INTEGER" property="草地公顷" />
+    <result column="设施农业用地_公顷" jdbcType="INTEGER" property="设施农业用地公顷" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    编号, 县市区, 乡镇个数_个, 村民委员会_个, 居民委员会_个, 村民小组_个, 自来水受益村数_个, 通有线电视村数_个, 通宽带村数_个, 乡_镇村户数_万户, 
+    乡_镇村人口数_万人, 乡_镇村人口数_男_万人, 乡_镇村人口数_女_万人, 乡_镇村劳动力资源数_万人, 乡_镇村劳动力资源数_男_万人, 乡_镇村劳动力资源数_女_万人, 
+    乡_镇村从业人员数_万人, 乡_镇村从业人员数_男_万人, 乡_镇村从业人员数_农业从业人员_万人, 乡_镇村从业人员数_女_万人, 乡_镇村从业人员数_农业从业人员_万人1, 
+    耕地_公顷, 园地_公顷, 林地_公顷, 草地_公顷, 设施农业用地_公顷
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from 玉林市2014年县市区农村基本情况统计
+    where 编号 = #{编号,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from 玉林市2014年县市区农村基本情况统计
+    where 编号 = #{编号,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农村基本情况统计" useGeneratedKeys="true">
+    insert into 玉林市2014年县市区农村基本情况统计 (县市区, 乡镇个数_个, 村民委员会_个, 
+      居民委员会_个, 村民小组_个, 自来水受益村数_个, 
+      通有线电视村数_个, 通宽带村数_个, 乡_镇村户数_万户, 
+      乡_镇村人口数_万人, 乡_镇村人口数_男_万人, 乡_镇村人口数_女_万人, 
+      乡_镇村劳动力资源数_万人, 乡_镇村劳动力资源数_男_万人, 乡_镇村劳动力资源数_女_万人, 
+      乡_镇村从业人员数_万人, 乡_镇村从业人员数_男_万人, 乡_镇村从业人员数_农业从业人员_万人, 
+      乡_镇村从业人员数_女_万人, 乡_镇村从业人员数_农业从业人员_万人1, 耕地_公顷, 
+      园地_公顷, 林地_公顷, 草地_公顷, 设施农业用地_公顷
+      )
+    values (#{县市区,jdbcType=VARCHAR}, #{乡镇个数个,jdbcType=INTEGER}, #{村民委员会个,jdbcType=INTEGER}, 
+      #{居民委员会个,jdbcType=INTEGER}, #{村民小组个,jdbcType=INTEGER}, #{自来水受益村数个,jdbcType=INTEGER}, 
+      #{通有线电视村数个,jdbcType=INTEGER}, #{通宽带村数个,jdbcType=INTEGER}, #{乡镇村户数万户,jdbcType=REAL}, 
+      #{乡镇村人口数万人,jdbcType=REAL}, #{乡镇村人口数男万人,jdbcType=REAL}, #{乡镇村人口数女万人,jdbcType=REAL}, 
+      #{乡镇村劳动力资源数万人,jdbcType=REAL}, #{乡镇村劳动力资源数男万人,jdbcType=REAL}, #{乡镇村劳动力资源数女万人,jdbcType=REAL}, 
+      #{乡镇村从业人员数万人,jdbcType=REAL}, #{乡镇村从业人员数男万人,jdbcType=REAL}, #{乡镇村从业人员数农业从业人员万人,jdbcType=REAL}, 
+      #{乡镇村从业人员数女万人,jdbcType=REAL}, #{乡镇村从业人员数农业从业人员万人1,jdbcType=REAL}, #{耕地公顷,jdbcType=INTEGER}, 
+      #{园地公顷,jdbcType=INTEGER}, #{林地公顷,jdbcType=INTEGER}, #{草地公顷,jdbcType=INTEGER}, #{设施农业用地公顷,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农村基本情况统计" useGeneratedKeys="true">
+    insert into 玉林市2014年县市区农村基本情况统计
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="县市区 != null">
+        县市区,
+      </if>
+      <if test="乡镇个数个 != null">
+        乡镇个数_个,
+      </if>
+      <if test="村民委员会个 != null">
+        村民委员会_个,
+      </if>
+      <if test="居民委员会个 != null">
+        居民委员会_个,
+      </if>
+      <if test="村民小组个 != null">
+        村民小组_个,
+      </if>
+      <if test="自来水受益村数个 != null">
+        自来水受益村数_个,
+      </if>
+      <if test="通有线电视村数个 != null">
+        通有线电视村数_个,
+      </if>
+      <if test="通宽带村数个 != null">
+        通宽带村数_个,
+      </if>
+      <if test="乡镇村户数万户 != null">
+        乡_镇村户数_万户,
+      </if>
+      <if test="乡镇村人口数万人 != null">
+        乡_镇村人口数_万人,
+      </if>
+      <if test="乡镇村人口数男万人 != null">
+        乡_镇村人口数_男_万人,
+      </if>
+      <if test="乡镇村人口数女万人 != null">
+        乡_镇村人口数_女_万人,
+      </if>
+      <if test="乡镇村劳动力资源数万人 != null">
+        乡_镇村劳动力资源数_万人,
+      </if>
+      <if test="乡镇村劳动力资源数男万人 != null">
+        乡_镇村劳动力资源数_男_万人,
+      </if>
+      <if test="乡镇村劳动力资源数女万人 != null">
+        乡_镇村劳动力资源数_女_万人,
+      </if>
+      <if test="乡镇村从业人员数万人 != null">
+        乡_镇村从业人员数_万人,
+      </if>
+      <if test="乡镇村从业人员数男万人 != null">
+        乡_镇村从业人员数_男_万人,
+      </if>
+      <if test="乡镇村从业人员数农业从业人员万人 != null">
+        乡_镇村从业人员数_农业从业人员_万人,
+      </if>
+      <if test="乡镇村从业人员数女万人 != null">
+        乡_镇村从业人员数_女_万人,
+      </if>
+      <if test="乡镇村从业人员数农业从业人员万人1 != null">
+        乡_镇村从业人员数_农业从业人员_万人1,
+      </if>
+      <if test="耕地公顷 != null">
+        耕地_公顷,
+      </if>
+      <if test="园地公顷 != null">
+        园地_公顷,
+      </if>
+      <if test="林地公顷 != null">
+        林地_公顷,
+      </if>
+      <if test="草地公顷 != null">
+        草地_公顷,
+      </if>
+      <if test="设施农业用地公顷 != null">
+        设施农业用地_公顷,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="县市区 != null">
+        #{县市区,jdbcType=VARCHAR},
+      </if>
+      <if test="乡镇个数个 != null">
+        #{乡镇个数个,jdbcType=INTEGER},
+      </if>
+      <if test="村民委员会个 != null">
+        #{村民委员会个,jdbcType=INTEGER},
+      </if>
+      <if test="居民委员会个 != null">
+        #{居民委员会个,jdbcType=INTEGER},
+      </if>
+      <if test="村民小组个 != null">
+        #{村民小组个,jdbcType=INTEGER},
+      </if>
+      <if test="自来水受益村数个 != null">
+        #{自来水受益村数个,jdbcType=INTEGER},
+      </if>
+      <if test="通有线电视村数个 != null">
+        #{通有线电视村数个,jdbcType=INTEGER},
+      </if>
+      <if test="通宽带村数个 != null">
+        #{通宽带村数个,jdbcType=INTEGER},
+      </if>
+      <if test="乡镇村户数万户 != null">
+        #{乡镇村户数万户,jdbcType=REAL},
+      </if>
+      <if test="乡镇村人口数万人 != null">
+        #{乡镇村人口数万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村人口数男万人 != null">
+        #{乡镇村人口数男万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村人口数女万人 != null">
+        #{乡镇村人口数女万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村劳动力资源数万人 != null">
+        #{乡镇村劳动力资源数万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村劳动力资源数男万人 != null">
+        #{乡镇村劳动力资源数男万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村劳动力资源数女万人 != null">
+        #{乡镇村劳动力资源数女万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数万人 != null">
+        #{乡镇村从业人员数万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数男万人 != null">
+        #{乡镇村从业人员数男万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数农业从业人员万人 != null">
+        #{乡镇村从业人员数农业从业人员万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数女万人 != null">
+        #{乡镇村从业人员数女万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数农业从业人员万人1 != null">
+        #{乡镇村从业人员数农业从业人员万人1,jdbcType=REAL},
+      </if>
+      <if test="耕地公顷 != null">
+        #{耕地公顷,jdbcType=INTEGER},
+      </if>
+      <if test="园地公顷 != null">
+        #{园地公顷,jdbcType=INTEGER},
+      </if>
+      <if test="林地公顷 != null">
+        #{林地公顷,jdbcType=INTEGER},
+      </if>
+      <if test="草地公顷 != null">
+        #{草地公顷,jdbcType=INTEGER},
+      </if>
+      <if test="设施农业用地公顷 != null">
+        #{设施农业用地公顷,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.农村基本情况统计">
+    update 玉林市2014年县市区农村基本情况统计
+    <set>
+      <if test="县市区 != null">
+        县市区 = #{县市区,jdbcType=VARCHAR},
+      </if>
+      <if test="乡镇个数个 != null">
+        乡镇个数_个 = #{乡镇个数个,jdbcType=INTEGER},
+      </if>
+      <if test="村民委员会个 != null">
+        村民委员会_个 = #{村民委员会个,jdbcType=INTEGER},
+      </if>
+      <if test="居民委员会个 != null">
+        居民委员会_个 = #{居民委员会个,jdbcType=INTEGER},
+      </if>
+      <if test="村民小组个 != null">
+        村民小组_个 = #{村民小组个,jdbcType=INTEGER},
+      </if>
+      <if test="自来水受益村数个 != null">
+        自来水受益村数_个 = #{自来水受益村数个,jdbcType=INTEGER},
+      </if>
+      <if test="通有线电视村数个 != null">
+        通有线电视村数_个 = #{通有线电视村数个,jdbcType=INTEGER},
+      </if>
+      <if test="通宽带村数个 != null">
+        通宽带村数_个 = #{通宽带村数个,jdbcType=INTEGER},
+      </if>
+      <if test="乡镇村户数万户 != null">
+        乡_镇村户数_万户 = #{乡镇村户数万户,jdbcType=REAL},
+      </if>
+      <if test="乡镇村人口数万人 != null">
+        乡_镇村人口数_万人 = #{乡镇村人口数万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村人口数男万人 != null">
+        乡_镇村人口数_男_万人 = #{乡镇村人口数男万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村人口数女万人 != null">
+        乡_镇村人口数_女_万人 = #{乡镇村人口数女万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村劳动力资源数万人 != null">
+        乡_镇村劳动力资源数_万人 = #{乡镇村劳动力资源数万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村劳动力资源数男万人 != null">
+        乡_镇村劳动力资源数_男_万人 = #{乡镇村劳动力资源数男万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村劳动力资源数女万人 != null">
+        乡_镇村劳动力资源数_女_万人 = #{乡镇村劳动力资源数女万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数万人 != null">
+        乡_镇村从业人员数_万人 = #{乡镇村从业人员数万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数男万人 != null">
+        乡_镇村从业人员数_男_万人 = #{乡镇村从业人员数男万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数农业从业人员万人 != null">
+        乡_镇村从业人员数_农业从业人员_万人 = #{乡镇村从业人员数农业从业人员万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数女万人 != null">
+        乡_镇村从业人员数_女_万人 = #{乡镇村从业人员数女万人,jdbcType=REAL},
+      </if>
+      <if test="乡镇村从业人员数农业从业人员万人1 != null">
+        乡_镇村从业人员数_农业从业人员_万人1 = #{乡镇村从业人员数农业从业人员万人1,jdbcType=REAL},
+      </if>
+      <if test="耕地公顷 != null">
+        耕地_公顷 = #{耕地公顷,jdbcType=INTEGER},
+      </if>
+      <if test="园地公顷 != null">
+        园地_公顷 = #{园地公顷,jdbcType=INTEGER},
+      </if>
+      <if test="林地公顷 != null">
+        林地_公顷 = #{林地公顷,jdbcType=INTEGER},
+      </if>
+      <if test="草地公顷 != null">
+        草地_公顷 = #{草地公顷,jdbcType=INTEGER},
+      </if>
+      <if test="设施农业用地公顷 != null">
+        设施农业用地_公顷 = #{设施农业用地公顷,jdbcType=INTEGER},
+      </if>
+    </set>
+    where 编号 = #{编号,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.农村基本情况统计">
+    update 玉林市2014年县市区农村基本情况统计
+    set 县市区 = #{县市区,jdbcType=VARCHAR},
+      乡镇个数_个 = #{乡镇个数个,jdbcType=INTEGER},
+      村民委员会_个 = #{村民委员会个,jdbcType=INTEGER},
+      居民委员会_个 = #{居民委员会个,jdbcType=INTEGER},
+      村民小组_个 = #{村民小组个,jdbcType=INTEGER},
+      自来水受益村数_个 = #{自来水受益村数个,jdbcType=INTEGER},
+      通有线电视村数_个 = #{通有线电视村数个,jdbcType=INTEGER},
+      通宽带村数_个 = #{通宽带村数个,jdbcType=INTEGER},
+      乡_镇村户数_万户 = #{乡镇村户数万户,jdbcType=REAL},
+      乡_镇村人口数_万人 = #{乡镇村人口数万人,jdbcType=REAL},
+      乡_镇村人口数_男_万人 = #{乡镇村人口数男万人,jdbcType=REAL},
+      乡_镇村人口数_女_万人 = #{乡镇村人口数女万人,jdbcType=REAL},
+      乡_镇村劳动力资源数_万人 = #{乡镇村劳动力资源数万人,jdbcType=REAL},
+      乡_镇村劳动力资源数_男_万人 = #{乡镇村劳动力资源数男万人,jdbcType=REAL},
+      乡_镇村劳动力资源数_女_万人 = #{乡镇村劳动力资源数女万人,jdbcType=REAL},
+      乡_镇村从业人员数_万人 = #{乡镇村从业人员数万人,jdbcType=REAL},
+      乡_镇村从业人员数_男_万人 = #{乡镇村从业人员数男万人,jdbcType=REAL},
+      乡_镇村从业人员数_农业从业人员_万人 = #{乡镇村从业人员数农业从业人员万人,jdbcType=REAL},
+      乡_镇村从业人员数_女_万人 = #{乡镇村从业人员数女万人,jdbcType=REAL},
+      乡_镇村从业人员数_农业从业人员_万人1 = #{乡镇村从业人员数农业从业人员万人1,jdbcType=REAL},
+      耕地_公顷 = #{耕地公顷,jdbcType=INTEGER},
+      园地_公顷 = #{园地公顷,jdbcType=INTEGER},
+      林地_公顷 = #{林地公顷,jdbcType=INTEGER},
+      草地_公顷 = #{草地公顷,jdbcType=INTEGER},
+      设施农业用地_公顷 = #{设施农业用地公顷,jdbcType=INTEGER}
+    where 编号 = #{编号,jdbcType=INTEGER}
+  </update>
+</mapper>

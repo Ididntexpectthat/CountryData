@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydl.mapper.社会经济基本情况统计表Mapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.社会经济基本情况统计表">
+    <id column="编号" jdbcType="INTEGER" property="编号" />
+    <result column="县市区" jdbcType="VARCHAR" property="县市区" />
+    <result column="稻谷_吨" jdbcType="INTEGER" property="稻谷吨" />
+    <result column="玉米_吨" jdbcType="INTEGER" property="玉米吨" />
+    <result column="油料产量_吨" jdbcType="INTEGER" property="油料产量吨" />
+    <result column="水果产量_吨" jdbcType="INTEGER" property="水果产量吨" />
+    <result column="肉类总产量_吨" jdbcType="INTEGER" property="肉类总产量吨" />
+    <result column="水产品总产量_吨" jdbcType="INTEGER" property="水产品总产量吨" />
+    <result column="规模以上工业企业数_个" jdbcType="INTEGER" property="规模以上工业企业数个" />
+    <result column="规模以上工业总产值_当年价_万元" jdbcType="INTEGER" property="规模以上工业总产值当年价万元" />
+    <result column="规模以上工业总产值_国有企业_万元" jdbcType="INTEGER" property="规模以上工业总产值国有企业万元" />
+    <result column="规模以上工业总产值_集体企业_万元" jdbcType="INTEGER" property="规模以上工业总产值集体企业万元" />
+    <result column="规模以上工业总产值_外商及港澳台商投资" jdbcType="INTEGER" property="规模以上工业总产值外商及港澳台商投资" />
+    <result column="规模以上工业总产值_其他经济类型企业_万元" jdbcType="INTEGER" property="规模以上工业总产值其他经济类型企业万元" />
+    <result column="规模以上工业总产值指数" jdbcType="DOUBLE" property="规模以上工业总产值指数" />
+    <result column="规模以上工业企业增加值_万元" jdbcType="INTEGER" property="规模以上工业企业增加值万元" />
+    <result column="规模以上工业增加值指数" jdbcType="DOUBLE" property="规模以上工业增加值指数" />
+    <result column="规模以上工业企业资产总计_万元" jdbcType="INTEGER" property="规模以上工业企业资产总计万元" />
+    <result column="规模以上工业企业负债合计_万元" jdbcType="INTEGER" property="规模以上工业企业负债合计万元" />
+    <result column="规模以上工业从业人员年平均数_人" jdbcType="INTEGER" property="规模以上工业从业人员年平均数人" />
+    <result column="规模以上工业主营业务收入_万元" jdbcType="INTEGER" property="规模以上工业主营业务收入万元" />
+    <result column="规模以上工业主营业务税金及附加_万元" jdbcType="INTEGER" property="规模以上工业主营业务税金及附加万元" />
+    <result column="规模以上工业利润总额_万元" jdbcType="INTEGER" property="规模以上工业利润总额万元" />
+    <result column="邮电业务总量_万元" jdbcType="INTEGER" property="邮电业务总量万元" />
+    <result column="邮政业务总量_万元" jdbcType="INTEGER" property="邮政业务总量万元" />
+    <result column="社会消费品零售总额_万元" jdbcType="INTEGER" property="社会消费品零售总额万元" />
+    <result column="社会消费品零售总额指数" jdbcType="INTEGER" property="社会消费品零售总额指数" />
+    <result column="批发零售贸易业_万元" jdbcType="INTEGER" property="批发零售贸易业万元" />
+    <result column="住宿和餐饮业_万元" jdbcType="INTEGER" property="住宿和餐饮业万元" />
+    <result column="外贸进出口总额_万美元" jdbcType="INTEGER" property="外贸进出口总额万美元" />
+    <result column="出口总额_万美元" jdbcType="INTEGER" property="出口总额万美元" />
+    <result column="实际利用外资金额_万美元" jdbcType="INTEGER" property="实际利用外资金额万美元" />
+    <result column="全社会固定资产投资_万元_万元" jdbcType="INTEGER" property="全社会固定资产投资万元万元" />
+    <result column="基本建设投资_万元" jdbcType="INTEGER" property="基本建设投资万元" />
+    <result column="更新改造投资_万元" jdbcType="INTEGER" property="更新改造投资万元" />
+    <result column="其它投资" jdbcType="INTEGER" property="其它投资" />
+    <result column="房地产开发_万元" jdbcType="INTEGER" property="房地产开发万元" />
+    <result column="城镇在岗职工年末人数_人" jdbcType="INTEGER" property="城镇在岗职工年末人数人" />
+    <result column="城镇在岗职工年工资总额_万元" jdbcType="INTEGER" property="城镇在岗职工年工资总额万元" />
+    <result column="城镇在岗职工年平均工资_元" jdbcType="INTEGER" property="城镇在岗职工年平均工资元" />
+    <result column="城镇居民人均可支配收入_元" jdbcType="INTEGER" property="城镇居民人均可支配收入元" />
+    <result column="农民人均纯收入_元" jdbcType="INTEGER" property="农民人均纯收入元" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    编号, 县市区, 稻谷_吨, 玉米_吨, 油料产量_吨, 水果产量_吨, 肉类总产量_吨, 水产品总产量_吨, 规模以上工业企业数_个, 规模以上工业总产值_当年价_万元, 
+    规模以上工业总产值_国有企业_万元, 规模以上工业总产值_集体企业_万元, 规模以上工业总产值_外商及港澳台商投资, 规模以上工业总产值_其他经济类型企业_万元, 
+    规模以上工业总产值指数, 规模以上工业企业增加值_万元, 规模以上工业增加值指数, 规模以上工业企业资产总计_万元, 规模以上工业企业负债合计_万元, 规模以上工业从业人员年平均数_人, 
+    规模以上工业主营业务收入_万元, 规模以上工业主营业务税金及附加_万元, 规模以上工业利润总额_万元, 邮电业务总量_万元, 邮政业务总量_万元, 社会消费品零售总额_万元, 
+    社会消费品零售总额指数, 批发零售贸易业_万元, 住宿和餐饮业_万元, 外贸进出口总额_万美元, 出口总额_万美元, 实际利用外资金额_万美元, 全社会固定资产投资_万元_万元, 
+    基本建设投资_万元, 更新改造投资_万元, 其它投资, 房地产开发_万元, 城镇在岗职工年末人数_人, 城镇在岗职工年工资总额_万元, 城镇在岗职工年平均工资_元, 
+    城镇居民人均可支配收入_元, 农民人均纯收入_元
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from 玉林市2014年各县市区社会经济基本情况统计表
+    where 编号 = #{编号,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from 玉林市2014年各县市区社会经济基本情况统计表
+    where 编号 = #{编号,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.社会经济基本情况统计表" useGeneratedKeys="true">
+    insert into 玉林市2014年各县市区社会经济基本情况统计表 (县市区, 稻谷_吨, 玉米_吨, 
+      油料产量_吨, 水果产量_吨, 肉类总产量_吨, 
+      水产品总产量_吨, 规模以上工业企业数_个, 规模以上工业总产值_当年价_万元, 
+      规模以上工业总产值_国有企业_万元, 规模以上工业总产值_集体企业_万元, 规模以上工业总产值_外商及港澳台商投资, 
+      规模以上工业总产值_其他经济类型企业_万元, 规模以上工业总产值指数, 规模以上工业企业增加值_万元, 
+      规模以上工业增加值指数, 规模以上工业企业资产总计_万元, 规模以上工业企业负债合计_万元, 
+      规模以上工业从业人员年平均数_人, 规模以上工业主营业务收入_万元, 规模以上工业主营业务税金及附加_万元, 
+      规模以上工业利润总额_万元, 邮电业务总量_万元, 邮政业务总量_万元, 
+      社会消费品零售总额_万元, 社会消费品零售总额指数, 批发零售贸易业_万元, 
+      住宿和餐饮业_万元, 外贸进出口总额_万美元, 出口总额_万美元, 
+      实际利用外资金额_万美元, 全社会固定资产投资_万元_万元, 基本建设投资_万元, 
+      更新改造投资_万元, 其它投资, 房地产开发_万元, 
+      城镇在岗职工年末人数_人, 城镇在岗职工年工资总额_万元, 城镇在岗职工年平均工资_元, 
+      城镇居民人均可支配收入_元, 农民人均纯收入_元)
+    values (#{县市区,jdbcType=VARCHAR}, #{稻谷吨,jdbcType=INTEGER}, #{玉米吨,jdbcType=INTEGER}, 
+      #{油料产量吨,jdbcType=INTEGER}, #{水果产量吨,jdbcType=INTEGER}, #{肉类总产量吨,jdbcType=INTEGER}, 
+      #{水产品总产量吨,jdbcType=INTEGER}, #{规模以上工业企业数个,jdbcType=INTEGER}, #{规模以上工业总产值当年价万元,jdbcType=INTEGER}, 
+      #{规模以上工业总产值国有企业万元,jdbcType=INTEGER}, #{规模以上工业总产值集体企业万元,jdbcType=INTEGER}, #{规模以上工业总产值外商及港澳台商投资,jdbcType=INTEGER}, 
+      #{规模以上工业总产值其他经济类型企业万元,jdbcType=INTEGER}, #{规模以上工业总产值指数,jdbcType=DOUBLE}, #{规模以上工业企业增加值万元,jdbcType=INTEGER}, 
+      #{规模以上工业增加值指数,jdbcType=DOUBLE}, #{规模以上工业企业资产总计万元,jdbcType=INTEGER}, #{规模以上工业企业负债合计万元,jdbcType=INTEGER}, 
+      #{规模以上工业从业人员年平均数人,jdbcType=INTEGER}, #{规模以上工业主营业务收入万元,jdbcType=INTEGER}, #{规模以上工业主营业务税金及附加万元,jdbcType=INTEGER}, 
+      #{规模以上工业利润总额万元,jdbcType=INTEGER}, #{邮电业务总量万元,jdbcType=INTEGER}, #{邮政业务总量万元,jdbcType=INTEGER}, 
+      #{社会消费品零售总额万元,jdbcType=INTEGER}, #{社会消费品零售总额指数,jdbcType=INTEGER}, #{批发零售贸易业万元,jdbcType=INTEGER}, 
+      #{住宿和餐饮业万元,jdbcType=INTEGER}, #{外贸进出口总额万美元,jdbcType=INTEGER}, #{出口总额万美元,jdbcType=INTEGER}, 
+      #{实际利用外资金额万美元,jdbcType=INTEGER}, #{全社会固定资产投资万元万元,jdbcType=INTEGER}, #{基本建设投资万元,jdbcType=INTEGER}, 
+      #{更新改造投资万元,jdbcType=INTEGER}, #{其它投资,jdbcType=INTEGER}, #{房地产开发万元,jdbcType=INTEGER}, 
+      #{城镇在岗职工年末人数人,jdbcType=INTEGER}, #{城镇在岗职工年工资总额万元,jdbcType=INTEGER}, #{城镇在岗职工年平均工资元,jdbcType=INTEGER}, 
+      #{城镇居民人均可支配收入元,jdbcType=INTEGER}, #{农民人均纯收入元,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.社会经济基本情况统计表" useGeneratedKeys="true">
+    insert into 玉林市2014年各县市区社会经济基本情况统计表
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="县市区 != null">
+        县市区,
+      </if>
+      <if test="稻谷吨 != null">
+        稻谷_吨,
+      </if>
+      <if test="玉米吨 != null">
+        玉米_吨,
+      </if>
+      <if test="油料产量吨 != null">
+        油料产量_吨,
+      </if>
+      <if test="水果产量吨 != null">
+        水果产量_吨,
+      </if>
+      <if test="肉类总产量吨 != null">
+        肉类总产量_吨,
+      </if>
+      <if test="水产品总产量吨 != null">
+        水产品总产量_吨,
+      </if>
+      <if test="规模以上工业企业数个 != null">
+        规模以上工业企业数_个,
+      </if>
+      <if test="规模以上工业总产值当年价万元 != null">
+        规模以上工业总产值_当年价_万元,
+      </if>
+      <if test="规模以上工业总产值国有企业万元 != null">
+        规模以上工业总产值_国有企业_万元,
+      </if>
+      <if test="规模以上工业总产值集体企业万元 != null">
+        规模以上工业总产值_集体企业_万元,
+      </if>
+      <if test="规模以上工业总产值外商及港澳台商投资 != null">
+        规模以上工业总产值_外商及港澳台商投资,
+      </if>
+      <if test="规模以上工业总产值其他经济类型企业万元 != null">
+        规模以上工业总产值_其他经济类型企业_万元,
+      </if>
+      <if test="规模以上工业总产值指数 != null">
+        规模以上工业总产值指数,
+      </if>
+      <if test="规模以上工业企业增加值万元 != null">
+        规模以上工业企业增加值_万元,
+      </if>
+      <if test="规模以上工业增加值指数 != null">
+        规模以上工业增加值指数,
+      </if>
+      <if test="规模以上工业企业资产总计万元 != null">
+        规模以上工业企业资产总计_万元,
+      </if>
+      <if test="规模以上工业企业负债合计万元 != null">
+        规模以上工业企业负债合计_万元,
+      </if>
+      <if test="规模以上工业从业人员年平均数人 != null">
+        规模以上工业从业人员年平均数_人,
+      </if>
+      <if test="规模以上工业主营业务收入万元 != null">
+        规模以上工业主营业务收入_万元,
+      </if>
+      <if test="规模以上工业主营业务税金及附加万元 != null">
+        规模以上工业主营业务税金及附加_万元,
+      </if>
+      <if test="规模以上工业利润总额万元 != null">
+        规模以上工业利润总额_万元,
+      </if>
+      <if test="邮电业务总量万元 != null">
+        邮电业务总量_万元,
+      </if>
+      <if test="邮政业务总量万元 != null">
+        邮政业务总量_万元,
+      </if>
+      <if test="社会消费品零售总额万元 != null">
+        社会消费品零售总额_万元,
+      </if>
+      <if test="社会消费品零售总额指数 != null">
+        社会消费品零售总额指数,
+      </if>
+      <if test="批发零售贸易业万元 != null">
+        批发零售贸易业_万元,
+      </if>
+      <if test="住宿和餐饮业万元 != null">
+        住宿和餐饮业_万元,
+      </if>
+      <if test="外贸进出口总额万美元 != null">
+        外贸进出口总额_万美元,
+      </if>
+      <if test="出口总额万美元 != null">
+        出口总额_万美元,
+      </if>
+      <if test="实际利用外资金额万美元 != null">
+        实际利用外资金额_万美元,
+      </if>
+      <if test="全社会固定资产投资万元万元 != null">
+        全社会固定资产投资_万元_万元,
+      </if>
+      <if test="基本建设投资万元 != null">
+        基本建设投资_万元,
+      </if>
+      <if test="更新改造投资万元 != null">
+        更新改造投资_万元,
+      </if>
+      <if test="其它投资 != null">
+        其它投资,
+      </if>
+      <if test="房地产开发万元 != null">
+        房地产开发_万元,
+      </if>
+      <if test="城镇在岗职工年末人数人 != null">
+        城镇在岗职工年末人数_人,
+      </if>
+      <if test="城镇在岗职工年工资总额万元 != null">
+        城镇在岗职工年工资总额_万元,
+      </if>
+      <if test="城镇在岗职工年平均工资元 != null">
+        城镇在岗职工年平均工资_元,
+      </if>
+      <if test="城镇居民人均可支配收入元 != null">
+        城镇居民人均可支配收入_元,
+      </if>
+      <if test="农民人均纯收入元 != null">
+        农民人均纯收入_元,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="县市区 != null">
+        #{县市区,jdbcType=VARCHAR},
+      </if>
+      <if test="稻谷吨 != null">
+        #{稻谷吨,jdbcType=INTEGER},
+      </if>
+      <if test="玉米吨 != null">
+        #{玉米吨,jdbcType=INTEGER},
+      </if>
+      <if test="油料产量吨 != null">
+        #{油料产量吨,jdbcType=INTEGER},
+      </if>
+      <if test="水果产量吨 != null">
+        #{水果产量吨,jdbcType=INTEGER},
+      </if>
+      <if test="肉类总产量吨 != null">
+        #{肉类总产量吨,jdbcType=INTEGER},
+      </if>
+      <if test="水产品总产量吨 != null">
+        #{水产品总产量吨,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业企业数个 != null">
+        #{规模以上工业企业数个,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值当年价万元 != null">
+        #{规模以上工业总产值当年价万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值国有企业万元 != null">
+        #{规模以上工业总产值国有企业万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值集体企业万元 != null">
+        #{规模以上工业总产值集体企业万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值外商及港澳台商投资 != null">
+        #{规模以上工业总产值外商及港澳台商投资,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值其他经济类型企业万元 != null">
+        #{规模以上工业总产值其他经济类型企业万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值指数 != null">
+        #{规模以上工业总产值指数,jdbcType=DOUBLE},
+      </if>
+      <if test="规模以上工业企业增加值万元 != null">
+        #{规模以上工业企业增加值万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业增加值指数 != null">
+        #{规模以上工业增加值指数,jdbcType=DOUBLE},
+      </if>
+      <if test="规模以上工业企业资产总计万元 != null">
+        #{规模以上工业企业资产总计万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业企业负债合计万元 != null">
+        #{规模以上工业企业负债合计万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业从业人员年平均数人 != null">
+        #{规模以上工业从业人员年平均数人,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业主营业务收入万元 != null">
+        #{规模以上工业主营业务收入万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业主营业务税金及附加万元 != null">
+        #{规模以上工业主营业务税金及附加万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业利润总额万元 != null">
+        #{规模以上工业利润总额万元,jdbcType=INTEGER},
+      </if>
+      <if test="邮电业务总量万元 != null">
+        #{邮电业务总量万元,jdbcType=INTEGER},
+      </if>
+      <if test="邮政业务总量万元 != null">
+        #{邮政业务总量万元,jdbcType=INTEGER},
+      </if>
+      <if test="社会消费品零售总额万元 != null">
+        #{社会消费品零售总额万元,jdbcType=INTEGER},
+      </if>
+      <if test="社会消费品零售总额指数 != null">
+        #{社会消费品零售总额指数,jdbcType=INTEGER},
+      </if>
+      <if test="批发零售贸易业万元 != null">
+        #{批发零售贸易业万元,jdbcType=INTEGER},
+      </if>
+      <if test="住宿和餐饮业万元 != null">
+        #{住宿和餐饮业万元,jdbcType=INTEGER},
+      </if>
+      <if test="外贸进出口总额万美元 != null">
+        #{外贸进出口总额万美元,jdbcType=INTEGER},
+      </if>
+      <if test="出口总额万美元 != null">
+        #{出口总额万美元,jdbcType=INTEGER},
+      </if>
+      <if test="实际利用外资金额万美元 != null">
+        #{实际利用外资金额万美元,jdbcType=INTEGER},
+      </if>
+      <if test="全社会固定资产投资万元万元 != null">
+        #{全社会固定资产投资万元万元,jdbcType=INTEGER},
+      </if>
+      <if test="基本建设投资万元 != null">
+        #{基本建设投资万元,jdbcType=INTEGER},
+      </if>
+      <if test="更新改造投资万元 != null">
+        #{更新改造投资万元,jdbcType=INTEGER},
+      </if>
+      <if test="其它投资 != null">
+        #{其它投资,jdbcType=INTEGER},
+      </if>
+      <if test="房地产开发万元 != null">
+        #{房地产开发万元,jdbcType=INTEGER},
+      </if>
+      <if test="城镇在岗职工年末人数人 != null">
+        #{城镇在岗职工年末人数人,jdbcType=INTEGER},
+      </if>
+      <if test="城镇在岗职工年工资总额万元 != null">
+        #{城镇在岗职工年工资总额万元,jdbcType=INTEGER},
+      </if>
+      <if test="城镇在岗职工年平均工资元 != null">
+        #{城镇在岗职工年平均工资元,jdbcType=INTEGER},
+      </if>
+      <if test="城镇居民人均可支配收入元 != null">
+        #{城镇居民人均可支配收入元,jdbcType=INTEGER},
+      </if>
+      <if test="农民人均纯收入元 != null">
+        #{农民人均纯收入元,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.社会经济基本情况统计表">
+    update 玉林市2014年各县市区社会经济基本情况统计表
+    <set>
+      <if test="县市区 != null">
+        县市区 = #{县市区,jdbcType=VARCHAR},
+      </if>
+      <if test="稻谷吨 != null">
+        稻谷_吨 = #{稻谷吨,jdbcType=INTEGER},
+      </if>
+      <if test="玉米吨 != null">
+        玉米_吨 = #{玉米吨,jdbcType=INTEGER},
+      </if>
+      <if test="油料产量吨 != null">
+        油料产量_吨 = #{油料产量吨,jdbcType=INTEGER},
+      </if>
+      <if test="水果产量吨 != null">
+        水果产量_吨 = #{水果产量吨,jdbcType=INTEGER},
+      </if>
+      <if test="肉类总产量吨 != null">
+        肉类总产量_吨 = #{肉类总产量吨,jdbcType=INTEGER},
+      </if>
+      <if test="水产品总产量吨 != null">
+        水产品总产量_吨 = #{水产品总产量吨,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业企业数个 != null">
+        规模以上工业企业数_个 = #{规模以上工业企业数个,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值当年价万元 != null">
+        规模以上工业总产值_当年价_万元 = #{规模以上工业总产值当年价万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值国有企业万元 != null">
+        规模以上工业总产值_国有企业_万元 = #{规模以上工业总产值国有企业万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值集体企业万元 != null">
+        规模以上工业总产值_集体企业_万元 = #{规模以上工业总产值集体企业万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值外商及港澳台商投资 != null">
+        规模以上工业总产值_外商及港澳台商投资 = #{规模以上工业总产值外商及港澳台商投资,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值其他经济类型企业万元 != null">
+        规模以上工业总产值_其他经济类型企业_万元 = #{规模以上工业总产值其他经济类型企业万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业总产值指数 != null">
+        规模以上工业总产值指数 = #{规模以上工业总产值指数,jdbcType=DOUBLE},
+      </if>
+      <if test="规模以上工业企业增加值万元 != null">
+        规模以上工业企业增加值_万元 = #{规模以上工业企业增加值万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业增加值指数 != null">
+        规模以上工业增加值指数 = #{规模以上工业增加值指数,jdbcType=DOUBLE},
+      </if>
+      <if test="规模以上工业企业资产总计万元 != null">
+        规模以上工业企业资产总计_万元 = #{规模以上工业企业资产总计万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业企业负债合计万元 != null">
+        规模以上工业企业负债合计_万元 = #{规模以上工业企业负债合计万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业从业人员年平均数人 != null">
+        规模以上工业从业人员年平均数_人 = #{规模以上工业从业人员年平均数人,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业主营业务收入万元 != null">
+        规模以上工业主营业务收入_万元 = #{规模以上工业主营业务收入万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业主营业务税金及附加万元 != null">
+        规模以上工业主营业务税金及附加_万元 = #{规模以上工业主营业务税金及附加万元,jdbcType=INTEGER},
+      </if>
+      <if test="规模以上工业利润总额万元 != null">
+        规模以上工业利润总额_万元 = #{规模以上工业利润总额万元,jdbcType=INTEGER},
+      </if>
+      <if test="邮电业务总量万元 != null">
+        邮电业务总量_万元 = #{邮电业务总量万元,jdbcType=INTEGER},
+      </if>
+      <if test="邮政业务总量万元 != null">
+        邮政业务总量_万元 = #{邮政业务总量万元,jdbcType=INTEGER},
+      </if>
+      <if test="社会消费品零售总额万元 != null">
+        社会消费品零售总额_万元 = #{社会消费品零售总额万元,jdbcType=INTEGER},
+      </if>
+      <if test="社会消费品零售总额指数 != null">
+        社会消费品零售总额指数 = #{社会消费品零售总额指数,jdbcType=INTEGER},
+      </if>
+      <if test="批发零售贸易业万元 != null">
+        批发零售贸易业_万元 = #{批发零售贸易业万元,jdbcType=INTEGER},
+      </if>
+      <if test="住宿和餐饮业万元 != null">
+        住宿和餐饮业_万元 = #{住宿和餐饮业万元,jdbcType=INTEGER},
+      </if>
+      <if test="外贸进出口总额万美元 != null">
+        外贸进出口总额_万美元 = #{外贸进出口总额万美元,jdbcType=INTEGER},
+      </if>
+      <if test="出口总额万美元 != null">
+        出口总额_万美元 = #{出口总额万美元,jdbcType=INTEGER},
+      </if>
+      <if test="实际利用外资金额万美元 != null">
+        实际利用外资金额_万美元 = #{实际利用外资金额万美元,jdbcType=INTEGER},
+      </if>
+      <if test="全社会固定资产投资万元万元 != null">
+        全社会固定资产投资_万元_万元 = #{全社会固定资产投资万元万元,jdbcType=INTEGER},
+      </if>
+      <if test="基本建设投资万元 != null">
+        基本建设投资_万元 = #{基本建设投资万元,jdbcType=INTEGER},
+      </if>
+      <if test="更新改造投资万元 != null">
+        更新改造投资_万元 = #{更新改造投资万元,jdbcType=INTEGER},
+      </if>
+      <if test="其它投资 != null">
+        其它投资 = #{其它投资,jdbcType=INTEGER},
+      </if>
+      <if test="房地产开发万元 != null">
+        房地产开发_万元 = #{房地产开发万元,jdbcType=INTEGER},
+      </if>
+      <if test="城镇在岗职工年末人数人 != null">
+        城镇在岗职工年末人数_人 = #{城镇在岗职工年末人数人,jdbcType=INTEGER},
+      </if>
+      <if test="城镇在岗职工年工资总额万元 != null">
+        城镇在岗职工年工资总额_万元 = #{城镇在岗职工年工资总额万元,jdbcType=INTEGER},
+      </if>
+      <if test="城镇在岗职工年平均工资元 != null">
+        城镇在岗职工年平均工资_元 = #{城镇在岗职工年平均工资元,jdbcType=INTEGER},
+      </if>
+      <if test="城镇居民人均可支配收入元 != null">
+        城镇居民人均可支配收入_元 = #{城镇居民人均可支配收入元,jdbcType=INTEGER},
+      </if>
+      <if test="农民人均纯收入元 != null">
+        农民人均纯收入_元 = #{农民人均纯收入元,jdbcType=INTEGER},
+      </if>
+    </set>
+    where 编号 = #{编号,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.社会经济基本情况统计表">
+    update 玉林市2014年各县市区社会经济基本情况统计表
+    set 县市区 = #{县市区,jdbcType=VARCHAR},
+      稻谷_吨 = #{稻谷吨,jdbcType=INTEGER},
+      玉米_吨 = #{玉米吨,jdbcType=INTEGER},
+      油料产量_吨 = #{油料产量吨,jdbcType=INTEGER},
+      水果产量_吨 = #{水果产量吨,jdbcType=INTEGER},
+      肉类总产量_吨 = #{肉类总产量吨,jdbcType=INTEGER},
+      水产品总产量_吨 = #{水产品总产量吨,jdbcType=INTEGER},
+      规模以上工业企业数_个 = #{规模以上工业企业数个,jdbcType=INTEGER},
+      规模以上工业总产值_当年价_万元 = #{规模以上工业总产值当年价万元,jdbcType=INTEGER},
+      规模以上工业总产值_国有企业_万元 = #{规模以上工业总产值国有企业万元,jdbcType=INTEGER},
+      规模以上工业总产值_集体企业_万元 = #{规模以上工业总产值集体企业万元,jdbcType=INTEGER},
+      规模以上工业总产值_外商及港澳台商投资 = #{规模以上工业总产值外商及港澳台商投资,jdbcType=INTEGER},
+      规模以上工业总产值_其他经济类型企业_万元 = #{规模以上工业总产值其他经济类型企业万元,jdbcType=INTEGER},
+      规模以上工业总产值指数 = #{规模以上工业总产值指数,jdbcType=DOUBLE},
+      规模以上工业企业增加值_万元 = #{规模以上工业企业增加值万元,jdbcType=INTEGER},
+      规模以上工业增加值指数 = #{规模以上工业增加值指数,jdbcType=DOUBLE},
+      规模以上工业企业资产总计_万元 = #{规模以上工业企业资产总计万元,jdbcType=INTEGER},
+      规模以上工业企业负债合计_万元 = #{规模以上工业企业负债合计万元,jdbcType=INTEGER},
+      规模以上工业从业人员年平均数_人 = #{规模以上工业从业人员年平均数人,jdbcType=INTEGER},
+      规模以上工业主营业务收入_万元 = #{规模以上工业主营业务收入万元,jdbcType=INTEGER},
+      规模以上工业主营业务税金及附加_万元 = #{规模以上工业主营业务税金及附加万元,jdbcType=INTEGER},
+      规模以上工业利润总额_万元 = #{规模以上工业利润总额万元,jdbcType=INTEGER},
+      邮电业务总量_万元 = #{邮电业务总量万元,jdbcType=INTEGER},
+      邮政业务总量_万元 = #{邮政业务总量万元,jdbcType=INTEGER},
+      社会消费品零售总额_万元 = #{社会消费品零售总额万元,jdbcType=INTEGER},
+      社会消费品零售总额指数 = #{社会消费品零售总额指数,jdbcType=INTEGER},
+      批发零售贸易业_万元 = #{批发零售贸易业万元,jdbcType=INTEGER},
+      住宿和餐饮业_万元 = #{住宿和餐饮业万元,jdbcType=INTEGER},
+      外贸进出口总额_万美元 = #{外贸进出口总额万美元,jdbcType=INTEGER},
+      出口总额_万美元 = #{出口总额万美元,jdbcType=INTEGER},
+      实际利用外资金额_万美元 = #{实际利用外资金额万美元,jdbcType=INTEGER},
+      全社会固定资产投资_万元_万元 = #{全社会固定资产投资万元万元,jdbcType=INTEGER},
+      基本建设投资_万元 = #{基本建设投资万元,jdbcType=INTEGER},
+      更新改造投资_万元 = #{更新改造投资万元,jdbcType=INTEGER},
+      其它投资 = #{其它投资,jdbcType=INTEGER},
+      房地产开发_万元 = #{房地产开发万元,jdbcType=INTEGER},
+      城镇在岗职工年末人数_人 = #{城镇在岗职工年末人数人,jdbcType=INTEGER},
+      城镇在岗职工年工资总额_万元 = #{城镇在岗职工年工资总额万元,jdbcType=INTEGER},
+      城镇在岗职工年平均工资_元 = #{城镇在岗职工年平均工资元,jdbcType=INTEGER},
+      城镇居民人均可支配收入_元 = #{城镇居民人均可支配收入元,jdbcType=INTEGER},
+      农民人均纯收入_元 = #{农民人均纯收入元,jdbcType=INTEGER}
+    where 编号 = #{编号,jdbcType=INTEGER}
+  </update>
+</mapper>
