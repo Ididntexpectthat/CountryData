@@ -1,6 +1,6 @@
 package com.ydl.entity;
 
-public class 社会经济基本情况统计二 {
+public class 社会经济基本情况统计二2014 {
     private Integer 编号;
 
     private String 县市区;

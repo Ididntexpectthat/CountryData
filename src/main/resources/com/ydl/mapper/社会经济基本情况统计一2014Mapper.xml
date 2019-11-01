@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ydl.mapper.社会经济基本情况统计一Mapper">
-  <resultMap id="BaseResultMap" type="com.ydl.entity.社会经济基本情况统计一">
+<mapper namespace="com.ydl.mapper.社会经济基本情况统计一2014Mapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.社会经济基本情况统计一2014">
     <id column="编号" jdbcType="INTEGER" property="编号" />
     <result column="县市区" jdbcType="VARCHAR" property="县市区" />
     <result column="年末总人口_人" jdbcType="INTEGER" property="年末总人口人" />
@@ -65,7 +65,7 @@
     delete from 玉林市2014年各县市区社会经济基本情况统计一
     where 编号 = #{编号,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.社会经济基本情况统计一" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.社会经济基本情况统计一2014" useGeneratedKeys="true">
     insert into 玉林市2014年各县市区社会经济基本情况统计一 (县市区, 年末总人口_人, 年末总户数_户, 
       常住人口_万人, 常住人口_城镇人口_万人, 城镇化率, 地区生产总值_万元, 
       地区生产总值_第一产业增加值_万元, 地区生产总值_第二产业增加值_万元, 地区生产总值_工业_万元, 
@@ -95,7 +95,7 @@
       #{粮食作物播种面积稻谷公顷,jdbcType=INTEGER}, #{粮食作物播种面积玉米公顷,jdbcType=INTEGER}, #{蔬菜播种面积公顷,jdbcType=INTEGER}, 
       #{粮食总产量吨,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.社会经济基本情况统计一" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.社会经济基本情况统计一2014" useGeneratedKeys="true">
     insert into 玉林市2014年各县市区社会经济基本情况统计一
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="县市区 != null">
@@ -354,7 +354,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.社会经济基本情况统计一">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.社会经济基本情况统计一2014">
     update 玉林市2014年各县市区社会经济基本情况统计一
     <set>
       <if test="县市区 != null">
@@ -486,7 +486,7 @@
     </set>
     where 编号 = #{编号,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.社会经济基本情况统计一">
+  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.社会经济基本情况统计一2014">
     update 玉林市2014年各县市区社会经济基本情况统计一
     set 县市区 = #{县市区,jdbcType=VARCHAR},
       年末总人口_人 = #{年末总人口人,jdbcType=INTEGER},

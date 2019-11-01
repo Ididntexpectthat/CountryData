@@ -1,6 +1,6 @@
 package com.ydl.entity;
 
-public class 农村基本情况统计 {
+public class 农村基本情况 {
     private Integer 编号;
 
     private String 县市区;

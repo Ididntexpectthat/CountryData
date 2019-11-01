@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ydl.mapper.农业主要经济指标统计Mapper">
-  <resultMap id="BaseResultMap" type="com.ydl.entity.农业主要经济指标统计">
+<mapper namespace="com.ydl.mapper.农业主要经济指标Mapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.农业主要经济指标">
     <id column="编号" jdbcType="INTEGER" property="编号" />
     <result column="年份" jdbcType="INTEGER" property="年份" />
     <result column="乡镇_不包括街道_个" jdbcType="INTEGER" property="乡镇不包括街道个" />
@@ -65,7 +65,7 @@
     delete from 玉林市历年北流市农业主要经济指标统计2006_2014
     where 编号 = #{编号,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农业主要经济指标统计" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农业主要经济指标" useGeneratedKeys="true">
     insert into 玉林市历年北流市农业主要经济指标统计2006_2014 (年份, 乡镇_不包括街道_个, 村民委员会_个, 
       乡村户数_万户, 乡镇_村人口数_万人, 乡镇_村劳动力_万人, 
       乡镇_村从业人员数_万人, 当机耕地面积_公顷, 农村用电量_万千瓦时, 
@@ -97,7 +97,7 @@
       #{豆类产量吨,jdbcType=INTEGER}, #{红薯种植面积公顷,jdbcType=INTEGER}, #{红薯产量吨,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农业主要经济指标统计" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农业主要经济指标" useGeneratedKeys="true">
     insert into 玉林市历年北流市农业主要经济指标统计2006_2014
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="年份 != null">
@@ -368,7 +368,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.农业主要经济指标统计">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.农业主要经济指标">
     update 玉林市历年北流市农业主要经济指标统计2006_2014
     <set>
       <if test="年份 != null">
@@ -506,7 +506,7 @@
     </set>
     where 编号 = #{编号,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.农业主要经济指标统计">
+  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.农业主要经济指标">
     update 玉林市历年北流市农业主要经济指标统计2006_2014
     set 年份 = #{年份,jdbcType=INTEGER},
       乡镇_不包括街道_个 = #{乡镇不包括街道个,jdbcType=INTEGER},

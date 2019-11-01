@@ -1,6 +1,6 @@
 package com.ydl.entity;
 
-public class 农业主要经济指标统计 {
+public class 农业主要经济指标 {
     private Integer 编号;
 
     private Integer 年份;

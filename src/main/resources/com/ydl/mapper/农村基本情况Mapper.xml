@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ydl.mapper.农村基本情况统计Mapper">
-  <resultMap id="BaseResultMap" type="com.ydl.entity.农村基本情况统计">
+<mapper namespace="com.ydl.mapper.农村基本情况Mapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.农村基本情况">
     <id column="编号" jdbcType="INTEGER" property="编号" />
     <result column="县市区" jdbcType="VARCHAR" property="县市区" />
     <result column="乡镇个数_个" jdbcType="INTEGER" property="乡镇个数个" />
@@ -45,7 +45,7 @@
     delete from 玉林市2014年县市区农村基本情况统计
     where 编号 = #{编号,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农村基本情况统计" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农村基本情况" useGeneratedKeys="true">
     insert into 玉林市2014年县市区农村基本情况统计 (县市区, 乡镇个数_个, 村民委员会_个, 
       居民委员会_个, 村民小组_个, 自来水受益村数_个, 
       通有线电视村数_个, 通宽带村数_个, 乡_镇村户数_万户, 
@@ -65,7 +65,7 @@
       #{园地公顷,jdbcType=INTEGER}, #{林地公顷,jdbcType=INTEGER}, #{草地公顷,jdbcType=INTEGER}, #{设施农业用地公顷,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农村基本情况统计" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.农村基本情况" useGeneratedKeys="true">
     insert into 玉林市2014年县市区农村基本情况统计
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="县市区 != null">
@@ -222,7 +222,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.农村基本情况统计">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.农村基本情况">
     update 玉林市2014年县市区农村基本情况统计
     <set>
       <if test="县市区 != null">
@@ -303,7 +303,7 @@
     </set>
     where 编号 = #{编号,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.农村基本情况统计">
+  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.农村基本情况">
     update 玉林市2014年县市区农村基本情况统计
     set 县市区 = #{县市区,jdbcType=VARCHAR},
       乡镇个数_个 = #{乡镇个数个,jdbcType=INTEGER},
