@@ -12,8 +12,12 @@ import java.util.List;
 public class EconomicDataServiceImpl implements EconomicDataService {
     @Autowired
     EconomicDataMapper economicDataMapper;
-    @Override
-    public List<EconomicData> getAllTableName(EconomicData economicData) {
-        return economicDataMapper.getAllTableName(economicData);
-    }
+//    @Override
+//    public List<EconomicData> getAllTableName(EconomicData economicData) {
+//        return economicDataMapper.getAllTableName(economicData);
+//    }
+@Override
+public List getAllTableName(EconomicData economicData) {
+    return economicDataMapper.getAllTableName(economicData);
+}
 }

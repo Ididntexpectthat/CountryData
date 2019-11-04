@@ -14,7 +14,7 @@
     <result column="批发零售住宿餐饮业_万元" jdbcType="INTEGER" property="批发零售住宿餐饮业万元" />
   </resultMap>
   <sql id="Base_Column_List">
-    编号, 年份, 地区生产总值_万元, 地区生产总值_第一产业_万元, 地区生产总值_第二产业_万元, 第二产业_工业_万元, 第二产业_建筑业_万元, 地区生产总值_第三产业_万元, 
+    tableName,编号, 年份, 地区生产总值_万元, 地区生产总值_第一产业_万元, 地区生产总值_第二产业_万元, 第二产业_工业_万元, 第二产业_建筑业_万元, 地区生产总值_第三产业_万元,
     交通运输仓储邮政业_万元, 批发零售住宿餐饮业_万元
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -23,7 +23,14 @@
     from 玉林市历年北流市生产总值统计1998_2014
     where 编号 = #{编号,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+
+<!--  <select id="getDataByTableName" parameterType="com.ydl.entity.生产总值统计" resultMap="BaseResultMap">-->
+<!--    select * from #{grossProduct.tableName}-->
+<!--  </select>-->
+  <select id="getDataByTableName" statementType="STATEMENT" resultType="com.ydl.entity.生产总值统计">
+    select * from ${tableName}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from 玉林市历年北流市生产总值统计1998_2014
     where 编号 = #{编号,jdbcType=INTEGER}
   </delete>

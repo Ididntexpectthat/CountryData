@@ -1,5 +1,6 @@
 package com.ydl.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data

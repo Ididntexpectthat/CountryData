@@ -1,7 +1,9 @@
 package com.ydl.mapper;
 
 import com.ydl.entity.农民人均纯收入;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface 农民人均纯收入Mapper {
     int deleteByPrimaryKey(Integer 编号);
 

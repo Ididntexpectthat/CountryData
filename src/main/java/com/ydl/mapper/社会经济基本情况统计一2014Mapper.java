@@ -1,7 +1,9 @@
 package com.ydl.mapper;
 
 import com.ydl.entity.社会经济基本情况统计一2014;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface 社会经济基本情况统计一2014Mapper {
     int deleteByPrimaryKey(Integer 编号);
 

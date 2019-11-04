@@ -1,6 +1,20 @@
 package com.ydl.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 public class 生产总值统计 {
+
+//    public String getTableName() {
+//        return tableName;
+//    }
+//
+//    public void setTableName(String tableName) {
+//        this.tableName = tableName;
+//    }
+//
+//    @JsonIgnoreProperties
+//    private String tableName;
     private Integer 编号;
 
     private Integer 年份;

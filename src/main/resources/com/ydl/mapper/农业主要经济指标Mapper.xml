@@ -61,6 +61,9 @@
     from 玉林市历年北流市农业主要经济指标统计2006_2014
     where 编号 = #{编号,jdbcType=INTEGER}
   </select>
+  <select id="getDataByTableName" statementType="STATEMENT" resultType="com.ydl.entity.农业主要经济指标">
+    select * from ${tableName}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from 玉林市历年北流市农业主要经济指标统计2006_2014
     where 编号 = #{编号,jdbcType=INTEGER}
