@@ -27,7 +27,7 @@ public class EconomicDataApi {
      * @apiVersion 0.0.2
      * @apiDescription 用于分类
      * @apiParam {JSON} tableName 分类名字
-     * @apiParam {JSON} particularYear 年份(可选)
+     * @apiParam {JSON} [particularYear] 年份
      * @apiParamExample {json} 请求样例：
      *  {
      * 	"tableName":"生产总值",
@@ -110,7 +110,7 @@ public class EconomicDataApi {
      * @apiVersion 0.0.2
      * @apiDescription 用于注分地区
      * @apiParam {JSON} tableName 分类名字
-     * @apiParam {JSON} particularYear 年份(可选)
+     * @apiParam {JSON} [particularYear] 年份
      * @apiParamExample {json} 请求样例：
      *{
      * 	"tableName":"农业主要经济指标"

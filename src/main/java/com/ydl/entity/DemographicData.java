@@ -3,13 +3,52 @@ package com.ydl.entity;
 public class DemographicData {
     private Integer 编号;
 
-    private String 城市名;
+    private String cityName;
 
-    private String 区县名;
+    private String districtName;
 
-    private String 乡镇名;
+    private String townName;
 
-    private String 行政村;
+    private String administrativeVillage;
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getDistrictName() {
+        return districtName;
+    }
+
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
+    }
+
+    public String getTownName() {
+        return townName;
+    }
+
+    public void setTownName(String townName) {
+        this.townName = townName;
+    }
+
+    public String getAdministrativeVillage() {
+        return administrativeVillage;
+    }
+
+    public void setAdministrativeVillage(String administrativeVillage) {
+        this.administrativeVillage = administrativeVillage;
+    }
+    //    private String 城市名;
+//
+//    private String 区县名;
+//
+//    private String 乡镇名;
+//
+//    private String 行政村;
 
     private Integer 总户数;
 
@@ -43,14 +82,6 @@ public class DemographicData {
 
     private Float 平均家庭户规模人每户;
 
-    private Integer 家庭户女性人口数;
-
-    private Integer 家庭户男性人口数;
-
-    private Integer 集体户女性人口数;
-
-    private Integer 集体户男性人口数;
-
     public Integer get编号() {
         return 编号;
     }
@@ -59,37 +90,37 @@ public class DemographicData {
         this.编号 = 编号;
     }
 
-    public String get城市名() {
-        return 城市名;
-    }
-
-    public void set城市名(String 城市名) {
-        this.城市名 = 城市名 == null ? null : 城市名.trim();
-    }
-
-    public String get区县名() {
-        return 区县名;
-    }
-
-    public void set区县名(String 区县名) {
-        this.区县名 = 区县名 == null ? null : 区县名.trim();
-    }
-
-    public String get乡镇名() {
-        return 乡镇名;
-    }
-
-    public void set乡镇名(String 乡镇名) {
-        this.乡镇名 = 乡镇名 == null ? null : 乡镇名.trim();
-    }
-
-    public String get行政村() {
-        return 行政村;
-    }
-
-    public void set行政村(String 行政村) {
-        this.行政村 = 行政村 == null ? null : 行政村.trim();
-    }
+//    public String get城市名() {
+//        return 城市名;
+//    }
+//
+//    public void set城市名(String 城市名) {
+//        this.城市名 = 城市名 == null ? null : 城市名.trim();
+//    }
+//
+//    public String get区县名() {
+//        return 区县名;
+//    }
+//
+//    public void set区县名(String 区县名) {
+//        this.区县名 = 区县名 == null ? null : 区县名.trim();
+//    }
+//
+//    public String get乡镇名() {
+//        return 乡镇名;
+//    }
+//
+//    public void set乡镇名(String 乡镇名) {
+//        this.乡镇名 = 乡镇名 == null ? null : 乡镇名.trim();
+//    }
+//
+//    public String get行政村() {
+//        return 行政村;
+//    }
+//
+//    public void set行政村(String 行政村) {
+//        this.行政村 = 行政村 == null ? null : 行政村.trim();
+//    }
 
     public Integer get总户数() {
         return 总户数;
@@ -217,37 +248,5 @@ public class DemographicData {
 
     public void set平均家庭户规模人每户(Float 平均家庭户规模人每户) {
         this.平均家庭户规模人每户 = 平均家庭户规模人每户;
-    }
-
-    public Integer get家庭户女性人口数() {
-        return 家庭户女性人口数;
-    }
-
-    public void set家庭户女性人口数(Integer 家庭户女性人口数) {
-        this.家庭户女性人口数 = 家庭户女性人口数;
-    }
-
-    public Integer get家庭户男性人口数() {
-        return 家庭户男性人口数;
-    }
-
-    public void set家庭户男性人口数(Integer 家庭户男性人口数) {
-        this.家庭户男性人口数 = 家庭户男性人口数;
-    }
-
-    public Integer get集体户女性人口数() {
-        return 集体户女性人口数;
-    }
-
-    public void set集体户女性人口数(Integer 集体户女性人口数) {
-        this.集体户女性人口数 = 集体户女性人口数;
-    }
-
-    public Integer get集体户男性人口数() {
-        return 集体户男性人口数;
-    }
-
-    public void set集体户男性人口数(Integer 集体户男性人口数) {
-        this.集体户男性人口数 = 集体户男性人口数;
     }
 }

@@ -12,10 +12,10 @@ import java.util.List;
 public class DemographicDataServiceImpl implements DemographicDataService {
     @Autowired
     DemographicDataMapper demographicDataMapper;
-    @Override
-    public Integer sum(DemographicData demographicData) {
-        return demographicDataMapper.sum(demographicData);
-    }
+//    @Override
+//    public Integer sum(DemographicData demographicData) {
+//        return demographicDataMapper.sum(demographicData);
+//    }
 
     @Override
     public List<DemographicData> getAllDemograhicData() {

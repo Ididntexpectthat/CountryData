@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface DemographicDataService {
 
-    Integer sum(DemographicData demographicData);
+//    Integer sum(DemographicData demographicData);
     List<DemographicData> getAllDemograhicData();
 
     List<DemographicData> getAllSelective(DemographicData record);
