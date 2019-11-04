@@ -1,0 +1,9 @@
+{
+  "name": "接口文档",
+  "version": "0.1.0",
+  "description": "apiDoc basic example",
+  "title": "项目接口文档",
+  "url" : "http://localhost:8888/",
+  "sampleUrl" : "http://localhost:8888/"
+}
+

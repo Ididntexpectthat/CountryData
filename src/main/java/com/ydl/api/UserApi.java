@@ -50,13 +50,6 @@ public class UserApi {
     @Autowired
     FunctionService functionService;
 
-    /**
-     * 注册，从header中取ctoken和captcha，公共
-     *
-     * @param user
-     * @param httpServletRequest
-     * @return
-     */
     @PassToken
     @PostMapping(value = "/register")
     public Object register2(@RequestBody User user, HttpServletRequest httpServletRequest) {

@@ -1,0 +1,16 @@
+{
+  "name": "文档名称",
+  "version": "0.1.0",
+  "description": "apiDoc basic example",
+  "title": "Custom apiDoc browser title",
+  "url": "http://localhost:8888/",
+  "sampleUrl": "http://localhost:8888/",
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2019-11-04T07:27:45.073Z",
+    "url": "http://apidocjs.com",
+    "version": "0.17.7"
+  }
+}
