@@ -1,6 +1,6 @@
 package com.ydl.mapper;
 
-import com.ydl.entity.EconomicData;
+import com.ydl.entity.economicData.EconomicData;
 import com.ydl.entity.GDPStatistics;
 import org.apache.ibatis.annotations.Mapper;
 

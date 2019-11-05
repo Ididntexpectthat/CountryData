@@ -1,6 +1,6 @@
 package com.ydl.service.impl;
 
-import com.ydl.entity.EconomicData;
+import com.ydl.entity.economicData.EconomicData;
 import com.ydl.entity.MainEconomicIndicatorsOfAgriculture;
 import com.ydl.mapper.MainEconomicIndicatorsOfAgricultureMapper;
 import com.ydl.service.MainEconomicIndicatorsOfAgricultureService;

@@ -1,9 +1,8 @@
-package com.ydl.api;
+package com.ydl.api.economicData;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ydl.annotation.UserLoginToken;
-import com.ydl.entity.EconomicData;
-import com.ydl.service.EconomicDataService;
+import com.ydl.entity.economicData.EconomicData;
+import com.ydl.service.economicData.EconomicDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

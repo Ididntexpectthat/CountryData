@@ -1,4 +1,4 @@
-package com.ydl.entity.经济数据;
+package com.ydl.entity.economicData;
 
 public class BasicSocialSituation1_2014 {
     private Integer 编号;

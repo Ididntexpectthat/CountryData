@@ -1,8 +1,8 @@
-package com.ydl.service.impl;
+package com.ydl.service.impl.economicData;
 
-import com.ydl.entity.EconomicData;
-import com.ydl.mapper.EconomicDataMapper;
-import com.ydl.service.EconomicDataService;
+import com.ydl.entity.economicData.EconomicData;
+import com.ydl.mapper.economicData.EconomicDataMapper;
+import com.ydl.service.economicData.EconomicDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

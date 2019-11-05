@@ -1,7 +1,7 @@
 package com.ydl.mapper;
 
 import com.ydl.entity.BasicRuralConditions;
-import com.ydl.entity.EconomicData;
+import com.ydl.entity.economicData.EconomicData;
 
 import java.util.List;
 

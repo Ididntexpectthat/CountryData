@@ -1,6 +1,6 @@
 package com.ydl.api;
 
-import com.ydl.entity.EconomicData;
+import com.ydl.entity.economicData.EconomicData;
 import com.ydl.service.MainEconomicIndicatorsOfAgricultureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

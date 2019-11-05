@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ydl.mapper.经济数据.BasicSocialSituation2_2014Mapper">
-  <resultMap id="BaseResultMap" type="com.ydl.entity.经济数据.BasicSocialSituation2_2014">
+<mapper namespace="com.ydl.mapper.economicData.BasicSocialSituation2_2014Mapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.economicData.BasicSocialSituation2_2014">
     <id column="编号" jdbcType="INTEGER" property="编号" />
     <result column="县市区" jdbcType="VARCHAR" property="县市区" />
     <result column="稻谷_吨" jdbcType="INTEGER" property="稻谷吨" />
@@ -70,7 +70,7 @@
 <!--    delete from 经济数据.玉林市2014年各县市区社会经济基本情况统计二-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </delete>-->
-<!--  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.经济数据.BasicSocialSituation2_2014" useGeneratedKeys="true">-->
+<!--  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.economicData.BasicSocialSituation2_2014" useGeneratedKeys="true">-->
 <!--    insert into 经济数据.玉林市2014年各县市区社会经济基本情况统计二 (县市区, 稻谷_吨, 玉米_吨, -->
 <!--      油料产量_吨, 水果产量_吨, 肉类总产量_吨, -->
 <!--      水产品总产量_吨, 规模以上工业企业数_个, 规模以上工业总产值_当年价_万元, -->
@@ -100,7 +100,7 @@
 <!--      #{城镇在岗职工年末人数人,jdbcType=INTEGER}, #{城镇在岗职工年工资总额万元,jdbcType=INTEGER}, #{城镇在岗职工年平均工资元,jdbcType=INTEGER}, -->
 <!--      #{城镇居民人均可支配收入元,jdbcType=INTEGER}, #{农民人均纯收入元,jdbcType=INTEGER})-->
 <!--  </insert>-->
-<!--  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.经济数据.BasicSocialSituation2_2014" useGeneratedKeys="true">-->
+<!--  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.economicData.BasicSocialSituation2_2014" useGeneratedKeys="true">-->
 <!--    insert into 经济数据.玉林市2014年各县市区社会经济基本情况统计二-->
 <!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
 <!--      <if test="县市区 != null">-->
@@ -353,7 +353,7 @@
 <!--      </if>-->
 <!--    </trim>-->
 <!--  </insert>-->
-<!--  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.经济数据.BasicSocialSituation2_2014">-->
+<!--  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.economicData.BasicSocialSituation2_2014">-->
 <!--    update 经济数据.玉林市2014年各县市区社会经济基本情况统计二-->
 <!--    <set>-->
 <!--      <if test="县市区 != null">-->
@@ -482,7 +482,7 @@
 <!--    </set>-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </update>-->
-<!--  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.经济数据.BasicSocialSituation2_2014">-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.economicData.BasicSocialSituation2_2014">-->
 <!--    update 经济数据.玉林市2014年各县市区社会经济基本情况统计二-->
 <!--    set 县市区 = #{县市区,jdbcType=VARCHAR},-->
 <!--      稻谷_吨 = #{稻谷吨,jdbcType=INTEGER},-->

@@ -1,6 +1,6 @@
-package com.ydl.service;
+package com.ydl.service.economicData;
 
-import com.ydl.entity.EconomicData;
+import com.ydl.entity.economicData.EconomicData;
 
 import java.util.List;
 

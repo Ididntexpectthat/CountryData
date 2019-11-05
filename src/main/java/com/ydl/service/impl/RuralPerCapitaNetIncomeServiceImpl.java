@@ -1,6 +1,6 @@
 package com.ydl.service.impl;
 
-import com.ydl.entity.EconomicData;
+import com.ydl.entity.economicData.EconomicData;
 import com.ydl.entity.RuralPerCapitaNetIncome;
 import com.ydl.mapper.RuralPerCapitaNetIncomeMapper;
 import com.ydl.service.RuralPerCapitaNetIncomeService;

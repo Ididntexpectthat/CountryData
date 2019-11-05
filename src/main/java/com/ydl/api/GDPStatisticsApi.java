@@ -1,7 +1,7 @@
 package com.ydl.api;
 
-import com.ydl.entity.EconomicData;
-import com.ydl.service.EconomicDataService;
+import com.ydl.entity.economicData.EconomicData;
+import com.ydl.service.economicData.EconomicDataService;
 import com.ydl.service.GrossProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

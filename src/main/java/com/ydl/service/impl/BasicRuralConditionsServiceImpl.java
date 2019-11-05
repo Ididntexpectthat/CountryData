@@ -1,7 +1,7 @@
 package com.ydl.service.impl;
 
 import com.ydl.entity.BasicRuralConditions;
-import com.ydl.entity.EconomicData;
+import com.ydl.entity.economicData.EconomicData;
 import com.ydl.mapper.BasicRuralConditionsMapper;
 import com.ydl.service.BasicRuralConditionsService;
 import org.springframework.beans.factory.annotation.Autowired;

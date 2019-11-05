@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ydl.mapper.EconomicDataMapper">
-    <select id="getAllTableName" resultType="com.ydl.entity.EconomicData">
+<mapper namespace="com.ydl.mapper.economicData.EconomicDataMapper">
+    <select id="getAllTableName" resultType="com.ydl.entity.economicData.EconomicData">
         SELECT table_name FROM information_schema.tables WHERE table_schema = '经济数据'
         <if test="tableName != null">
             and table_name ~* #{tableName}

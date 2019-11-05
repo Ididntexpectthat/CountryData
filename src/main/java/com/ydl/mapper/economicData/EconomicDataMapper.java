@@ -1,6 +1,6 @@
-package com.ydl.mapper;
+package com.ydl.mapper.economicData;
 
-import com.ydl.entity.EconomicData;
+import com.ydl.entity.economicData.EconomicData;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
