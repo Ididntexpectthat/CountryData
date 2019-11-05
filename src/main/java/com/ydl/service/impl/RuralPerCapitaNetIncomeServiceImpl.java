@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class getDataByTableNameServiceImpl implements RuralPerCapitaNetIncomeService {
+public class RuralPerCapitaNetIncomeServiceImpl implements RuralPerCapitaNetIncomeService {
     @Autowired
     RuralPerCapitaNetIncomeMapper rural;
     @Override

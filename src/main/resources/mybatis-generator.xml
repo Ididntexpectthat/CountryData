@@ -31,34 +31,34 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="玉林市六普村级户数人口数和性别比总计表" domainObjectName="DemographicData" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-<!--            <property name="runtimeSchema" value="人口数据"/>-->
-<!--            <property name="runtimeTableName" value="人口数据.sheet1"/>-->
-            <!-- 新增后返回主键的ID -->
-            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+<!--        <table tableName="玉林市六普村级户数人口数和性别比总计表" domainObjectName="DemographicData" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--&lt;!&ndash;            <property name="runtimeSchema" value="人口数据"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <property name="runtimeTableName" value="人口数据.sheet1"/>&ndash;&gt;-->
+<!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
+<!--            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>-->
 
-        </table>
-        <table tableName="玉林市历年各县市区农民人均纯收入统计2000_2016" domainObjectName="RuralPerCapitaNetIncome" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-<!--            <property name="runtimeSchema" value="经济数据"/>-->
+<!--        </table>-->
+<!--        <table tableName="玉林市历年各县市区农民人均纯收入统计2000_2016" domainObjectName="RuralPerCapitaNetIncome" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--&lt;!&ndash;            <property name="runtimeSchema" value="经济数据"/>&ndash;&gt;-->
+<!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
+<!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->
+<!--        </table>-->
+        <table tableName="玉林市2014年各县市区社会经济基本情况统计二" domainObjectName="BasicSocialSituation2_2014" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+                        <property name="runtimeSchema" value="经济数据"/>
             <!-- 新增后返回主键的ID -->
             <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>
         </table>
-<!--        <table tableName="玉林市2014年各县市区社会经济基本情况统计二" domainObjectName="社会经济基本情况统计二2014" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+        <table tableName="玉林市2014年各县市区社会经济基本情况统计一" domainObjectName="BasicSocialSituation1_2014" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+                        <property name="runtimeSchema" value="经济数据"/>
+            <!-- 新增后返回主键的ID -->
+            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>
+        </table>
+<!--        <table tableName="玉林市2014年县市区农村基本情况统计" domainObjectName="BasicRuralConditions" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
 <!--            &lt;!&ndash;            <property name="runtimeSchema" value="经济数据"/>&ndash;&gt;-->
 <!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
 <!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->
 <!--        </table>-->
-<!--        <table tableName="玉林市2014年各县市区社会经济基本情况统计一" domainObjectName="社会经济基本情况统计一2014" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-<!--            &lt;!&ndash;            <property name="runtimeSchema" value="经济数据"/>&ndash;&gt;-->
-<!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
-<!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->
-<!--        </table>-->
-<!--        <table tableName="玉林市2014年县市区农村基本情况统计" domainObjectName="农村基本情况" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
-<!--            &lt;!&ndash;            <property name="runtimeSchema" value="经济数据"/>&ndash;&gt;-->
-<!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
-<!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->
-<!--        </table>-->
-<!--        <table tableName="玉林市历年北流市农业主要经济指标统计2006_2014" domainObjectName="农业主要经济指标" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        <table tableName="玉林市历年北流市农业主要经济指标统计2006_2014" domainObjectName="MainEconomicIndicatorsOfAgriculture" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
 <!--            &lt;!&ndash;            <property name="runtimeSchema" value="经济数据"/>&ndash;&gt;-->
 <!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
 <!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->

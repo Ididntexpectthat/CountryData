@@ -3,7 +3,7 @@ package com.ydl.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public class 生产总值统计 {
+public class GDPStatistics {
 
 //    public String getTableName() {
 //        return tableName;

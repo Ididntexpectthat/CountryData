@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydl.mapper.MainEconomicIndicatorsOfAgricultureMapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.MainEconomicIndicatorsOfAgriculture">
+    <id column="编号" jdbcType="INTEGER" property="编号" />
+    <result column="年份" jdbcType="INTEGER" property="年份" />
+    <result column="乡镇_不包括街道_个" jdbcType="INTEGER" property="乡镇不包括街道个" />
+    <result column="村民委员会_个" jdbcType="INTEGER" property="村民委员会个" />
+    <result column="乡村户数_万户" jdbcType="REAL" property="乡村户数万户" />
+    <result column="乡镇_村人口数_万人" jdbcType="REAL" property="乡镇村人口数万人" />
+    <result column="乡镇_村劳动力_万人" jdbcType="REAL" property="乡镇村劳动力万人" />
+    <result column="乡镇_村从业人员数_万人" jdbcType="REAL" property="乡镇村从业人员数万人" />
+    <result column="当机耕地面积_公顷" jdbcType="INTEGER" property="当机耕地面积公顷" />
+    <result column="农村用电量_万千瓦时" jdbcType="INTEGER" property="农村用电量万千瓦时" />
+    <result column="化肥施用量_吨" jdbcType="INTEGER" property="化肥施用量吨" />
+    <result column="肉类总产量_吨" jdbcType="INTEGER" property="肉类总产量吨" />
+    <result column="牛存栏_头" jdbcType="INTEGER" property="牛存栏头" />
+    <result column="猪出栏_头" jdbcType="INTEGER" property="猪出栏头" />
+    <result column="猪肉产量_吨" jdbcType="INTEGER" property="猪肉产量吨" />
+    <result column="猪存栏_头" jdbcType="INTEGER" property="猪存栏头" />
+    <result column="家禽出栏_万只" jdbcType="REAL" property="家禽出栏万只" />
+    <result column="禽肉产量_吨" jdbcType="INTEGER" property="禽肉产量吨" />
+    <result column="家禽存栏_万只" jdbcType="REAL" property="家禽存栏万只" />
+    <result column="农林牧渔业总产值_万元" jdbcType="INTEGER" property="农林牧渔业总产值万元" />
+    <result column="农林牧渔业总产值指数" jdbcType="REAL" property="农林牧渔业总产值指数" />
+    <result column="农业产值_万元" jdbcType="INTEGER" property="农业产值万元" />
+    <result column="农业产值指数" jdbcType="REAL" property="农业产值指数" />
+    <result column="林业产值_万元" jdbcType="INTEGER" property="林业产值万元" />
+    <result column="林业产值指数" jdbcType="REAL" property="林业产值指数" />
+    <result column="牧业产值_万元" jdbcType="INTEGER" property="牧业产值万元" />
+    <result column="牧业产值指数" jdbcType="REAL" property="牧业产值指数" />
+    <result column="渔业产值_万元" jdbcType="INTEGER" property="渔业产值万元" />
+    <result column="渔业产值指数" jdbcType="REAL" property="渔业产值指数" />
+    <result column="水果产量_吨" jdbcType="INTEGER" property="水果产量吨" />
+    <result column="荔枝产量_吨" jdbcType="INTEGER" property="荔枝产量吨" />
+    <result column="龙眼产量_吨" jdbcType="INTEGER" property="龙眼产量吨" />
+    <result column="水产品产量_吨" jdbcType="INTEGER" property="水产品产量吨" />
+    <result column="粮食种植面积_公顷" jdbcType="INTEGER" property="粮食种植面积公顷" />
+    <result column="粮食产量_吨" jdbcType="INTEGER" property="粮食产量吨" />
+    <result column="早稻种植面积_公顷" jdbcType="INTEGER" property="早稻种植面积公顷" />
+    <result column="早稻产量_吨" jdbcType="INTEGER" property="早稻产量吨" />
+    <result column="晚稻种植面积_公顷" jdbcType="INTEGER" property="晚稻种植面积公顷" />
+    <result column="晚稻产量_吨" jdbcType="INTEGER" property="晚稻产量吨" />
+    <result column="玉米种植面积_公顷" jdbcType="INTEGER" property="玉米种植面积公顷" />
+    <result column="玉米产量_吨" jdbcType="INTEGER" property="玉米产量吨" />
+    <result column="豆类种植面积_公顷" jdbcType="INTEGER" property="豆类种植面积公顷" />
+    <result column="豆类产量_吨" jdbcType="INTEGER" property="豆类产量吨" />
+    <result column="红薯种植面积_公顷" jdbcType="INTEGER" property="红薯种植面积公顷" />
+    <result column="红薯产量_吨" jdbcType="INTEGER" property="红薯产量吨" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    编号, 年份, 乡镇_不包括街道_个, 村民委员会_个, 乡村户数_万户, 乡镇_村人口数_万人, 乡镇_村劳动力_万人, 乡镇_村从业人员数_万人, 当机耕地面积_公顷, 
+    农村用电量_万千瓦时, 化肥施用量_吨, 肉类总产量_吨, 牛存栏_头, 猪出栏_头, 猪肉产量_吨, 猪存栏_头, 家禽出栏_万只, 禽肉产量_吨, 家禽存栏_万只, 
+    农林牧渔业总产值_万元, 农林牧渔业总产值指数, 农业产值_万元, 农业产值指数, 林业产值_万元, 林业产值指数, 牧业产值_万元, 牧业产值指数, 渔业产值_万元, 
+    渔业产值指数, 水果产量_吨, 荔枝产量_吨, 龙眼产量_吨, 水产品产量_吨, 粮食种植面积_公顷, 粮食产量_吨, 早稻种植面积_公顷, 早稻产量_吨, 晚稻种植面积_公顷, 
+    晚稻产量_吨, 玉米种植面积_公顷, 玉米产量_吨, 豆类种植面积_公顷, 豆类产量_吨, 红薯种植面积_公顷, 红薯产量_吨
+  </sql>
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select -->
+<!--    <include refid="Base_Column_List" />-->
+<!--    from 玉林市历年北流市农业主要经济指标统计2006_2014-->
+<!--    where 编号 = #{编号,jdbcType=INTEGER}-->
+<!--  </select>-->
+  <select id="getDataByTableName" statementType="STATEMENT" resultType="com.ydl.entity.MainEconomicIndicatorsOfAgriculture">
+    select * from ${tableName}
+  </select>
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from 玉林市历年北流市农业主要经济指标统计2006_2014-->
+<!--    where 编号 = #{编号,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.MainEconomicIndicatorsOfAgriculture" useGeneratedKeys="true">-->
+<!--    insert into 玉林市历年北流市农业主要经济指标统计2006_2014 (年份, 乡镇_不包括街道_个, 村民委员会_个, -->
+<!--      乡村户数_万户, 乡镇_村人口数_万人, 乡镇_村劳动力_万人, -->
+<!--      乡镇_村从业人员数_万人, 当机耕地面积_公顷, 农村用电量_万千瓦时, -->
+<!--      化肥施用量_吨, 肉类总产量_吨, 牛存栏_头, -->
+<!--      猪出栏_头, 猪肉产量_吨, 猪存栏_头, -->
+<!--      家禽出栏_万只, 禽肉产量_吨, 家禽存栏_万只, 农林牧渔业总产值_万元, -->
+<!--      农林牧渔业总产值指数, 农业产值_万元, 农业产值指数, -->
+<!--      林业产值_万元, 林业产值指数, 牧业产值_万元, -->
+<!--      牧业产值指数, 渔业产值_万元, 渔业产值指数, 水果产量_吨, -->
+<!--      荔枝产量_吨, 龙眼产量_吨, 水产品产量_吨, -->
+<!--      粮食种植面积_公顷, 粮食产量_吨, 早稻种植面积_公顷, -->
+<!--      早稻产量_吨, 晚稻种植面积_公顷, 晚稻产量_吨, -->
+<!--      玉米种植面积_公顷, 玉米产量_吨, 豆类种植面积_公顷, -->
+<!--      豆类产量_吨, 红薯种植面积_公顷, 红薯产量_吨-->
+<!--      )-->
+<!--    values (#{年份,jdbcType=INTEGER}, #{乡镇不包括街道个,jdbcType=INTEGER}, #{村民委员会个,jdbcType=INTEGER}, -->
+<!--      #{乡村户数万户,jdbcType=REAL}, #{乡镇村人口数万人,jdbcType=REAL}, #{乡镇村劳动力万人,jdbcType=REAL}, -->
+<!--      #{乡镇村从业人员数万人,jdbcType=REAL}, #{当机耕地面积公顷,jdbcType=INTEGER}, #{农村用电量万千瓦时,jdbcType=INTEGER}, -->
+<!--      #{化肥施用量吨,jdbcType=INTEGER}, #{肉类总产量吨,jdbcType=INTEGER}, #{牛存栏头,jdbcType=INTEGER}, -->
+<!--      #{猪出栏头,jdbcType=INTEGER}, #{猪肉产量吨,jdbcType=INTEGER}, #{猪存栏头,jdbcType=INTEGER}, -->
+<!--      #{家禽出栏万只,jdbcType=REAL}, #{禽肉产量吨,jdbcType=INTEGER}, #{家禽存栏万只,jdbcType=REAL}, #{农林牧渔业总产值万元,jdbcType=INTEGER}, -->
+<!--      #{农林牧渔业总产值指数,jdbcType=REAL}, #{农业产值万元,jdbcType=INTEGER}, #{农业产值指数,jdbcType=REAL}, -->
+<!--      #{林业产值万元,jdbcType=INTEGER}, #{林业产值指数,jdbcType=REAL}, #{牧业产值万元,jdbcType=INTEGER}, -->
+<!--      #{牧业产值指数,jdbcType=REAL}, #{渔业产值万元,jdbcType=INTEGER}, #{渔业产值指数,jdbcType=REAL}, #{水果产量吨,jdbcType=INTEGER}, -->
+<!--      #{荔枝产量吨,jdbcType=INTEGER}, #{龙眼产量吨,jdbcType=INTEGER}, #{水产品产量吨,jdbcType=INTEGER}, -->
+<!--      #{粮食种植面积公顷,jdbcType=INTEGER}, #{粮食产量吨,jdbcType=INTEGER}, #{早稻种植面积公顷,jdbcType=INTEGER}, -->
+<!--      #{早稻产量吨,jdbcType=INTEGER}, #{晚稻种植面积公顷,jdbcType=INTEGER}, #{晚稻产量吨,jdbcType=INTEGER}, -->
+<!--      #{玉米种植面积公顷,jdbcType=INTEGER}, #{玉米产量吨,jdbcType=INTEGER}, #{豆类种植面积公顷,jdbcType=INTEGER}, -->
+<!--      #{豆类产量吨,jdbcType=INTEGER}, #{红薯种植面积公顷,jdbcType=INTEGER}, #{红薯产量吨,jdbcType=INTEGER}-->
+<!--      )-->
+<!--  </insert>-->
+<!--  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.MainEconomicIndicatorsOfAgriculture" useGeneratedKeys="true">-->
+<!--    insert into 玉林市历年北流市农业主要经济指标统计2006_2014-->
+<!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--      <if test="年份 != null">-->
+<!--        年份,-->
+<!--      </if>-->
+<!--      <if test="乡镇不包括街道个 != null">-->
+<!--        乡镇_不包括街道_个,-->
+<!--      </if>-->
+<!--      <if test="村民委员会个 != null">-->
+<!--        村民委员会_个,-->
+<!--      </if>-->
+<!--      <if test="乡村户数万户 != null">-->
+<!--        乡村户数_万户,-->
+<!--      </if>-->
+<!--      <if test="乡镇村人口数万人 != null">-->
+<!--        乡镇_村人口数_万人,-->
+<!--      </if>-->
+<!--      <if test="乡镇村劳动力万人 != null">-->
+<!--        乡镇_村劳动力_万人,-->
+<!--      </if>-->
+<!--      <if test="乡镇村从业人员数万人 != null">-->
+<!--        乡镇_村从业人员数_万人,-->
+<!--      </if>-->
+<!--      <if test="当机耕地面积公顷 != null">-->
+<!--        当机耕地面积_公顷,-->
+<!--      </if>-->
+<!--      <if test="农村用电量万千瓦时 != null">-->
+<!--        农村用电量_万千瓦时,-->
+<!--      </if>-->
+<!--      <if test="化肥施用量吨 != null">-->
+<!--        化肥施用量_吨,-->
+<!--      </if>-->
+<!--      <if test="肉类总产量吨 != null">-->
+<!--        肉类总产量_吨,-->
+<!--      </if>-->
+<!--      <if test="牛存栏头 != null">-->
+<!--        牛存栏_头,-->
+<!--      </if>-->
+<!--      <if test="猪出栏头 != null">-->
+<!--        猪出栏_头,-->
+<!--      </if>-->
+<!--      <if test="猪肉产量吨 != null">-->
+<!--        猪肉产量_吨,-->
+<!--      </if>-->
+<!--      <if test="猪存栏头 != null">-->
+<!--        猪存栏_头,-->
+<!--      </if>-->
+<!--      <if test="家禽出栏万只 != null">-->
+<!--        家禽出栏_万只,-->
+<!--      </if>-->
+<!--      <if test="禽肉产量吨 != null">-->
+<!--        禽肉产量_吨,-->
+<!--      </if>-->
+<!--      <if test="家禽存栏万只 != null">-->
+<!--        家禽存栏_万只,-->
+<!--      </if>-->
+<!--      <if test="农林牧渔业总产值万元 != null">-->
+<!--        农林牧渔业总产值_万元,-->
+<!--      </if>-->
+<!--      <if test="农林牧渔业总产值指数 != null">-->
+<!--        农林牧渔业总产值指数,-->
+<!--      </if>-->
+<!--      <if test="农业产值万元 != null">-->
+<!--        农业产值_万元,-->
+<!--      </if>-->
+<!--      <if test="农业产值指数 != null">-->
+<!--        农业产值指数,-->
+<!--      </if>-->
+<!--      <if test="林业产值万元 != null">-->
+<!--        林业产值_万元,-->
+<!--      </if>-->
+<!--      <if test="林业产值指数 != null">-->
+<!--        林业产值指数,-->
+<!--      </if>-->
+<!--      <if test="牧业产值万元 != null">-->
+<!--        牧业产值_万元,-->
+<!--      </if>-->
+<!--      <if test="牧业产值指数 != null">-->
+<!--        牧业产值指数,-->
+<!--      </if>-->
+<!--      <if test="渔业产值万元 != null">-->
+<!--        渔业产值_万元,-->
+<!--      </if>-->
+<!--      <if test="渔业产值指数 != null">-->
+<!--        渔业产值指数,-->
+<!--      </if>-->
+<!--      <if test="水果产量吨 != null">-->
+<!--        水果产量_吨,-->
+<!--      </if>-->
+<!--      <if test="荔枝产量吨 != null">-->
+<!--        荔枝产量_吨,-->
+<!--      </if>-->
+<!--      <if test="龙眼产量吨 != null">-->
+<!--        龙眼产量_吨,-->
+<!--      </if>-->
+<!--      <if test="水产品产量吨 != null">-->
+<!--        水产品产量_吨,-->
+<!--      </if>-->
+<!--      <if test="粮食种植面积公顷 != null">-->
+<!--        粮食种植面积_公顷,-->
+<!--      </if>-->
+<!--      <if test="粮食产量吨 != null">-->
+<!--        粮食产量_吨,-->
+<!--      </if>-->
+<!--      <if test="早稻种植面积公顷 != null">-->
+<!--        早稻种植面积_公顷,-->
+<!--      </if>-->
+<!--      <if test="早稻产量吨 != null">-->
+<!--        早稻产量_吨,-->
+<!--      </if>-->
+<!--      <if test="晚稻种植面积公顷 != null">-->
+<!--        晚稻种植面积_公顷,-->
+<!--      </if>-->
+<!--      <if test="晚稻产量吨 != null">-->
+<!--        晚稻产量_吨,-->
+<!--      </if>-->
+<!--      <if test="玉米种植面积公顷 != null">-->
+<!--        玉米种植面积_公顷,-->
+<!--      </if>-->
+<!--      <if test="玉米产量吨 != null">-->
+<!--        玉米产量_吨,-->
+<!--      </if>-->
+<!--      <if test="豆类种植面积公顷 != null">-->
+<!--        豆类种植面积_公顷,-->
+<!--      </if>-->
+<!--      <if test="豆类产量吨 != null">-->
+<!--        豆类产量_吨,-->
+<!--      </if>-->
+<!--      <if test="红薯种植面积公顷 != null">-->
+<!--        红薯种植面积_公顷,-->
+<!--      </if>-->
+<!--      <if test="红薯产量吨 != null">-->
+<!--        红薯产量_吨,-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--    <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--      <if test="年份 != null">-->
+<!--        #{年份,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="乡镇不包括街道个 != null">-->
+<!--        #{乡镇不包括街道个,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="村民委员会个 != null">-->
+<!--        #{村民委员会个,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="乡村户数万户 != null">-->
+<!--        #{乡村户数万户,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="乡镇村人口数万人 != null">-->
+<!--        #{乡镇村人口数万人,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="乡镇村劳动力万人 != null">-->
+<!--        #{乡镇村劳动力万人,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="乡镇村从业人员数万人 != null">-->
+<!--        #{乡镇村从业人员数万人,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="当机耕地面积公顷 != null">-->
+<!--        #{当机耕地面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="农村用电量万千瓦时 != null">-->
+<!--        #{农村用电量万千瓦时,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="化肥施用量吨 != null">-->
+<!--        #{化肥施用量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="肉类总产量吨 != null">-->
+<!--        #{肉类总产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="牛存栏头 != null">-->
+<!--        #{牛存栏头,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="猪出栏头 != null">-->
+<!--        #{猪出栏头,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="猪肉产量吨 != null">-->
+<!--        #{猪肉产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="猪存栏头 != null">-->
+<!--        #{猪存栏头,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="家禽出栏万只 != null">-->
+<!--        #{家禽出栏万只,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="禽肉产量吨 != null">-->
+<!--        #{禽肉产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="家禽存栏万只 != null">-->
+<!--        #{家禽存栏万只,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="农林牧渔业总产值万元 != null">-->
+<!--        #{农林牧渔业总产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="农林牧渔业总产值指数 != null">-->
+<!--        #{农林牧渔业总产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="农业产值万元 != null">-->
+<!--        #{农业产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="农业产值指数 != null">-->
+<!--        #{农业产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="林业产值万元 != null">-->
+<!--        #{林业产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="林业产值指数 != null">-->
+<!--        #{林业产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="牧业产值万元 != null">-->
+<!--        #{牧业产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="牧业产值指数 != null">-->
+<!--        #{牧业产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="渔业产值万元 != null">-->
+<!--        #{渔业产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="渔业产值指数 != null">-->
+<!--        #{渔业产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="水果产量吨 != null">-->
+<!--        #{水果产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="荔枝产量吨 != null">-->
+<!--        #{荔枝产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="龙眼产量吨 != null">-->
+<!--        #{龙眼产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="水产品产量吨 != null">-->
+<!--        #{水产品产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="粮食种植面积公顷 != null">-->
+<!--        #{粮食种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="粮食产量吨 != null">-->
+<!--        #{粮食产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="早稻种植面积公顷 != null">-->
+<!--        #{早稻种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="早稻产量吨 != null">-->
+<!--        #{早稻产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="晚稻种植面积公顷 != null">-->
+<!--        #{晚稻种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="晚稻产量吨 != null">-->
+<!--        #{晚稻产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="玉米种植面积公顷 != null">-->
+<!--        #{玉米种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="玉米产量吨 != null">-->
+<!--        #{玉米产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="豆类种植面积公顷 != null">-->
+<!--        #{豆类种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="豆类产量吨 != null">-->
+<!--        #{豆类产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="红薯种植面积公顷 != null">-->
+<!--        #{红薯种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="红薯产量吨 != null">-->
+<!--        #{红薯产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.MainEconomicIndicatorsOfAgriculture">-->
+<!--    update 玉林市历年北流市农业主要经济指标统计2006_2014-->
+<!--    <set>-->
+<!--      <if test="年份 != null">-->
+<!--        年份 = #{年份,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="乡镇不包括街道个 != null">-->
+<!--        乡镇_不包括街道_个 = #{乡镇不包括街道个,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="村民委员会个 != null">-->
+<!--        村民委员会_个 = #{村民委员会个,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="乡村户数万户 != null">-->
+<!--        乡村户数_万户 = #{乡村户数万户,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="乡镇村人口数万人 != null">-->
+<!--        乡镇_村人口数_万人 = #{乡镇村人口数万人,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="乡镇村劳动力万人 != null">-->
+<!--        乡镇_村劳动力_万人 = #{乡镇村劳动力万人,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="乡镇村从业人员数万人 != null">-->
+<!--        乡镇_村从业人员数_万人 = #{乡镇村从业人员数万人,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="当机耕地面积公顷 != null">-->
+<!--        当机耕地面积_公顷 = #{当机耕地面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="农村用电量万千瓦时 != null">-->
+<!--        农村用电量_万千瓦时 = #{农村用电量万千瓦时,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="化肥施用量吨 != null">-->
+<!--        化肥施用量_吨 = #{化肥施用量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="肉类总产量吨 != null">-->
+<!--        肉类总产量_吨 = #{肉类总产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="牛存栏头 != null">-->
+<!--        牛存栏_头 = #{牛存栏头,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="猪出栏头 != null">-->
+<!--        猪出栏_头 = #{猪出栏头,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="猪肉产量吨 != null">-->
+<!--        猪肉产量_吨 = #{猪肉产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="猪存栏头 != null">-->
+<!--        猪存栏_头 = #{猪存栏头,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="家禽出栏万只 != null">-->
+<!--        家禽出栏_万只 = #{家禽出栏万只,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="禽肉产量吨 != null">-->
+<!--        禽肉产量_吨 = #{禽肉产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="家禽存栏万只 != null">-->
+<!--        家禽存栏_万只 = #{家禽存栏万只,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="农林牧渔业总产值万元 != null">-->
+<!--        农林牧渔业总产值_万元 = #{农林牧渔业总产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="农林牧渔业总产值指数 != null">-->
+<!--        农林牧渔业总产值指数 = #{农林牧渔业总产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="农业产值万元 != null">-->
+<!--        农业产值_万元 = #{农业产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="农业产值指数 != null">-->
+<!--        农业产值指数 = #{农业产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="林业产值万元 != null">-->
+<!--        林业产值_万元 = #{林业产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="林业产值指数 != null">-->
+<!--        林业产值指数 = #{林业产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="牧业产值万元 != null">-->
+<!--        牧业产值_万元 = #{牧业产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="牧业产值指数 != null">-->
+<!--        牧业产值指数 = #{牧业产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="渔业产值万元 != null">-->
+<!--        渔业产值_万元 = #{渔业产值万元,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="渔业产值指数 != null">-->
+<!--        渔业产值指数 = #{渔业产值指数,jdbcType=REAL},-->
+<!--      </if>-->
+<!--      <if test="水果产量吨 != null">-->
+<!--        水果产量_吨 = #{水果产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="荔枝产量吨 != null">-->
+<!--        荔枝产量_吨 = #{荔枝产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="龙眼产量吨 != null">-->
+<!--        龙眼产量_吨 = #{龙眼产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="水产品产量吨 != null">-->
+<!--        水产品产量_吨 = #{水产品产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="粮食种植面积公顷 != null">-->
+<!--        粮食种植面积_公顷 = #{粮食种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="粮食产量吨 != null">-->
+<!--        粮食产量_吨 = #{粮食产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="早稻种植面积公顷 != null">-->
+<!--        早稻种植面积_公顷 = #{早稻种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="早稻产量吨 != null">-->
+<!--        早稻产量_吨 = #{早稻产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="晚稻种植面积公顷 != null">-->
+<!--        晚稻种植面积_公顷 = #{晚稻种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="晚稻产量吨 != null">-->
+<!--        晚稻产量_吨 = #{晚稻产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="玉米种植面积公顷 != null">-->
+<!--        玉米种植面积_公顷 = #{玉米种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="玉米产量吨 != null">-->
+<!--        玉米产量_吨 = #{玉米产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="豆类种植面积公顷 != null">-->
+<!--        豆类种植面积_公顷 = #{豆类种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="豆类产量吨 != null">-->
+<!--        豆类产量_吨 = #{豆类产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="红薯种植面积公顷 != null">-->
+<!--        红薯种植面积_公顷 = #{红薯种植面积公顷,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="红薯产量吨 != null">-->
+<!--        红薯产量_吨 = #{红薯产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--    </set>-->
+<!--    where 编号 = #{编号,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.MainEconomicIndicatorsOfAgriculture">-->
+<!--    update 玉林市历年北流市农业主要经济指标统计2006_2014-->
+<!--    set 年份 = #{年份,jdbcType=INTEGER},-->
+<!--      乡镇_不包括街道_个 = #{乡镇不包括街道个,jdbcType=INTEGER},-->
+<!--      村民委员会_个 = #{村民委员会个,jdbcType=INTEGER},-->
+<!--      乡村户数_万户 = #{乡村户数万户,jdbcType=REAL},-->
+<!--      乡镇_村人口数_万人 = #{乡镇村人口数万人,jdbcType=REAL},-->
+<!--      乡镇_村劳动力_万人 = #{乡镇村劳动力万人,jdbcType=REAL},-->
+<!--      乡镇_村从业人员数_万人 = #{乡镇村从业人员数万人,jdbcType=REAL},-->
+<!--      当机耕地面积_公顷 = #{当机耕地面积公顷,jdbcType=INTEGER},-->
+<!--      农村用电量_万千瓦时 = #{农村用电量万千瓦时,jdbcType=INTEGER},-->
+<!--      化肥施用量_吨 = #{化肥施用量吨,jdbcType=INTEGER},-->
+<!--      肉类总产量_吨 = #{肉类总产量吨,jdbcType=INTEGER},-->
+<!--      牛存栏_头 = #{牛存栏头,jdbcType=INTEGER},-->
+<!--      猪出栏_头 = #{猪出栏头,jdbcType=INTEGER},-->
+<!--      猪肉产量_吨 = #{猪肉产量吨,jdbcType=INTEGER},-->
+<!--      猪存栏_头 = #{猪存栏头,jdbcType=INTEGER},-->
+<!--      家禽出栏_万只 = #{家禽出栏万只,jdbcType=REAL},-->
+<!--      禽肉产量_吨 = #{禽肉产量吨,jdbcType=INTEGER},-->
+<!--      家禽存栏_万只 = #{家禽存栏万只,jdbcType=REAL},-->
+<!--      农林牧渔业总产值_万元 = #{农林牧渔业总产值万元,jdbcType=INTEGER},-->
+<!--      农林牧渔业总产值指数 = #{农林牧渔业总产值指数,jdbcType=REAL},-->
+<!--      农业产值_万元 = #{农业产值万元,jdbcType=INTEGER},-->
+<!--      农业产值指数 = #{农业产值指数,jdbcType=REAL},-->
+<!--      林业产值_万元 = #{林业产值万元,jdbcType=INTEGER},-->
+<!--      林业产值指数 = #{林业产值指数,jdbcType=REAL},-->
+<!--      牧业产值_万元 = #{牧业产值万元,jdbcType=INTEGER},-->
+<!--      牧业产值指数 = #{牧业产值指数,jdbcType=REAL},-->
+<!--      渔业产值_万元 = #{渔业产值万元,jdbcType=INTEGER},-->
+<!--      渔业产值指数 = #{渔业产值指数,jdbcType=REAL},-->
+<!--      水果产量_吨 = #{水果产量吨,jdbcType=INTEGER},-->
+<!--      荔枝产量_吨 = #{荔枝产量吨,jdbcType=INTEGER},-->
+<!--      龙眼产量_吨 = #{龙眼产量吨,jdbcType=INTEGER},-->
+<!--      水产品产量_吨 = #{水产品产量吨,jdbcType=INTEGER},-->
+<!--      粮食种植面积_公顷 = #{粮食种植面积公顷,jdbcType=INTEGER},-->
+<!--      粮食产量_吨 = #{粮食产量吨,jdbcType=INTEGER},-->
+<!--      早稻种植面积_公顷 = #{早稻种植面积公顷,jdbcType=INTEGER},-->
+<!--      早稻产量_吨 = #{早稻产量吨,jdbcType=INTEGER},-->
+<!--      晚稻种植面积_公顷 = #{晚稻种植面积公顷,jdbcType=INTEGER},-->
+<!--      晚稻产量_吨 = #{晚稻产量吨,jdbcType=INTEGER},-->
+<!--      玉米种植面积_公顷 = #{玉米种植面积公顷,jdbcType=INTEGER},-->
+<!--      玉米产量_吨 = #{玉米产量吨,jdbcType=INTEGER},-->
+<!--      豆类种植面积_公顷 = #{豆类种植面积公顷,jdbcType=INTEGER},-->
+<!--      豆类产量_吨 = #{豆类产量吨,jdbcType=INTEGER},-->
+<!--      红薯种植面积_公顷 = #{红薯种植面积公顷,jdbcType=INTEGER},-->
+<!--      红薯产量_吨 = #{红薯产量吨,jdbcType=INTEGER}-->
+<!--    where 编号 = #{编号,jdbcType=INTEGER}-->
+<!--  </update>-->
+</mapper>

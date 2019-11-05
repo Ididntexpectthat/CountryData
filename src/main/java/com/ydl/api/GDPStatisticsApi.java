@@ -1,10 +1,6 @@
 package com.ydl.api;
 
-import com.alibaba.fastjson.JSONObject;
-import com.ydl.annotation.UserLoginToken;
-import com.ydl.entity.DemographicData;
 import com.ydl.entity.EconomicData;
-import com.ydl.entity.生产总值统计;
 import com.ydl.service.EconomicDataService;
 import com.ydl.service.GrossProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/GrossProduct")
@@ -33,7 +24,8 @@ public class GDPStatisticsApi {
 //     return grossProductService.getDataByTableName(grossProduct);
 //    }
     /**
-     * @api {POST} MainEconomicIndicatorsOfAgriculture/getDataByTableName 生产总值统计
+     * @apiName GrossProduct_getDataByTableName
+     * @api {POST} GrossProduct/getDataByTableName 生产总值统计
      * @apiGroup 经济数据
      * @apiVersion 0.0.2
      * @apiDescription 用于获取生产总值统计的数据

@@ -14,6 +14,7 @@ public class RuralPerCapitaNetIncomeApi {
     @Autowired
     RuralPerCapitaNetIncomeService rural;
     /**
+     * @apiName RuralPerCapitaNetIncome_getDataByTableName
      * @api {POST} RuralPerCapitaNetIncome/getDataByTableName 农民人均纯收入
      * @apiGroup 经济数据
      * @apiVersion 0.0.2

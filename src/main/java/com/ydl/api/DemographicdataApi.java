@@ -30,6 +30,7 @@ public class DemographicdataApi {
     @Autowired
     DemographicDataMapper demographicDataMapper;
     /**
+     * @apiName Demographicdata_getAll
      * @api {POST} Demographicdata/getAll 选地区获取人口数据
      * @apiGroup 人口数据
      * @apiVersion 0.0.2
@@ -81,6 +82,7 @@ public class DemographicdataApi {
     }
 
     /**
+     * @apiName Demographicdata_getAllPaging
      * @api {POST} Demographicdata/getAllPaging 分页获取所有人口数据
      * @apiGroup 人口数据
      * @apiVersion 0.0.2

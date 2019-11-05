@@ -22,6 +22,7 @@ public class EconomicDataApi {
     @Autowired
     EconomicDataService economicDataService;
     /**
+     * @apiName EconomicData_classification
      * @api {POST} EconomicData/classification 分类
      * @apiGroup 经济数据
      * @apiVersion 0.0.2
@@ -105,6 +106,7 @@ public class EconomicDataApi {
         return new ResponseEntity<List>(economicDataService.getAllTableName(economicData), HttpStatus.OK);
     }
     /**
+     *  @apiName EconomicData_subRegion
      * @api {POST} EconomicData/subRegion 分地区
      * @apiGroup 经济数据
      * @apiVersion 0.0.2
