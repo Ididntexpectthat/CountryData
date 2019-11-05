@@ -2,10 +2,12 @@ package com.ydl.mapper.economicData;
 
 import com.ydl.entity.economicData.BasicSocialSituation1_2014;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component("BasicSocialSituation1_2014Mapper")
 public interface BasicSocialSituation1_2014Mapper {
     int deleteByPrimaryKey(Integer 编号);
 

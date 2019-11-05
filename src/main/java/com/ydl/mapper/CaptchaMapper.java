@@ -3,8 +3,10 @@ package com.ydl.mapper;
 
 import com.ydl.entity.Captcha;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Component;
 
 @Mapper
+@Component("CaptchaMapper")
 public interface CaptchaMapper {
 
     void add(@Param("ctoken") String ctoken, @Param("captcha") String captcha);

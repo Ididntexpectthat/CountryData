@@ -3,10 +3,12 @@ package com.ydl.mapper;
 import com.ydl.entity.Department;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component("DepartmentMapper")
 public interface DepartmentMapper {
     void insertDepartment(@Param("department") String department);
 

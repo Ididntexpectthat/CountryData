@@ -1,7 +1,7 @@
 package com.ydl.service;
 
 import com.ydl.entity.economicData.EconomicData;
-import com.ydl.entity.MainEconomicIndicatorsOfAgriculture;
+import com.ydl.entity.economicData.MainEconomicIndicatorsOfAgriculture;
 
 import java.util.List;
 

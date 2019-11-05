@@ -11,6 +11,9 @@
             and table_name ~* #{particularYear}
         </if>
     </select>
+    <select id="getDataByTableName" statementType="STATEMENT" resultType="com.ydl.entity.economicData.BasicRuralConditions">
+    select * from ${tableName}
+  </select>
 <!--    <select id="getAllTableName" resultType="java.lang.String">-->
 <!--        SELECT table_name FROM information_schema.tables WHERE table_schema = '经济数据'-->
 <!--        <if test="tableName != null">-->

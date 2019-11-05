@@ -2,11 +2,9 @@ package com.ydl.mapper;
 
 
 import com.ydl.entity.User;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -15,6 +13,7 @@ import java.util.List;
  * @date 2018-07-08 20:44
  */
 @Mapper
+@Component("UserMapper")
 public interface UserMapper {
 
     User findByUsername(@Param("username") String username);

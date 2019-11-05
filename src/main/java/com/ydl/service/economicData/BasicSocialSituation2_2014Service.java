@@ -1,6 +1,5 @@
 package com.ydl.service.economicData;
 
-import com.ydl.entity.economicData.BasicSocialSituation1_2014;
 import com.ydl.entity.economicData.BasicSocialSituation2_2014;
 
 import java.util.List;

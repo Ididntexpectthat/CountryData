@@ -1,7 +1,7 @@
 package com.ydl.service;
 
 import com.ydl.entity.economicData.EconomicData;
-import com.ydl.entity.RuralPerCapitaNetIncome;
+import com.ydl.entity.economicData.RuralPerCapitaNetIncome;
 
 import java.util.List;
 

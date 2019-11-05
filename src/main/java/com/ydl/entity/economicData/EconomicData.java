@@ -1,6 +1,5 @@
 package com.ydl.entity.economicData;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data

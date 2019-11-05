@@ -1,13 +1,14 @@
 package com.ydl.mapper;
 
 import com.ydl.entity.Function;
-import com.ydl.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component("FunctionMapper")
 public interface FunctionMapper {
     List<Function> findFunctionsByUsername(@Param("username")String username);
 

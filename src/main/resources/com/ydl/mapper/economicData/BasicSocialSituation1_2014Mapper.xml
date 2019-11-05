@@ -70,7 +70,7 @@
 <!--    delete from 经济数据.玉林市2014年各县市区社会经济基本情况统计一-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </delete>-->
-<!--  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.economicData.BasicSocialSituation1_2014" useGeneratedKeys="true">-->
+<!--  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="BasicSocialSituation1_2014" useGeneratedKeys="true">-->
 <!--    insert into 经济数据.玉林市2014年各县市区社会经济基本情况统计一 (县市区, 年末总人口_人, 年末总户数_户, -->
 <!--      常住人口_万人, 常住人口_城镇人口_万人, 城镇化率, 地区生产总值_万元, -->
 <!--      地区生产总值_第一产业增加值_万元, 地区生产总值_第二产业增加值_万元, 地区生产总值_工业_万元, -->
@@ -100,7 +100,7 @@
 <!--      #{粮食作物播种面积稻谷公顷,jdbcType=INTEGER}, #{粮食作物播种面积玉米公顷,jdbcType=INTEGER}, #{蔬菜播种面积公顷,jdbcType=INTEGER}, -->
 <!--      #{粮食总产量吨,jdbcType=INTEGER})-->
 <!--  </insert>-->
-<!--  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.economicData.BasicSocialSituation1_2014" useGeneratedKeys="true">-->
+<!--  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="BasicSocialSituation1_2014" useGeneratedKeys="true">-->
 <!--    insert into 经济数据.玉林市2014年各县市区社会经济基本情况统计一-->
 <!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
 <!--      <if test="县市区 != null">-->
@@ -359,7 +359,7 @@
 <!--      </if>-->
 <!--    </trim>-->
 <!--  </insert>-->
-<!--  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.economicData.BasicSocialSituation1_2014">-->
+<!--  <update id="updateByPrimaryKeySelective" parameterType="BasicSocialSituation1_2014">-->
 <!--    update 经济数据.玉林市2014年各县市区社会经济基本情况统计一-->
 <!--    <set>-->
 <!--      <if test="县市区 != null">-->
@@ -491,7 +491,7 @@
 <!--    </set>-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </update>-->
-<!--  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.economicData.BasicSocialSituation1_2014">-->
+<!--  <update id="updateByPrimaryKey" parameterType="BasicSocialSituation1_2014">-->
 <!--    update 经济数据.玉林市2014年各县市区社会经济基本情况统计一-->
 <!--    set 县市区 = #{县市区,jdbcType=VARCHAR},-->
 <!--      年末总人口_人 = #{年末总人口人,jdbcType=INTEGER},-->

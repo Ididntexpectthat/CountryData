@@ -2,10 +2,12 @@ package com.ydl.mapper;
 
 import com.ydl.entity.LayersList;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component("LayersListMapper")
 public interface LayersListMapper {
     List<LayersList> findAllByOrderById();
 

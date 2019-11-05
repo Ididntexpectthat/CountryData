@@ -13,7 +13,7 @@
     "Demographicdata_getAllPaging",
     "EconomicData_classification",
     "EconomicData_subRegion",
-    "GrossProduct_getDataByTableName",
+    "GDPStatistics_getDataByTableName",
     "MainEconomicIndicatorsOfAgriculture_getDataByTableName",
     "RuralPerCapitaNetIncome_getDataByTableName",
     "BasicRuralConditions_getDataByTableName"

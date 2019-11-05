@@ -1,10 +1,8 @@
 package com.ydl.service.impl.economicData;
 
 import com.ydl.entity.economicData.BasicSocialSituation1_2014;
-import com.ydl.entity.economicData.BasicSocialSituation2_2014;
 import com.ydl.mapper.economicData.BasicSocialSituation1_2014Mapper;
 import com.ydl.service.economicData.BasicSocialSituation1_2014Service;
-import com.ydl.service.economicData.BasicSocialSituation2_2014Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
