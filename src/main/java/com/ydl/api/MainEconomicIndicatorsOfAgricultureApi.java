@@ -17,8 +17,9 @@ public class MainEconomicIndicatorsOfAgricultureApi {
      * @api {POST} MainEconomicIndicatorsOfAgriculture/getDataByTableName 农业主要经济指标
      * @apiGroup 经济数据
      * @apiVersion 0.0.2
-     * @apiDescription 用于获取农业主要经济指标数据
-     * @apiParam {JSON} tableName 分类名字
+     * @apiName getDataByTableName
+     * @apiDescription 用于获取农业主要经济指标的数据
+     * @apiParam {JSON} tableName 表名字
      * @apiParamExample {json} 请求样例：
      *{
      * 	"tableName":"经济数据.玉林市历年北流市农业主要经济指标统计2006_2014"

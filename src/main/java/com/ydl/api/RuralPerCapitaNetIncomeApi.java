@@ -14,10 +14,10 @@ public class RuralPerCapitaNetIncomeApi {
     @Autowired
     RuralPerCapitaNetIncomeService rural;
     /**
-     * @api {POST} RuralPerCapitaNetIncome/getDataByTableName 农业主要经济指标
+     * @api {POST} RuralPerCapitaNetIncome/getDataByTableName 农民人均纯收入
      * @apiGroup 经济数据
      * @apiVersion 0.0.2
-     * @apiDescription 用于获取农业主要经济指标数据
+     * @apiDescription 用于获取农民人均纯收入的数据
      * @apiParam {JSON} tableName 分类名字
      * @apiParamExample {json} 请求样例：
      *{
