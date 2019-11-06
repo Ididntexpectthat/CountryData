@@ -26,7 +26,7 @@ public class EconomicDataApi {
      * @apiGroup 经济数据
      * @apiVersion 0.0.2
      * @apiDescription 用于分类
-     * @apiParam {JSON} tableName 分类名字
+     * @apiParam {JSON} tableName 分类名字(可选情况分为：农业主要经济指标，农村基本情况，生产总值统计，农民人均纯收入，社会经济基本情况)
      * @apiParam {JSON} [particularYear] 年份
      * @apiParamExample {json} 请求样例：
      *  {

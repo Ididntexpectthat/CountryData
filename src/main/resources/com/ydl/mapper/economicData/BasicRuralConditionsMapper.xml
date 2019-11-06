@@ -41,8 +41,10 @@
 <!--    from 经济数据.玉林市2014年县市区农村基本情况统计-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </select>-->
-  <select id="getDataByTableName" statementType="STATEMENT" resultType="com.ydl.entity.economicData.BasicRuralConditions">
-    select * from "economicData".${tableName}
+  <select id="getDataByTableName" statementType="STATEMENT" resultMap="BaseResultMap">
+    select
+     <include refid="Base_Column_List" />
+     from "economicData".${tableName}
   </select>
 <!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
 <!--    delete from 经济数据.玉林市2014年县市区农村基本情况统计-->

@@ -54,7 +54,7 @@
     农用化肥施用实物量_吨, 农药使用量, 农作物总播种面积_公顷, 粮食作物播种面积_公顷, 粮食作物播种面积_稻谷_公顷, 粮食作物播种面积_玉米_公顷, 蔬菜播种面积_公顷, 
     粮食总产量_吨, 粮食总产量_稻谷_吨, 粮食总产量_玉米_吨, 油料产量_吨, 园林水果产量_吨, 肉类总产量_吨, 水产品总产量_吨, 规模以上工业企业数_个
   </sql>
-  <select id="getAll" resultMap="BaseResultMap">
+  <select id="getDataByTableName" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from "economicData".玉林市2015年各县市区社会经济基本情况统计一

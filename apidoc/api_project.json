@@ -12,16 +12,17 @@
     "Demographicdata_getAllPaging",
     "EconomicData_classification",
     "EconomicData_subRegion",
-    "GrossProduct_getDataByTableName",
+    "GDPStatistics_getDataByTableName",
     "MainEconomicIndicatorsOfAgriculture_getDataByTableName",
     "RuralPerCapitaNetIncome_getDataByTableName",
-    "BasicRuralConditions_getDataByTableName"
+    "BasicRuralConditions_getDataByTableName",
+    "BasicSocialSituation_getDataByTableName"
   ],
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2019-11-05T02:13:00.882Z",
+    "time": "2019-11-06T03:02:57.701Z",
     "url": "http://apidocjs.com",
     "version": "0.17.7"
   }

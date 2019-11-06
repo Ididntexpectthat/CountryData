@@ -16,7 +16,8 @@
     "GDPStatistics_getDataByTableName",
     "MainEconomicIndicatorsOfAgriculture_getDataByTableName",
     "RuralPerCapitaNetIncome_getDataByTableName",
-    "BasicRuralConditions_getDataByTableName"
+    "BasicRuralConditions_getDataByTableName",
+    "BasicSocialSituation_getDataByTableName"
   ]
 }
 

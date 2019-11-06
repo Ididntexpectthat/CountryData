@@ -1,6 +1,5 @@
 package com.ydl.mapper.economicData;
 
-import com.ydl.entity.economicData.BasicSocialSituation1_2014;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
@@ -21,5 +20,5 @@ public interface BasicSocialSituation1_2014Mapper {
 //
 //    int updateByPrimaryKey(BasicSocialSituation1_2014 record);
 
-    List<BasicSocialSituation1_2014> getAll();
+    List<Object> getDataByTableName();
 }

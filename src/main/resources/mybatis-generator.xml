@@ -43,12 +43,12 @@
 <!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
 <!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->
 <!--        </table>-->
-        <table tableName="玉林市2015年各县市区社会经济基本情况统计二" domainObjectName="BasicSocialSituation2_2015" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table tableName="玉林市2016年各县市区社会经济基本情况统计二" domainObjectName="BasicSocialSituation2_2016" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
                         <property name="runtimeSchema" value="economicData"/>
             <!-- 新增后返回主键的ID -->
             <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>
         </table>
-        <table tableName="玉林市2015年各县市区社会经济基本情况统计一" domainObjectName="BasicSocialSituation1_2015" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table tableName="玉林市2016年各县市区社会经济基本情况统计一" domainObjectName="BasicSocialSituation1_2016" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
                         <property name="runtimeSchema" value="economicData"/>
             <!-- 新增后返回主键的ID -->
             <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>

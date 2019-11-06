@@ -55,7 +55,7 @@
     全社会固定资产投资_其它投资, 全社会固定资产投资_房地产开发_万元, 城镇在岗职工年末人数_人, 城镇在岗职工年工资总额_万元, 城镇在岗职工年平均工资_元, 
     城镇居民人均可支配收入_元, 农民人均纯收入_元
   </sql>
-  <select id="getAll" resultMap="BaseResultMap">
+  <select id="getDataByTableName" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from "economicData".玉林市2014年各县市区社会经济基本情况统计二
