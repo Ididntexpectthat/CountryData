@@ -1,7 +1,7 @@
 package com.ydl.api.bigDataPlatform.economicData;
 
 import com.ydl.entity.economicData.EconomicData;
-import com.ydl.service.BasicRuralConditionsService;
+import com.ydl.service.economicData.BasicRuralConditionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -31,13 +31,13 @@
 <!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
 <!--    select-->
 <!--    <include refid="Base_Column_List" />-->
-<!--    from 玉林市六普村级户数人口数和性别比总计表-->
+<!--    from demograhicData.玉林市六普村级户数人口数和性别比总计表-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </select>-->
     <select id="getAllDemograhicData" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
-        from 人口数据.玉林市六普村级户数人口数和性别比总计表 order by 编号
+        from "demographicData".玉林市六普村级户数人口数和性别比总计表 order by 编号
     </select>
     <select id="getAllSelective" parameterType="com.ydl.entity.demographicData.DemographicData" resultType="java.util.HashMap">
         select
@@ -55,8 +55,7 @@
                 *
             </if>
         </trim>
-        -- *
-        from 人口数据.玉林市六普村级户数人口数和性别比总计表
+        from "demographicData".玉林市六普村级户数人口数和性别比总计表
         <if test=" cityName != null or districtName != null or townName != null or administrativeVillage != null">
             <trim prefix="where " suffixOverrides="and">
                 <if test="cityName != null">

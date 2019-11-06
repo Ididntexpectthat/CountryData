@@ -19,13 +19,13 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from 经济数据.玉林市历年各县市区农民人均纯收入统计2000_2016
+    from "economicData".玉林市历年各县市区农民人均纯收入统计2000_2016
     where 编号 = #{编号,jdbcType=INTEGER}
   </select>
   <select id="getDataByTableName" statementType="STATEMENT" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-     from 经济数据.${tableName}
+     from "economicData".${tableName}
   </select>
 <!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
 <!--    delete from 经济数据.玉林市历年各县市区农民人均纯收入统计2000_2016-->

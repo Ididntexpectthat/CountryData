@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ydl.mapper.economicData.BasicSocialSituation1_2014Mapper">
-  <resultMap id="BaseResultMap" type="com.ydl.entity.economicData.BasicSocialSituation1_2014">
+<mapper namespace="com.ydl.mapper.economicData.BasicSocialSituation1_2015Mapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.economicData.BasicSocialSituation1_2015">
     <id column="编号" jdbcType="INTEGER" property="编号" />
     <result column="县市区" jdbcType="VARCHAR" property="县市区" />
     <result column="年末总人口_人" jdbcType="INTEGER" property="年末总人口人" />
@@ -16,92 +16,91 @@
     <result column="地区生产总值_第三产业增加值_万元" jdbcType="INTEGER" property="地区生产总值第三产业增加值万元" />
     <result column="人均地区生产总值_元" jdbcType="INTEGER" property="人均地区生产总值元" />
     <result column="地区生产总值指数" jdbcType="REAL" property="地区生产总值指数" />
-    <result column="第一产业" jdbcType="REAL" property="第一产业" />
-    <result column="第二产业" jdbcType="REAL" property="第二产业" />
-    <result column="工业" jdbcType="REAL" property="工业" />
-    <result column="第三产业" jdbcType="REAL" property="第三产业" />
+    <result column="地区生产总值指数_第一产业" jdbcType="REAL" property="地区生产总值指数第一产业" />
+    <result column="地区生产总值指数_第二产业" jdbcType="REAL" property="地区生产总值指数第二产业" />
+    <result column="地区生产总值指数_工业" jdbcType="REAL" property="地区生产总值指数工业" />
+    <result column="地区生产总值指数_第三产业" jdbcType="REAL" property="地区生产总值指数第三产业" />
     <result column="人均地区生产总值指数" jdbcType="REAL" property="人均地区生产总值指数" />
     <result column="财政收入_万元" jdbcType="INTEGER" property="财政收入万元" />
     <result column="财政收入_公共财政预算收入_万元" jdbcType="INTEGER" property="财政收入公共财政预算收入万元" />
     <result column="公共财政预算支出_万元" jdbcType="INTEGER" property="公共财政预算支出万元" />
-    <result column="公共财政预算支出_公共服务支出_万元" jdbcType="INTEGER" property="公共财政预算支出公共服务支出万元" />
-    <result column="公共财政预算支出_教育支出_万元" jdbcType="INTEGER" property="公共财政预算支出教育支出万元" />
-    <result column="公共财政预算支出_农林水事务支出_万元" jdbcType="INTEGER" property="公共财政预算支出农林水事务支出万元" />
-    <result column="年末单位从业人员数_人" jdbcType="INTEGER" property="年末单位从业人员数人" />
-    <result column="年末单位从业人员数_女_人" jdbcType="INTEGER" property="年末单位从业人员数女人" />
-    <result column="年末单位从业人员数_第二产业_人" jdbcType="INTEGER" property="年末单位从业人员数第二产业人" />
-    <result column="年末单位从业人员数_第三产业_人" jdbcType="INTEGER" property="年末单位从业人员数第三产业人" />
     <result column="年末金融机构各项存款余额_亿元" jdbcType="REAL" property="年末金融机构各项存款余额亿元" />
-    <result column="年末金融机构各项存款余额_储蓄存款余额_亿" jdbcType="REAL" property="年末金融机构各项存款余额储蓄存款余额亿" />
-    <result column="年末金融机构各项贷款余额_亿元" jdbcType="REAL" property="年末金融机构各项贷款余额亿元" />
+    <result column="住户存款余额" jdbcType="REAL" property="住户存款余额" />
+    <result column="年末金融机构各项贷款余额" jdbcType="REAL" property="年末金融机构各项贷款余额" />
     <result column="农林牧渔业总产值_万元" jdbcType="INTEGER" property="农林牧渔业总产值万元" />
     <result column="农林牧渔业总产值指数" jdbcType="REAL" property="农林牧渔业总产值指数" />
-    <result column="农业机械总动力_千瓦" jdbcType="INTEGER" property="农业机械总动力千瓦" />
+    <result column="农业机械总动力" jdbcType="INTEGER" property="农业机械总动力" />
     <result column="农用化肥施用实物量_吨" jdbcType="INTEGER" property="农用化肥施用实物量吨" />
-    <result column="农药使用量_吨" jdbcType="INTEGER" property="农药使用量吨" />
+    <result column="农药使用量" jdbcType="INTEGER" property="农药使用量" />
     <result column="农作物总播种面积_公顷" jdbcType="INTEGER" property="农作物总播种面积公顷" />
     <result column="粮食作物播种面积_公顷" jdbcType="INTEGER" property="粮食作物播种面积公顷" />
     <result column="粮食作物播种面积_稻谷_公顷" jdbcType="INTEGER" property="粮食作物播种面积稻谷公顷" />
     <result column="粮食作物播种面积_玉米_公顷" jdbcType="INTEGER" property="粮食作物播种面积玉米公顷" />
     <result column="蔬菜播种面积_公顷" jdbcType="INTEGER" property="蔬菜播种面积公顷" />
     <result column="粮食总产量_吨" jdbcType="INTEGER" property="粮食总产量吨" />
+    <result column="粮食总产量_稻谷_吨" jdbcType="INTEGER" property="粮食总产量稻谷吨" />
+    <result column="粮食总产量_玉米_吨" jdbcType="INTEGER" property="粮食总产量玉米吨" />
+    <result column="油料产量_吨" jdbcType="INTEGER" property="油料产量吨" />
+    <result column="园林水果产量_吨" jdbcType="INTEGER" property="园林水果产量吨" />
+    <result column="肉类总产量_吨" jdbcType="INTEGER" property="肉类总产量吨" />
+    <result column="水产品总产量_吨" jdbcType="INTEGER" property="水产品总产量吨" />
+    <result column="规模以上工业企业数_个" jdbcType="INTEGER" property="规模以上工业企业数个" />
   </resultMap>
   <sql id="Base_Column_List">
     编号, 县市区, 年末总人口_人, 年末总户数_户, 常住人口_万人, 常住人口_城镇人口_万人, 城镇化率, 地区生产总值_万元, 地区生产总值_第一产业增加值_万元, 
-    地区生产总值_第二产业增加值_万元, 地区生产总值_工业_万元, 地区生产总值_第三产业增加值_万元, 人均地区生产总值_元, 地区生产总值指数, 第一产业, 第二产业, 
-    工业, 第三产业, 人均地区生产总值指数, 财政收入_万元, 财政收入_公共财政预算收入_万元, 公共财政预算支出_万元, 公共财政预算支出_公共服务支出_万元, 
-    公共财政预算支出_教育支出_万元, 公共财政预算支出_农林水事务支出_万元, 年末单位从业人员数_人, 年末单位从业人员数_女_人, 年末单位从业人员数_第二产业_人, 
-    年末单位从业人员数_第三产业_人, 年末金融机构各项存款余额_亿元, 年末金融机构各项存款余额_储蓄存款余额_亿, 年末金融机构各项贷款余额_亿元, 农林牧渔业总产值_万元, 
-    农林牧渔业总产值指数, 农业机械总动力_千瓦, 农用化肥施用实物量_吨, 农药使用量_吨, 农作物总播种面积_公顷, 粮食作物播种面积_公顷, 粮食作物播种面积_稻谷_公顷, 
-    粮食作物播种面积_玉米_公顷, 蔬菜播种面积_公顷, 粮食总产量_吨
+    地区生产总值_第二产业增加值_万元, 地区生产总值_工业_万元, 地区生产总值_第三产业增加值_万元, 人均地区生产总值_元, 地区生产总值指数, 地区生产总值指数_第一产业, 
+    地区生产总值指数_第二产业, 地区生产总值指数_工业, 地区生产总值指数_第三产业, 人均地区生产总值指数, 财政收入_万元, 财政收入_公共财政预算收入_万元, 
+    公共财政预算支出_万元, 年末金融机构各项存款余额_亿元, 住户存款余额, 年末金融机构各项贷款余额, 农林牧渔业总产值_万元, 农林牧渔业总产值指数, 农业机械总动力, 
+    农用化肥施用实物量_吨, 农药使用量, 农作物总播种面积_公顷, 粮食作物播种面积_公顷, 粮食作物播种面积_稻谷_公顷, 粮食作物播种面积_玉米_公顷, 蔬菜播种面积_公顷, 
+    粮食总产量_吨, 粮食总产量_稻谷_吨, 粮食总产量_玉米_吨, 油料产量_吨, 园林水果产量_吨, 肉类总产量_吨, 水产品总产量_吨, 规模以上工业企业数_个
   </sql>
   <select id="getAll" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
-    from "economicData".玉林市2014年各县市区社会经济基本情况统计一
+    from "economicData".玉林市2015年各县市区社会经济基本情况统计一
   </select>
 <!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
-<!--    select-->
+<!--    select -->
 <!--    <include refid="Base_Column_List" />-->
-<!--    from "economicData".玉林市2014年各县市区社会经济基本情况统计一-->
-<!--      where 编号 = #{编号,jdbcType=INTEGER}-->
+<!--    from economicData.玉林市2015年各县市区社会经济基本情况统计一-->
+<!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </select>-->
 <!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
-<!--    delete from 经济数据.玉林市2014年各县市区社会经济基本情况统计一-->
+<!--    delete from economicData.玉林市2015年各县市区社会经济基本情况统计一-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </delete>-->
-<!--  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="BasicSocialSituation1_2014" useGeneratedKeys="true">-->
-<!--    insert into 经济数据.玉林市2014年各县市区社会经济基本情况统计一 (县市区, 年末总人口_人, 年末总户数_户, -->
+<!--  <insert id="insert" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.economicData.BasicSocialSituation1_2015" useGeneratedKeys="true">-->
+<!--    insert into economicData.玉林市2015年各县市区社会经济基本情况统计一 (县市区, 年末总人口_人, 年末总户数_户, -->
 <!--      常住人口_万人, 常住人口_城镇人口_万人, 城镇化率, 地区生产总值_万元, -->
 <!--      地区生产总值_第一产业增加值_万元, 地区生产总值_第二产业增加值_万元, 地区生产总值_工业_万元, -->
 <!--      地区生产总值_第三产业增加值_万元, 人均地区生产总值_元, 地区生产总值指数, -->
-<!--      第一产业, 第二产业, 工业, 第三产业, -->
-<!--      人均地区生产总值指数, 财政收入_万元, 财政收入_公共财政预算收入_万元, -->
-<!--      公共财政预算支出_万元, 公共财政预算支出_公共服务支出_万元, 公共财政预算支出_教育支出_万元, -->
-<!--      公共财政预算支出_农林水事务支出_万元, 年末单位从业人员数_人, 年末单位从业人员数_女_人, -->
-<!--      年末单位从业人员数_第二产业_人, 年末单位从业人员数_第三产业_人, 年末金融机构各项存款余额_亿元, -->
-<!--      年末金融机构各项存款余额_储蓄存款余额_亿, 年末金融机构各项贷款余额_亿元, 农林牧渔业总产值_万元, -->
-<!--      农林牧渔业总产值指数, 农业机械总动力_千瓦, 农用化肥施用实物量_吨, -->
-<!--      农药使用量_吨, 农作物总播种面积_公顷, 粮食作物播种面积_公顷, -->
+<!--      地区生产总值指数_第一产业, 地区生产总值指数_第二产业, 地区生产总值指数_工业, -->
+<!--      地区生产总值指数_第三产业, 人均地区生产总值指数, 财政收入_万元, -->
+<!--      财政收入_公共财政预算收入_万元, 公共财政预算支出_万元, 年末金融机构各项存款余额_亿元, -->
+<!--      住户存款余额, 年末金融机构各项贷款余额, 农林牧渔业总产值_万元, -->
+<!--      农林牧渔业总产值指数, 农业机械总动力, 农用化肥施用实物量_吨, -->
+<!--      农药使用量, 农作物总播种面积_公顷, 粮食作物播种面积_公顷, -->
 <!--      粮食作物播种面积_稻谷_公顷, 粮食作物播种面积_玉米_公顷, 蔬菜播种面积_公顷, -->
-<!--      粮食总产量_吨)-->
+<!--      粮食总产量_吨, 粮食总产量_稻谷_吨, 粮食总产量_玉米_吨, -->
+<!--      油料产量_吨, 园林水果产量_吨, 肉类总产量_吨, -->
+<!--      水产品总产量_吨, 规模以上工业企业数_个)-->
 <!--    values (#{县市区,jdbcType=VARCHAR}, #{年末总人口人,jdbcType=INTEGER}, #{年末总户数户,jdbcType=INTEGER}, -->
 <!--      #{常住人口万人,jdbcType=REAL}, #{常住人口城镇人口万人,jdbcType=REAL}, #{城镇化率,jdbcType=REAL}, #{地区生产总值万元,jdbcType=INTEGER}, -->
 <!--      #{地区生产总值第一产业增加值万元,jdbcType=INTEGER}, #{地区生产总值第二产业增加值万元,jdbcType=INTEGER}, #{地区生产总值工业万元,jdbcType=INTEGER}, -->
 <!--      #{地区生产总值第三产业增加值万元,jdbcType=INTEGER}, #{人均地区生产总值元,jdbcType=INTEGER}, #{地区生产总值指数,jdbcType=REAL}, -->
-<!--      #{第一产业,jdbcType=REAL}, #{第二产业,jdbcType=REAL}, #{工业,jdbcType=REAL}, #{第三产业,jdbcType=REAL}, -->
-<!--      #{人均地区生产总值指数,jdbcType=REAL}, #{财政收入万元,jdbcType=INTEGER}, #{财政收入公共财政预算收入万元,jdbcType=INTEGER}, -->
-<!--      #{公共财政预算支出万元,jdbcType=INTEGER}, #{公共财政预算支出公共服务支出万元,jdbcType=INTEGER}, #{公共财政预算支出教育支出万元,jdbcType=INTEGER}, -->
-<!--      #{公共财政预算支出农林水事务支出万元,jdbcType=INTEGER}, #{年末单位从业人员数人,jdbcType=INTEGER}, #{年末单位从业人员数女人,jdbcType=INTEGER}, -->
-<!--      #{年末单位从业人员数第二产业人,jdbcType=INTEGER}, #{年末单位从业人员数第三产业人,jdbcType=INTEGER}, #{年末金融机构各项存款余额亿元,jdbcType=REAL}, -->
-<!--      #{年末金融机构各项存款余额储蓄存款余额亿,jdbcType=REAL}, #{年末金融机构各项贷款余额亿元,jdbcType=REAL}, #{农林牧渔业总产值万元,jdbcType=INTEGER}, -->
-<!--      #{农林牧渔业总产值指数,jdbcType=REAL}, #{农业机械总动力千瓦,jdbcType=INTEGER}, #{农用化肥施用实物量吨,jdbcType=INTEGER}, -->
-<!--      #{农药使用量吨,jdbcType=INTEGER}, #{农作物总播种面积公顷,jdbcType=INTEGER}, #{粮食作物播种面积公顷,jdbcType=INTEGER}, -->
+<!--      #{地区生产总值指数第一产业,jdbcType=REAL}, #{地区生产总值指数第二产业,jdbcType=REAL}, #{地区生产总值指数工业,jdbcType=REAL}, -->
+<!--      #{地区生产总值指数第三产业,jdbcType=REAL}, #{人均地区生产总值指数,jdbcType=REAL}, #{财政收入万元,jdbcType=INTEGER}, -->
+<!--      #{财政收入公共财政预算收入万元,jdbcType=INTEGER}, #{公共财政预算支出万元,jdbcType=INTEGER}, #{年末金融机构各项存款余额亿元,jdbcType=REAL}, -->
+<!--      #{住户存款余额,jdbcType=REAL}, #{年末金融机构各项贷款余额,jdbcType=REAL}, #{农林牧渔业总产值万元,jdbcType=INTEGER}, -->
+<!--      #{农林牧渔业总产值指数,jdbcType=REAL}, #{农业机械总动力,jdbcType=INTEGER}, #{农用化肥施用实物量吨,jdbcType=INTEGER}, -->
+<!--      #{农药使用量,jdbcType=INTEGER}, #{农作物总播种面积公顷,jdbcType=INTEGER}, #{粮食作物播种面积公顷,jdbcType=INTEGER}, -->
 <!--      #{粮食作物播种面积稻谷公顷,jdbcType=INTEGER}, #{粮食作物播种面积玉米公顷,jdbcType=INTEGER}, #{蔬菜播种面积公顷,jdbcType=INTEGER}, -->
-<!--      #{粮食总产量吨,jdbcType=INTEGER})-->
+<!--      #{粮食总产量吨,jdbcType=INTEGER}, #{粮食总产量稻谷吨,jdbcType=INTEGER}, #{粮食总产量玉米吨,jdbcType=INTEGER}, -->
+<!--      #{油料产量吨,jdbcType=INTEGER}, #{园林水果产量吨,jdbcType=INTEGER}, #{肉类总产量吨,jdbcType=INTEGER}, -->
+<!--      #{水产品总产量吨,jdbcType=INTEGER}, #{规模以上工业企业数个,jdbcType=INTEGER})-->
 <!--  </insert>-->
-<!--  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="BasicSocialSituation1_2014" useGeneratedKeys="true">-->
-<!--    insert into 经济数据.玉林市2014年各县市区社会经济基本情况统计一-->
+<!--  <insert id="insertSelective" keyColumn="编号" keyProperty="编号" parameterType="com.ydl.entity.economicData.BasicSocialSituation1_2015" useGeneratedKeys="true">-->
+<!--    insert into economicData.玉林市2015年各县市区社会经济基本情况统计一-->
 <!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
 <!--      <if test="县市区 != null">-->
 <!--        县市区,-->
@@ -142,17 +141,17 @@
 <!--      <if test="地区生产总值指数 != null">-->
 <!--        地区生产总值指数,-->
 <!--      </if>-->
-<!--      <if test="第一产业 != null">-->
-<!--        第一产业,-->
+<!--      <if test="地区生产总值指数第一产业 != null">-->
+<!--        地区生产总值指数_第一产业,-->
 <!--      </if>-->
-<!--      <if test="第二产业 != null">-->
-<!--        第二产业,-->
+<!--      <if test="地区生产总值指数第二产业 != null">-->
+<!--        地区生产总值指数_第二产业,-->
 <!--      </if>-->
-<!--      <if test="工业 != null">-->
-<!--        工业,-->
+<!--      <if test="地区生产总值指数工业 != null">-->
+<!--        地区生产总值指数_工业,-->
 <!--      </if>-->
-<!--      <if test="第三产业 != null">-->
-<!--        第三产业,-->
+<!--      <if test="地区生产总值指数第三产业 != null">-->
+<!--        地区生产总值指数_第三产业,-->
 <!--      </if>-->
 <!--      <if test="人均地区生产总值指数 != null">-->
 <!--        人均地区生产总值指数,-->
@@ -166,35 +165,14 @@
 <!--      <if test="公共财政预算支出万元 != null">-->
 <!--        公共财政预算支出_万元,-->
 <!--      </if>-->
-<!--      <if test="公共财政预算支出公共服务支出万元 != null">-->
-<!--        公共财政预算支出_公共服务支出_万元,-->
-<!--      </if>-->
-<!--      <if test="公共财政预算支出教育支出万元 != null">-->
-<!--        公共财政预算支出_教育支出_万元,-->
-<!--      </if>-->
-<!--      <if test="公共财政预算支出农林水事务支出万元 != null">-->
-<!--        公共财政预算支出_农林水事务支出_万元,-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数人 != null">-->
-<!--        年末单位从业人员数_人,-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数女人 != null">-->
-<!--        年末单位从业人员数_女_人,-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数第二产业人 != null">-->
-<!--        年末单位从业人员数_第二产业_人,-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数第三产业人 != null">-->
-<!--        年末单位从业人员数_第三产业_人,-->
-<!--      </if>-->
 <!--      <if test="年末金融机构各项存款余额亿元 != null">-->
 <!--        年末金融机构各项存款余额_亿元,-->
 <!--      </if>-->
-<!--      <if test="年末金融机构各项存款余额储蓄存款余额亿 != null">-->
-<!--        年末金融机构各项存款余额_储蓄存款余额_亿,-->
+<!--      <if test="住户存款余额 != null">-->
+<!--        住户存款余额,-->
 <!--      </if>-->
-<!--      <if test="年末金融机构各项贷款余额亿元 != null">-->
-<!--        年末金融机构各项贷款余额_亿元,-->
+<!--      <if test="年末金融机构各项贷款余额 != null">-->
+<!--        年末金融机构各项贷款余额,-->
 <!--      </if>-->
 <!--      <if test="农林牧渔业总产值万元 != null">-->
 <!--        农林牧渔业总产值_万元,-->
@@ -202,14 +180,14 @@
 <!--      <if test="农林牧渔业总产值指数 != null">-->
 <!--        农林牧渔业总产值指数,-->
 <!--      </if>-->
-<!--      <if test="农业机械总动力千瓦 != null">-->
-<!--        农业机械总动力_千瓦,-->
+<!--      <if test="农业机械总动力 != null">-->
+<!--        农业机械总动力,-->
 <!--      </if>-->
 <!--      <if test="农用化肥施用实物量吨 != null">-->
 <!--        农用化肥施用实物量_吨,-->
 <!--      </if>-->
-<!--      <if test="农药使用量吨 != null">-->
-<!--        农药使用量_吨,-->
+<!--      <if test="农药使用量 != null">-->
+<!--        农药使用量,-->
 <!--      </if>-->
 <!--      <if test="农作物总播种面积公顷 != null">-->
 <!--        农作物总播种面积_公顷,-->
@@ -228,6 +206,27 @@
 <!--      </if>-->
 <!--      <if test="粮食总产量吨 != null">-->
 <!--        粮食总产量_吨,-->
+<!--      </if>-->
+<!--      <if test="粮食总产量稻谷吨 != null">-->
+<!--        粮食总产量_稻谷_吨,-->
+<!--      </if>-->
+<!--      <if test="粮食总产量玉米吨 != null">-->
+<!--        粮食总产量_玉米_吨,-->
+<!--      </if>-->
+<!--      <if test="油料产量吨 != null">-->
+<!--        油料产量_吨,-->
+<!--      </if>-->
+<!--      <if test="园林水果产量吨 != null">-->
+<!--        园林水果产量_吨,-->
+<!--      </if>-->
+<!--      <if test="肉类总产量吨 != null">-->
+<!--        肉类总产量_吨,-->
+<!--      </if>-->
+<!--      <if test="水产品总产量吨 != null">-->
+<!--        水产品总产量_吨,-->
+<!--      </if>-->
+<!--      <if test="规模以上工业企业数个 != null">-->
+<!--        规模以上工业企业数_个,-->
 <!--      </if>-->
 <!--    </trim>-->
 <!--    <trim prefix="values (" suffix=")" suffixOverrides=",">-->
@@ -270,17 +269,17 @@
 <!--      <if test="地区生产总值指数 != null">-->
 <!--        #{地区生产总值指数,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="第一产业 != null">-->
-<!--        #{第一产业,jdbcType=REAL},-->
+<!--      <if test="地区生产总值指数第一产业 != null">-->
+<!--        #{地区生产总值指数第一产业,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="第二产业 != null">-->
-<!--        #{第二产业,jdbcType=REAL},-->
+<!--      <if test="地区生产总值指数第二产业 != null">-->
+<!--        #{地区生产总值指数第二产业,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="工业 != null">-->
-<!--        #{工业,jdbcType=REAL},-->
+<!--      <if test="地区生产总值指数工业 != null">-->
+<!--        #{地区生产总值指数工业,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="第三产业 != null">-->
-<!--        #{第三产业,jdbcType=REAL},-->
+<!--      <if test="地区生产总值指数第三产业 != null">-->
+<!--        #{地区生产总值指数第三产业,jdbcType=REAL},-->
 <!--      </if>-->
 <!--      <if test="人均地区生产总值指数 != null">-->
 <!--        #{人均地区生产总值指数,jdbcType=REAL},-->
@@ -294,35 +293,14 @@
 <!--      <if test="公共财政预算支出万元 != null">-->
 <!--        #{公共财政预算支出万元,jdbcType=INTEGER},-->
 <!--      </if>-->
-<!--      <if test="公共财政预算支出公共服务支出万元 != null">-->
-<!--        #{公共财政预算支出公共服务支出万元,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="公共财政预算支出教育支出万元 != null">-->
-<!--        #{公共财政预算支出教育支出万元,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="公共财政预算支出农林水事务支出万元 != null">-->
-<!--        #{公共财政预算支出农林水事务支出万元,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数人 != null">-->
-<!--        #{年末单位从业人员数人,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数女人 != null">-->
-<!--        #{年末单位从业人员数女人,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数第二产业人 != null">-->
-<!--        #{年末单位从业人员数第二产业人,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数第三产业人 != null">-->
-<!--        #{年末单位从业人员数第三产业人,jdbcType=INTEGER},-->
-<!--      </if>-->
 <!--      <if test="年末金融机构各项存款余额亿元 != null">-->
 <!--        #{年末金融机构各项存款余额亿元,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="年末金融机构各项存款余额储蓄存款余额亿 != null">-->
-<!--        #{年末金融机构各项存款余额储蓄存款余额亿,jdbcType=REAL},-->
+<!--      <if test="住户存款余额 != null">-->
+<!--        #{住户存款余额,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="年末金融机构各项贷款余额亿元 != null">-->
-<!--        #{年末金融机构各项贷款余额亿元,jdbcType=REAL},-->
+<!--      <if test="年末金融机构各项贷款余额 != null">-->
+<!--        #{年末金融机构各项贷款余额,jdbcType=REAL},-->
 <!--      </if>-->
 <!--      <if test="农林牧渔业总产值万元 != null">-->
 <!--        #{农林牧渔业总产值万元,jdbcType=INTEGER},-->
@@ -330,14 +308,14 @@
 <!--      <if test="农林牧渔业总产值指数 != null">-->
 <!--        #{农林牧渔业总产值指数,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="农业机械总动力千瓦 != null">-->
-<!--        #{农业机械总动力千瓦,jdbcType=INTEGER},-->
+<!--      <if test="农业机械总动力 != null">-->
+<!--        #{农业机械总动力,jdbcType=INTEGER},-->
 <!--      </if>-->
 <!--      <if test="农用化肥施用实物量吨 != null">-->
 <!--        #{农用化肥施用实物量吨,jdbcType=INTEGER},-->
 <!--      </if>-->
-<!--      <if test="农药使用量吨 != null">-->
-<!--        #{农药使用量吨,jdbcType=INTEGER},-->
+<!--      <if test="农药使用量 != null">-->
+<!--        #{农药使用量,jdbcType=INTEGER},-->
 <!--      </if>-->
 <!--      <if test="农作物总播种面积公顷 != null">-->
 <!--        #{农作物总播种面积公顷,jdbcType=INTEGER},-->
@@ -357,10 +335,31 @@
 <!--      <if test="粮食总产量吨 != null">-->
 <!--        #{粮食总产量吨,jdbcType=INTEGER},-->
 <!--      </if>-->
+<!--      <if test="粮食总产量稻谷吨 != null">-->
+<!--        #{粮食总产量稻谷吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="粮食总产量玉米吨 != null">-->
+<!--        #{粮食总产量玉米吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="油料产量吨 != null">-->
+<!--        #{油料产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="园林水果产量吨 != null">-->
+<!--        #{园林水果产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="肉类总产量吨 != null">-->
+<!--        #{肉类总产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="水产品总产量吨 != null">-->
+<!--        #{水产品总产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="规模以上工业企业数个 != null">-->
+<!--        #{规模以上工业企业数个,jdbcType=INTEGER},-->
+<!--      </if>-->
 <!--    </trim>-->
 <!--  </insert>-->
-<!--  <update id="updateByPrimaryKeySelective" parameterType="BasicSocialSituation1_2014">-->
-<!--    update 经济数据.玉林市2014年各县市区社会经济基本情况统计一-->
+<!--  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.economicData.BasicSocialSituation1_2015">-->
+<!--    update economicData.玉林市2015年各县市区社会经济基本情况统计一-->
 <!--    <set>-->
 <!--      <if test="县市区 != null">-->
 <!--        县市区 = #{县市区,jdbcType=VARCHAR},-->
@@ -401,17 +400,17 @@
 <!--      <if test="地区生产总值指数 != null">-->
 <!--        地区生产总值指数 = #{地区生产总值指数,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="第一产业 != null">-->
-<!--        第一产业 = #{第一产业,jdbcType=REAL},-->
+<!--      <if test="地区生产总值指数第一产业 != null">-->
+<!--        地区生产总值指数_第一产业 = #{地区生产总值指数第一产业,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="第二产业 != null">-->
-<!--        第二产业 = #{第二产业,jdbcType=REAL},-->
+<!--      <if test="地区生产总值指数第二产业 != null">-->
+<!--        地区生产总值指数_第二产业 = #{地区生产总值指数第二产业,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="工业 != null">-->
-<!--        工业 = #{工业,jdbcType=REAL},-->
+<!--      <if test="地区生产总值指数工业 != null">-->
+<!--        地区生产总值指数_工业 = #{地区生产总值指数工业,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="第三产业 != null">-->
-<!--        第三产业 = #{第三产业,jdbcType=REAL},-->
+<!--      <if test="地区生产总值指数第三产业 != null">-->
+<!--        地区生产总值指数_第三产业 = #{地区生产总值指数第三产业,jdbcType=REAL},-->
 <!--      </if>-->
 <!--      <if test="人均地区生产总值指数 != null">-->
 <!--        人均地区生产总值指数 = #{人均地区生产总值指数,jdbcType=REAL},-->
@@ -425,35 +424,14 @@
 <!--      <if test="公共财政预算支出万元 != null">-->
 <!--        公共财政预算支出_万元 = #{公共财政预算支出万元,jdbcType=INTEGER},-->
 <!--      </if>-->
-<!--      <if test="公共财政预算支出公共服务支出万元 != null">-->
-<!--        公共财政预算支出_公共服务支出_万元 = #{公共财政预算支出公共服务支出万元,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="公共财政预算支出教育支出万元 != null">-->
-<!--        公共财政预算支出_教育支出_万元 = #{公共财政预算支出教育支出万元,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="公共财政预算支出农林水事务支出万元 != null">-->
-<!--        公共财政预算支出_农林水事务支出_万元 = #{公共财政预算支出农林水事务支出万元,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数人 != null">-->
-<!--        年末单位从业人员数_人 = #{年末单位从业人员数人,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数女人 != null">-->
-<!--        年末单位从业人员数_女_人 = #{年末单位从业人员数女人,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数第二产业人 != null">-->
-<!--        年末单位从业人员数_第二产业_人 = #{年末单位从业人员数第二产业人,jdbcType=INTEGER},-->
-<!--      </if>-->
-<!--      <if test="年末单位从业人员数第三产业人 != null">-->
-<!--        年末单位从业人员数_第三产业_人 = #{年末单位从业人员数第三产业人,jdbcType=INTEGER},-->
-<!--      </if>-->
 <!--      <if test="年末金融机构各项存款余额亿元 != null">-->
 <!--        年末金融机构各项存款余额_亿元 = #{年末金融机构各项存款余额亿元,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="年末金融机构各项存款余额储蓄存款余额亿 != null">-->
-<!--        年末金融机构各项存款余额_储蓄存款余额_亿 = #{年末金融机构各项存款余额储蓄存款余额亿,jdbcType=REAL},-->
+<!--      <if test="住户存款余额 != null">-->
+<!--        住户存款余额 = #{住户存款余额,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="年末金融机构各项贷款余额亿元 != null">-->
-<!--        年末金融机构各项贷款余额_亿元 = #{年末金融机构各项贷款余额亿元,jdbcType=REAL},-->
+<!--      <if test="年末金融机构各项贷款余额 != null">-->
+<!--        年末金融机构各项贷款余额 = #{年末金融机构各项贷款余额,jdbcType=REAL},-->
 <!--      </if>-->
 <!--      <if test="农林牧渔业总产值万元 != null">-->
 <!--        农林牧渔业总产值_万元 = #{农林牧渔业总产值万元,jdbcType=INTEGER},-->
@@ -461,14 +439,14 @@
 <!--      <if test="农林牧渔业总产值指数 != null">-->
 <!--        农林牧渔业总产值指数 = #{农林牧渔业总产值指数,jdbcType=REAL},-->
 <!--      </if>-->
-<!--      <if test="农业机械总动力千瓦 != null">-->
-<!--        农业机械总动力_千瓦 = #{农业机械总动力千瓦,jdbcType=INTEGER},-->
+<!--      <if test="农业机械总动力 != null">-->
+<!--        农业机械总动力 = #{农业机械总动力,jdbcType=INTEGER},-->
 <!--      </if>-->
 <!--      <if test="农用化肥施用实物量吨 != null">-->
 <!--        农用化肥施用实物量_吨 = #{农用化肥施用实物量吨,jdbcType=INTEGER},-->
 <!--      </if>-->
-<!--      <if test="农药使用量吨 != null">-->
-<!--        农药使用量_吨 = #{农药使用量吨,jdbcType=INTEGER},-->
+<!--      <if test="农药使用量 != null">-->
+<!--        农药使用量 = #{农药使用量,jdbcType=INTEGER},-->
 <!--      </if>-->
 <!--      <if test="农作物总播种面积公顷 != null">-->
 <!--        农作物总播种面积_公顷 = #{农作物总播种面积公顷,jdbcType=INTEGER},-->
@@ -488,11 +466,32 @@
 <!--      <if test="粮食总产量吨 != null">-->
 <!--        粮食总产量_吨 = #{粮食总产量吨,jdbcType=INTEGER},-->
 <!--      </if>-->
+<!--      <if test="粮食总产量稻谷吨 != null">-->
+<!--        粮食总产量_稻谷_吨 = #{粮食总产量稻谷吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="粮食总产量玉米吨 != null">-->
+<!--        粮食总产量_玉米_吨 = #{粮食总产量玉米吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="油料产量吨 != null">-->
+<!--        油料产量_吨 = #{油料产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="园林水果产量吨 != null">-->
+<!--        园林水果产量_吨 = #{园林水果产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="肉类总产量吨 != null">-->
+<!--        肉类总产量_吨 = #{肉类总产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="水产品总产量吨 != null">-->
+<!--        水产品总产量_吨 = #{水产品总产量吨,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="规模以上工业企业数个 != null">-->
+<!--        规模以上工业企业数_个 = #{规模以上工业企业数个,jdbcType=INTEGER},-->
+<!--      </if>-->
 <!--    </set>-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </update>-->
-<!--  <update id="updateByPrimaryKey" parameterType="BasicSocialSituation1_2014">-->
-<!--    update 经济数据.玉林市2014年各县市区社会经济基本情况统计一-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.economicData.BasicSocialSituation1_2015">-->
+<!--    update economicData.玉林市2015年各县市区社会经济基本情况统计一-->
 <!--    set 县市区 = #{县市区,jdbcType=VARCHAR},-->
 <!--      年末总人口_人 = #{年末总人口人,jdbcType=INTEGER},-->
 <!--      年末总户数_户 = #{年末总户数户,jdbcType=INTEGER},-->
@@ -506,35 +505,35 @@
 <!--      地区生产总值_第三产业增加值_万元 = #{地区生产总值第三产业增加值万元,jdbcType=INTEGER},-->
 <!--      人均地区生产总值_元 = #{人均地区生产总值元,jdbcType=INTEGER},-->
 <!--      地区生产总值指数 = #{地区生产总值指数,jdbcType=REAL},-->
-<!--      第一产业 = #{第一产业,jdbcType=REAL},-->
-<!--      第二产业 = #{第二产业,jdbcType=REAL},-->
-<!--      工业 = #{工业,jdbcType=REAL},-->
-<!--      第三产业 = #{第三产业,jdbcType=REAL},-->
+<!--      地区生产总值指数_第一产业 = #{地区生产总值指数第一产业,jdbcType=REAL},-->
+<!--      地区生产总值指数_第二产业 = #{地区生产总值指数第二产业,jdbcType=REAL},-->
+<!--      地区生产总值指数_工业 = #{地区生产总值指数工业,jdbcType=REAL},-->
+<!--      地区生产总值指数_第三产业 = #{地区生产总值指数第三产业,jdbcType=REAL},-->
 <!--      人均地区生产总值指数 = #{人均地区生产总值指数,jdbcType=REAL},-->
 <!--      财政收入_万元 = #{财政收入万元,jdbcType=INTEGER},-->
 <!--      财政收入_公共财政预算收入_万元 = #{财政收入公共财政预算收入万元,jdbcType=INTEGER},-->
 <!--      公共财政预算支出_万元 = #{公共财政预算支出万元,jdbcType=INTEGER},-->
-<!--      公共财政预算支出_公共服务支出_万元 = #{公共财政预算支出公共服务支出万元,jdbcType=INTEGER},-->
-<!--      公共财政预算支出_教育支出_万元 = #{公共财政预算支出教育支出万元,jdbcType=INTEGER},-->
-<!--      公共财政预算支出_农林水事务支出_万元 = #{公共财政预算支出农林水事务支出万元,jdbcType=INTEGER},-->
-<!--      年末单位从业人员数_人 = #{年末单位从业人员数人,jdbcType=INTEGER},-->
-<!--      年末单位从业人员数_女_人 = #{年末单位从业人员数女人,jdbcType=INTEGER},-->
-<!--      年末单位从业人员数_第二产业_人 = #{年末单位从业人员数第二产业人,jdbcType=INTEGER},-->
-<!--      年末单位从业人员数_第三产业_人 = #{年末单位从业人员数第三产业人,jdbcType=INTEGER},-->
 <!--      年末金融机构各项存款余额_亿元 = #{年末金融机构各项存款余额亿元,jdbcType=REAL},-->
-<!--      年末金融机构各项存款余额_储蓄存款余额_亿 = #{年末金融机构各项存款余额储蓄存款余额亿,jdbcType=REAL},-->
-<!--      年末金融机构各项贷款余额_亿元 = #{年末金融机构各项贷款余额亿元,jdbcType=REAL},-->
+<!--      住户存款余额 = #{住户存款余额,jdbcType=REAL},-->
+<!--      年末金融机构各项贷款余额 = #{年末金融机构各项贷款余额,jdbcType=REAL},-->
 <!--      农林牧渔业总产值_万元 = #{农林牧渔业总产值万元,jdbcType=INTEGER},-->
 <!--      农林牧渔业总产值指数 = #{农林牧渔业总产值指数,jdbcType=REAL},-->
-<!--      农业机械总动力_千瓦 = #{农业机械总动力千瓦,jdbcType=INTEGER},-->
+<!--      农业机械总动力 = #{农业机械总动力,jdbcType=INTEGER},-->
 <!--      农用化肥施用实物量_吨 = #{农用化肥施用实物量吨,jdbcType=INTEGER},-->
-<!--      农药使用量_吨 = #{农药使用量吨,jdbcType=INTEGER},-->
+<!--      农药使用量 = #{农药使用量,jdbcType=INTEGER},-->
 <!--      农作物总播种面积_公顷 = #{农作物总播种面积公顷,jdbcType=INTEGER},-->
 <!--      粮食作物播种面积_公顷 = #{粮食作物播种面积公顷,jdbcType=INTEGER},-->
 <!--      粮食作物播种面积_稻谷_公顷 = #{粮食作物播种面积稻谷公顷,jdbcType=INTEGER},-->
 <!--      粮食作物播种面积_玉米_公顷 = #{粮食作物播种面积玉米公顷,jdbcType=INTEGER},-->
 <!--      蔬菜播种面积_公顷 = #{蔬菜播种面积公顷,jdbcType=INTEGER},-->
-<!--      粮食总产量_吨 = #{粮食总产量吨,jdbcType=INTEGER}-->
+<!--      粮食总产量_吨 = #{粮食总产量吨,jdbcType=INTEGER},-->
+<!--      粮食总产量_稻谷_吨 = #{粮食总产量稻谷吨,jdbcType=INTEGER},-->
+<!--      粮食总产量_玉米_吨 = #{粮食总产量玉米吨,jdbcType=INTEGER},-->
+<!--      油料产量_吨 = #{油料产量吨,jdbcType=INTEGER},-->
+<!--      园林水果产量_吨 = #{园林水果产量吨,jdbcType=INTEGER},-->
+<!--      肉类总产量_吨 = #{肉类总产量吨,jdbcType=INTEGER},-->
+<!--      水产品总产量_吨 = #{水产品总产量吨,jdbcType=INTEGER},-->
+<!--      规模以上工业企业数_个 = #{规模以上工业企业数个,jdbcType=INTEGER}-->
 <!--    where 编号 = #{编号,jdbcType=INTEGER}-->
 <!--  </update>-->
 </mapper>

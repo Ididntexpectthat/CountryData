@@ -1,7 +1,7 @@
 package com.ydl.service.impl.demograhicData;
 
 import com.ydl.entity.demographicData.DemographicData;
-import com.ydl.mapper.demographic.DemographicDataMapper;
+import com.ydl.mapper.demographicData.DemographicDataMapper;
 import com.ydl.service.demograhicData.DemographicDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

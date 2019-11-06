@@ -1,4 +1,4 @@
-package com.ydl.api.bigDataPlatform.demograhicData;
+package com.ydl.api.bigDataPlatform.demograghicData;
 
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.Page;

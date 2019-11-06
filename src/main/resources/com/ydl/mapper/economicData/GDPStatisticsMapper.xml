@@ -28,7 +28,7 @@
 <!--    select * from #{grossProduct.tableName}-->
 <!--  </select>-->
   <select id="getDataByTableName" statementType="STATEMENT" resultType="com.ydl.entity.economicData.GDPStatistics">
-    select * from ${tableName}
+    select * from "economicData".${tableName}
   </select>
 <!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
 <!--    delete from 经济数据.玉林市历年北流市生产总值统计1998_2014-->

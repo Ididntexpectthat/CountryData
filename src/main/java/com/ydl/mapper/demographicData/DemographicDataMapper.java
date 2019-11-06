@@ -1,4 +1,4 @@
-package com.ydl.mapper.demographic;
+package com.ydl.mapper.demographicData;
 
 import com.ydl.entity.demographicData.DemographicData;
 import org.apache.ibatis.annotations.Mapper;

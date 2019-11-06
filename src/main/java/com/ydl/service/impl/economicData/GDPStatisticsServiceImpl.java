@@ -3,14 +3,14 @@ package com.ydl.service.impl.economicData;
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.entity.economicData.GDPStatistics;
 import com.ydl.mapper.economicData.GDPStatisticsMapper;
-import com.ydl.service.GrossProductService;
+import com.ydl.service.economicData.GDPStatisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class GrossProducctServiceImpl implements GrossProductService {
+public class GDPStatisticsServiceImpl implements GDPStatisticsService {
     @Autowired
     GDPStatisticsMapper gdpStatisticsMapper;
 //    @Override

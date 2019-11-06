@@ -3,7 +3,7 @@ package com.ydl.service.impl.economicData;
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.entity.economicData.MainEconomicIndicatorsOfAgriculture;
 import com.ydl.mapper.economicData.MainEconomicIndicatorsOfAgricultureMapper;
-import com.ydl.service.MainEconomicIndicatorsOfAgricultureService;
+import com.ydl.service.economicData.MainEconomicIndicatorsOfAgricultureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

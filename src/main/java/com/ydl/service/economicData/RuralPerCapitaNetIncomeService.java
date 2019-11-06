@@ -1,4 +1,4 @@
-package com.ydl.service;
+package com.ydl.service.economicData;
 
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.entity.economicData.RuralPerCapitaNetIncome;

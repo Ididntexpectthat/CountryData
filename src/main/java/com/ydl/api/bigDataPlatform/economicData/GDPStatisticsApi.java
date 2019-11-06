@@ -2,7 +2,7 @@ package com.ydl.api.bigDataPlatform.economicData;
 
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.service.economicData.EconomicDataService;
-import com.ydl.service.GrossProductService;
+import com.ydl.service.economicData.GDPStatisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +15,7 @@ public class GDPStatisticsApi {
     @Autowired
     EconomicDataService economicDataService;
     @Autowired
-    GrossProductService grossProductService;
+    GDPStatisticsService grossProductService;
 
 
 //    @PostMapping(value = "/getDataByTableName")
