@@ -23,4 +23,6 @@ public interface LayersListService {
     int updateModifyTime(String modifyTime,String name);
 
     int deleteLayersByName(LayersList layersList);
+
+    List<LayersList> classifiedQueryLayersList(LayersList layersList, String classificationType);
 }

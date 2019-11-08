@@ -21,6 +21,16 @@
     id, name, url, type, copyright, key_value, updatetime, modifytime, groupname, childgroup,
     datatype, datasources, dataaging, remarks
   </sql>
+    <select id="classifiedQueryLayersList" resultType="com.ydl.entity.LayersList">
+      SELECT * FROM layersList
+      where
+       <if test="name != null">
+        name like concat('%',#{name,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="keyValue != null">
+        key_value like concat('%',#{keyValue,jdbcType=VARCHAR},'%')
+        </if>
+    </select>
     <select id="findAllByOrderById" resultType="com.ydl.entity.LayersList">
         SELECT * FROM layersList order by id
     </select>

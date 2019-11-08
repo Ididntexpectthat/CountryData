@@ -59,14 +59,96 @@ public class LayersListApi {
         List<LayersList> list = layersListService.getAllLayerList();
         return new ResponseEntity<List>(list, HttpStatus.OK);
     }
-
-//    @UserLoginToken
-//    @PostMapping(value = "/addLayersList")
-//    public Object getAllLayerList(@RequestBody LayersList layersList) {
-////        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-//        List<LayersList> list = layersListService.getAllLayerList();
-//        return new ResponseEntity<List>(list, HttpStatus.OK);
-//    }
+    /**
+     * @apiName Layers_classifiedQueryLayersList
+     * @api {POST} Layers/classifiedQueryLayersList 分类搜索图层
+     * @apiGroup 图层列表
+     * @apiVersion 0.0.2
+     * @apiDescription 用于分类搜索图层
+     * @apiParam {JSON} [keyValue] 表名(只可二选一)
+     * @apiParam {JSON} [name] 名字
+     * @apiParamExample {json} 请求样例：
+     *   {
+     * 	"name":"交"
+     * }
+     * @apiSuccess (200) {String} msg 信息
+     * @apiSuccessExample {json} 返回样例:
+     * [
+     *     {
+     *         "id": 15,
+     *         "name": "公交线路",
+     *         "url": "http://10.250.0.120:6080/arcgis/rest/services/GHYZT/SZSJ_GGJT_GJXL/MapServer",
+     *         "type": "MapImageLayer",
+     *         "copyright": "公交线路",
+     *         "keyValue": "SZSJ_GGJT_GJXL",
+     *         "updatetime": "",
+     *         "modifytime": "",
+     *         "groupname": "公共专题数据",
+     *         "childgroup": "公共交通",
+     *         "datatype": "szsj_ggjt_gjxl",
+     *         "datasources": "",
+     *         "dataaging": "",
+     *         "remarks": ""
+     *     },
+     *     {
+     *         "id": 16,
+     *         "name": "公交站场",
+     *         "url": "http://10.250.0.120:6080/arcgis/rest/services/GHYZT/SZSJ_GGJT_GJZC/MapServer",
+     *         "type": "MapImageLayer",
+     *         "copyright": "公交站场",
+     *         "keyValue": "SZSJ_GGJT_GJZC",
+     *         "updatetime": "",
+     *         "modifytime": "",
+     *         "groupname": "公共专题数据",
+     *         "childgroup": "公共交通",
+     *         "datatype": "szsj_ggjt_gjzc",
+     *         "datasources": "",
+     *         "dataaging": "",
+     *         "remarks": ""
+     *     },
+     *     {
+     *         "id": 14,
+     *         "name": "公交站点",
+     *         "url": "http://10.250.0.120:6080/arcgis/rest/services/GHYZT/SZSJ_GGJT_GJZD/MapServer",
+     *         "type": "MapImageLayer",
+     *         "copyright": "公交站点",
+     *         "keyValue": "SZSJ_GGJT_GJZD",
+     *         "updatetime": "",
+     *         "modifytime": "",
+     *         "groupname": "公共专题数据",
+     *         "childgroup": "公共交通",
+     *         "datatype": "szsj_ggjt_gjzd",
+     *         "datasources": "",
+     *         "dataaging": "",
+     *         "remarks": ""
+     *     },
+     *     {
+     *         "id": 29,
+     *         "name": "市域综合交通规划",
+     *         "url": "http://10.250.0.120:6080/arcgis/rest/services/GHYZT/GHCG_ZX_SYZHJT/MapServer",
+     *         "type": "MapImageLayer",
+     *         "copyright": "市域综合交通规划",
+     *         "keyValue": "GHCG_ZX_SYZHJT",
+     *         "updatetime": "",
+     *         "modifytime": "",
+     *         "groupname": "本地扩展数据",
+     *         "childgroup": "专项规划",
+     *         "datatype": "ghcg_zx_zhjt_sy",
+     *         "datasources": "",
+     *         "dataaging": "",
+     *         "remarks": ""
+     *     }
+     * ]
+     *
+     */
+    @UserLoginToken
+    @PostMapping(value = "/classifiedQueryLayersList")
+    public Object classifiedQueryLayersList(@RequestBody LayersList layersList,HttpServletRequest httpServletRequest) {
+        String classificationType = httpServletRequest.getHeader("classificationType");
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+        List<LayersList> list = layersListService.classifiedQueryLayersList(layersList,classificationType);
+        return new ResponseEntity<List>(list, HttpStatus.OK);
+    }
 
     @UserLoginToken
     @PostMapping(value = "/insertSelective")

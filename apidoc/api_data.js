@@ -133,6 +133,69 @@ define({ "api": [
     ]
   },
   {
+    "name": "Layers_classifiedQueryLayersList",
+    "type": "POST",
+    "url": "Layers/classifiedQueryLayersList",
+    "title": "分类搜索图层",
+    "group": "图层列表",
+    "version": "0.0.2",
+    "description": "<p>用于分类搜索图层</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "JSON",
+            "optional": true,
+            "field": "keyValue",
+            "description": "<p>表名(只可二选一)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "JSON",
+            "optional": true,
+            "field": "name",
+            "description": "<p>名字</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "请求样例：",
+          "content": "  {\n\t\"name\":\"交\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "返回样例:",
+          "content": "[\n    {\n        \"id\": 15,\n        \"name\": \"公交线路\",\n        \"url\": \"http://10.250.0.120:6080/arcgis/rest/services/GHYZT/SZSJ_GGJT_GJXL/MapServer\",\n        \"type\": \"MapImageLayer\",\n        \"copyright\": \"公交线路\",\n        \"keyValue\": \"SZSJ_GGJT_GJXL\",\n        \"updatetime\": \"\",\n        \"modifytime\": \"\",\n        \"groupname\": \"公共专题数据\",\n        \"childgroup\": \"公共交通\",\n        \"datatype\": \"szsj_ggjt_gjxl\",\n        \"datasources\": \"\",\n        \"dataaging\": \"\",\n        \"remarks\": \"\"\n    },\n    {\n        \"id\": 16,\n        \"name\": \"公交站场\",\n        \"url\": \"http://10.250.0.120:6080/arcgis/rest/services/GHYZT/SZSJ_GGJT_GJZC/MapServer\",\n        \"type\": \"MapImageLayer\",\n        \"copyright\": \"公交站场\",\n        \"keyValue\": \"SZSJ_GGJT_GJZC\",\n        \"updatetime\": \"\",\n        \"modifytime\": \"\",\n        \"groupname\": \"公共专题数据\",\n        \"childgroup\": \"公共交通\",\n        \"datatype\": \"szsj_ggjt_gjzc\",\n        \"datasources\": \"\",\n        \"dataaging\": \"\",\n        \"remarks\": \"\"\n    },\n    {\n        \"id\": 14,\n        \"name\": \"公交站点\",\n        \"url\": \"http://10.250.0.120:6080/arcgis/rest/services/GHYZT/SZSJ_GGJT_GJZD/MapServer\",\n        \"type\": \"MapImageLayer\",\n        \"copyright\": \"公交站点\",\n        \"keyValue\": \"SZSJ_GGJT_GJZD\",\n        \"updatetime\": \"\",\n        \"modifytime\": \"\",\n        \"groupname\": \"公共专题数据\",\n        \"childgroup\": \"公共交通\",\n        \"datatype\": \"szsj_ggjt_gjzd\",\n        \"datasources\": \"\",\n        \"dataaging\": \"\",\n        \"remarks\": \"\"\n    },\n    {\n        \"id\": 29,\n        \"name\": \"市域综合交通规划\",\n        \"url\": \"http://10.250.0.120:6080/arcgis/rest/services/GHYZT/GHCG_ZX_SYZHJT/MapServer\",\n        \"type\": \"MapImageLayer\",\n        \"copyright\": \"市域综合交通规划\",\n        \"keyValue\": \"GHCG_ZX_SYZHJT\",\n        \"updatetime\": \"\",\n        \"modifytime\": \"\",\n        \"groupname\": \"本地扩展数据\",\n        \"childgroup\": \"专项规划\",\n        \"datatype\": \"ghcg_zx_zhjt_sy\",\n        \"datasources\": \"\",\n        \"dataaging\": \"\",\n        \"remarks\": \"\"\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/com/ydl/api/arcgisPlatform/LayersListApi.java",
+    "groupTitle": "图层列表",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8888/Layers/classifiedQueryLayersList"
+      }
+    ]
+  },
+  {
     "name": "LayerInfo_getLayerInfo",
     "type": "POST",
     "url": "LayerInfo/getLayerInfo",

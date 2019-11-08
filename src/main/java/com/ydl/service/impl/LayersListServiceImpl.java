@@ -48,5 +48,14 @@ public class LayersListServiceImpl implements LayersListService {
        return layersListMapper.deleteLayersByName(layersList);
     }
 
+    @Override
+    public List<LayersList> classifiedQueryLayersList(LayersList layersList, String classificationType) {
+//        if(classificationType.equals("name")){
+            return layersListMapper.classifiedQueryLayersList(layersList);
+//        }else if(classificationType.equals("keyValue")){
+//
+//        }
+    }
+
 
 }
