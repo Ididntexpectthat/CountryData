@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.ydl.annotation.UserLoginToken;
 import com.ydl.entity.demographicData.DemographicData;
 import com.ydl.service.demograhicData.DemographicDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +72,7 @@ public class DemographicdataApi {
      *     }
      * ]
      */
-//    @UserLoginToken
+    @UserLoginToken
     @PostMapping("/getAll")
     public Object getAllDemograhicData(@RequestBody DemographicData demographicData) {
 //            return new ResponseEntity(demographicDataMapper.selectByPrimaryKey(demographicData.get编号()),HttpStatus.OK);
@@ -322,7 +323,7 @@ public class DemographicdataApi {
      *     }
      * ]
      */
-//    @UserLoginToken
+    @UserLoginToken
     @PostMapping("/getAllPaging")
     public Object getAllDemograhicDataPaging(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 //            return new ResponseEntity(demographicDataMapper.selectByPrimaryKey(demographicData.get编号()),HttpStatus.OK);

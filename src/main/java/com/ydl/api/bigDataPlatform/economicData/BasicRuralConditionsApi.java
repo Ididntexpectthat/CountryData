@@ -1,5 +1,6 @@
 package com.ydl.api.bigDataPlatform.economicData;
 
+import com.ydl.annotation.UserLoginToken;
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.service.economicData.BasicRuralConditionsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -252,6 +253,7 @@ public class BasicRuralConditionsApi {
      *     }
      * ]
      */
+    @UserLoginToken
     @PostMapping(value = "/getDataByTableName")
     public Object data(@RequestBody EconomicData economicData) {
         System.out.println(economicData.getTableName());

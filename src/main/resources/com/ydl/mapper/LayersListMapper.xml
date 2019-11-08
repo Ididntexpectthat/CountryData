@@ -10,7 +10,7 @@
         <result column="key_value" jdbcType="VARCHAR" property="keyValue" />
         <result column="updatetime" jdbcType="VARCHAR" property="updatetime" />
         <result column="modifytime" jdbcType="VARCHAR" property="modifytime" />
-        <result column="group" jdbcType="VARCHAR" property="group" />
+        <result column="groupname" jdbcType="VARCHAR" property="groupname" />
         <result column="childgroup" jdbcType="VARCHAR" property="childgroup" />
         <result column="datatype" jdbcType="VARCHAR" property="datatype" />
         <result column="datasources" jdbcType="VARCHAR" property="datasources" />
@@ -18,7 +18,7 @@
         <result column="remarks" jdbcType="VARCHAR" property="remarks" />
     </resultMap>
     <sql id="Base_Column_List">
-    id, name, url, type, copyright, key_value, updatetime, modifytime, group, childgroup,
+    id, name, url, type, copyright, key_value, updatetime, modifytime, groupname, childgroup,
     datatype, datasources, dataaging, remarks
   </sql>
     <select id="findAllByOrderById" resultType="com.ydl.entity.LayersList">
@@ -57,8 +57,8 @@
         <if test="modifytime != null">
             modifytime,
         </if>
-        <if test="group != null">
-            group,
+        <if test="groupname != null">
+            groupname,
         </if>
         <if test="childgroup != null">
             childgroup,
@@ -98,8 +98,8 @@
         <if test="modifytime != null">
             #{modifytime,jdbcType=VARCHAR},
         </if>
-        <if test="group != null">
-            #{group,jdbcType=VARCHAR},
+        <if test="groupname != null">
+            #{groupname,jdbcType=VARCHAR},
         </if>
         <if test="childgroup != null">
             #{childgroup,jdbcType=VARCHAR},
@@ -142,8 +142,8 @@
             <if test="param2.modifytime != null">
                 modifytime = #{param2.modifytime,jdbcType=VARCHAR},
             </if>
-            <if test="param2.group != null">
-                group = #{param2.group,jdbcType=VARCHAR},
+            <if test="param2.groupname != null">
+                groupname = #{param2.groupname,jdbcType=VARCHAR},
             </if>
             <if test="param2.childgroup != null">
                 childgroup = #{param2.childgroup,jdbcType=VARCHAR},

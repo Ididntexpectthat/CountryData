@@ -1,5 +1,6 @@
 package com.ydl.api.bigDataPlatform.economicData;
 
+import com.ydl.annotation.UserLoginToken;
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.service.economicData.BasicSocialSituationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -400,6 +401,7 @@ public class BasicSocialSituationApi {
      *     "数据错误，请输入正确的数据！"
      * ]
      */
+    @UserLoginToken
     @PostMapping("getDataByTableName")
     public Object getAllByTableName(@RequestBody EconomicData economicData) {
         return basicSocialSituationService.getDataByTableName(economicData);

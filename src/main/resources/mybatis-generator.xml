@@ -43,16 +43,16 @@
 <!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
 <!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->
 <!--        </table>-->
-        <table tableName="玉林市2016年各县市区社会经济基本情况统计二" domainObjectName="BasicSocialSituation2_2016" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-                        <property name="runtimeSchema" value="economicData"/>
+        <table tableName="ghcg_zg_yzq" domainObjectName="LayerInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+                        <property name="runtimeSchema" value="basicSpatialData"/>
             <!-- 新增后返回主键的ID -->
-            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>
+            <generatedKey column="gid" sqlStatement="JDBC" identity="true"/>
         </table>
-        <table tableName="玉林市2016年各县市区社会经济基本情况统计一" domainObjectName="BasicSocialSituation1_2016" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-                        <property name="runtimeSchema" value="economicData"/>
-            <!-- 新增后返回主键的ID -->
-            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>
-        </table>
+<!--        <table tableName="玉林市2016年各县市区社会经济基本情况统计一" domainObjectName="BasicSocialSituation1_2016" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--                        <property name="runtimeSchema" value="economicData"/>-->
+<!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
+<!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->
+<!--        </table>-->
 <!--        <table tableName="玉林市2014年县市区农村基本情况统计" domainObjectName="BasicRuralConditions" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
 <!--            &lt;!&ndash;            <property name="runtimeSchema" value="经济数据"/>&ndash;&gt;-->
 <!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->

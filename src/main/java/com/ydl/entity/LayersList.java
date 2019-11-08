@@ -12,7 +12,7 @@ public class LayersList {
     private String keyValue;
     private String updatetime;
     private String modifytime;
-    private String group;
+    private String groupname;
     private String childgroup;
     private String datatype;
     private String datasources;

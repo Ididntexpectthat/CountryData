@@ -60,13 +60,13 @@ public class LayersListApi {
         return new ResponseEntity<List>(list, HttpStatus.OK);
     }
 
-    @UserLoginToken
-    @PostMapping(value = "/addLayersList")
-    public Object getAllLayerList(@RequestBody LayersList layersList) {
-//        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-        List<LayersList> list = layersListService.getAllLayerList();
-        return new ResponseEntity<List>(list, HttpStatus.OK);
-    }
+//    @UserLoginToken
+//    @PostMapping(value = "/addLayersList")
+//    public Object getAllLayerList(@RequestBody LayersList layersList) {
+////        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+//        List<LayersList> list = layersListService.getAllLayerList();
+//        return new ResponseEntity<List>(list, HttpStatus.OK);
+//    }
 
     @UserLoginToken
     @PostMapping(value = "/insertSelective")
@@ -75,7 +75,7 @@ public class LayersListApi {
         JSONObject jsonObject = new JSONObject();
 //        System.out.println(layersListService.selectByName(layersList));
 
-             int a =layersListService.insertSelective(layersList);
+            int a =layersListService.insertSelective(layersList);
             Date date = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
             String updatetime = dateFormat.format(date);

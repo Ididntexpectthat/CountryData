@@ -6,8 +6,11 @@ define({
   "url": "http://localhost:8888/",
   "sampleUrl": "http://localhost:8888/",
   "order": [
+    "模板样例",
     "人口数据",
     "经济数据",
+    "基本空间数据",
+    "template",
     "Demographicdata_getAll",
     "Demographicdata_getAllPaging",
     "EconomicData_classification",
@@ -16,13 +19,14 @@ define({
     "MainEconomicIndicatorsOfAgriculture_getDataByTableName",
     "RuralPerCapitaNetIncome_getDataByTableName",
     "BasicRuralConditions_getDataByTableName",
-    "BasicSocialSituation_getDataByTableName"
+    "BasicSocialSituation_getDataByTableName",
+    "LayerInfo_getLayerInfo"
   ],
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2019-11-06T03:02:57.701Z",
+    "time": "2019-11-08T08:46:52.398Z",
     "url": "http://apidocjs.com",
     "version": "0.17.7"
   }
