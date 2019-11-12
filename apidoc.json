@@ -10,6 +10,8 @@
     "模板样例",
     "人口数据",
     "经济数据",
+    "图层列表",
+    "图层详细信息",
     "基本空间数据",
     "template",
     "Demographicdata_getAll",
@@ -21,7 +23,9 @@
     "RuralPerCapitaNetIncome_getDataByTableName",
     "BasicRuralConditions_getDataByTableName",
     "BasicSocialSituation_getDataByTableName",
-    "LayerInfo_getLayerInfo"
+    "Layers_classifiedQueryLayersList",
+    "LayerInfo_getLayerInfo",
+    "ThreeDimensional_getThreeDimensional"
   ]
 }
 

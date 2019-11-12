@@ -43,10 +43,10 @@
 <!--            &lt;!&ndash; 新增后返回主键的ID &ndash;&gt;-->
 <!--            <generatedKey column="编号" sqlStatement="JDBC" identity="true"/>-->
 <!--        </table>-->
-        <table tableName="ghcg_zg_yzq" domainObjectName="LayerInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table tableName="threedimensional" domainObjectName="ThreeDimensional" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
                         <property name="runtimeSchema" value="basicSpatialData"/>
             <!-- 新增后返回主键的ID -->
-            <generatedKey column="gid" sqlStatement="JDBC" identity="true"/>
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
         </table>
 <!--        <table tableName="玉林市2016年各县市区社会经济基本情况统计一" domainObjectName="BasicSocialSituation1_2016" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
 <!--                        <property name="runtimeSchema" value="economicData"/>-->

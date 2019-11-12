@@ -31,7 +31,7 @@ public class LayersListApi {
     @UserLoginToken
     @PostMapping(value = "/getAllLayersListPaging")
     public Object getAllLayersListPaging(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
         String pagenum = httpServletRequest.getHeader("pagenum");
         if (StringUtils.isEmpty(pagenum)) {
             JSONObject jsonObject = new JSONObject();
@@ -55,7 +55,7 @@ public class LayersListApi {
     @UserLoginToken
     @PostMapping(value = "/getAllLayersList")
     public Object getAllLayersList(HttpServletResponse httpServletResponse) {
-        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
         List<LayersList> list = layersListService.getAllLayerList();
         return new ResponseEntity<List>(list, HttpStatus.OK);
     }

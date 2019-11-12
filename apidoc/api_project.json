@@ -9,6 +9,8 @@
     "模板样例",
     "人口数据",
     "经济数据",
+    "图层列表",
+    "图层详细信息",
     "基本空间数据",
     "template",
     "Demographicdata_getAll",
@@ -20,13 +22,15 @@
     "RuralPerCapitaNetIncome_getDataByTableName",
     "BasicRuralConditions_getDataByTableName",
     "BasicSocialSituation_getDataByTableName",
-    "LayerInfo_getLayerInfo"
+    "Layers_classifiedQueryLayersList",
+    "LayerInfo_getLayerInfo",
+    "ThreeDimensional_getThreeDimensional"
   ],
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2019-11-12T08:03:28.106Z",
+    "time": "2019-11-12T10:28:36.477Z",
     "url": "http://apidocjs.com",
     "version": "0.17.7"
   }

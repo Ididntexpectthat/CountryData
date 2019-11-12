@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydl.mapper.basicspatialdata.ThreeDimensionalMapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.basicspatialdata.ThreeDimensional">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="keyvalue" jdbcType="VARCHAR" property="keyvalue" />
+    <result column="scenename" jdbcType="VARCHAR" property="scenename" />
+    <result column="mapLayers" jdbcType="VARCHAR" property="maplayers" />
+    <result column="layersdatatype" jdbcType="VARCHAR" property="layersdatatype" />
+    <result column="updatetime" jdbcType="DATE" property="updatetime" />
+    <result column="modifytime" jdbcType="DATE" property="modifytime" />
+    <result column="groupname" jdbcType="VARCHAR" property="groupname" />
+    <result column="centerpointx" jdbcType="DOUBLE" property="centerpointx" />
+    <result column="centerpointy" jdbcType="DOUBLE" property="centerpointy" />
+    <result column="centerpointz" jdbcType="DOUBLE" property="centerpointz" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="srs" jdbcType="VARCHAR" property="srs" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, url, keyvalue, scenename, mapLayers, layersdatatype, updatetime, modifytime, 
+    groupname, centerpointx, centerpointy, centerpointz, remarks, srs
+  </sql>
+
+  <select id="getThreeDimensional" resultType="com.ydl.entity.basicspatialdata.ThreeDimensional">
+        select *
+    from "basicSpatialData"."threedimensional"
+    where keyvalue=#{param1.keyvalue,jdbcType=VARCHAR};
+  </select>
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select -->
+<!--    <include refid="Base_Column_List" />-->
+<!--    from basicSpatialData.threedimensional-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from basicSpatialData.threedimensional-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ydl.entity.basicspatialdata.ThreeDimensional" useGeneratedKeys="true">-->
+<!--    insert into basicSpatialData.threedimensional (name, url, keyvalue, -->
+<!--      scenename, mapLayers, layersdatatype, -->
+<!--      updatetime, modifytime, groupname, -->
+<!--      centerpointx, centerpointy, centerpointz, -->
+<!--      remarks, srs)-->
+<!--    values (#{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{keyvalue,jdbcType=VARCHAR}, -->
+<!--      #{scenename,jdbcType=VARCHAR}, #{maplayers,jdbcType=VARCHAR}, #{layersdatatype,jdbcType=VARCHAR}, -->
+<!--      #{updatetime,jdbcType=DATE}, #{modifytime,jdbcType=DATE}, #{groupname,jdbcType=VARCHAR}, -->
+<!--      #{centerpointx,jdbcType=DOUBLE}, #{centerpointy,jdbcType=DOUBLE}, #{centerpointz,jdbcType=DOUBLE}, -->
+<!--      #{remarks,jdbcType=VARCHAR}, #{srs,jdbcType=VARCHAR})-->
+<!--  </insert>-->
+<!--  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ydl.entity.basicspatialdata.ThreeDimensional" useGeneratedKeys="true">-->
+<!--    insert into basicSpatialData.threedimensional-->
+<!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--      <if test="name != null">-->
+<!--        name,-->
+<!--      </if>-->
+<!--      <if test="url != null">-->
+<!--        url,-->
+<!--      </if>-->
+<!--      <if test="keyvalue != null">-->
+<!--        keyvalue,-->
+<!--      </if>-->
+<!--      <if test="scenename != null">-->
+<!--        scenename,-->
+<!--      </if>-->
+<!--      <if test="maplayers != null">-->
+<!--        mapLayers,-->
+<!--      </if>-->
+<!--      <if test="layersdatatype != null">-->
+<!--        layersdatatype,-->
+<!--      </if>-->
+<!--      <if test="updatetime != null">-->
+<!--        updatetime,-->
+<!--      </if>-->
+<!--      <if test="modifytime != null">-->
+<!--        modifytime,-->
+<!--      </if>-->
+<!--      <if test="groupname != null">-->
+<!--        groupname,-->
+<!--      </if>-->
+<!--      <if test="centerpointx != null">-->
+<!--        centerpointx,-->
+<!--      </if>-->
+<!--      <if test="centerpointy != null">-->
+<!--        centerpointy,-->
+<!--      </if>-->
+<!--      <if test="centerpointz != null">-->
+<!--        centerpointz,-->
+<!--      </if>-->
+<!--      <if test="remarks != null">-->
+<!--        remarks,-->
+<!--      </if>-->
+<!--      <if test="srs != null">-->
+<!--        srs,-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--    <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--      <if test="name != null">-->
+<!--        #{name,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="url != null">-->
+<!--        #{url,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="keyvalue != null">-->
+<!--        #{keyvalue,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="scenename != null">-->
+<!--        #{scenename,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="maplayers != null">-->
+<!--        #{maplayers,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="layersdatatype != null">-->
+<!--        #{layersdatatype,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="updatetime != null">-->
+<!--        #{updatetime,jdbcType=DATE},-->
+<!--      </if>-->
+<!--      <if test="modifytime != null">-->
+<!--        #{modifytime,jdbcType=DATE},-->
+<!--      </if>-->
+<!--      <if test="groupname != null">-->
+<!--        #{groupname,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="centerpointx != null">-->
+<!--        #{centerpointx,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="centerpointy != null">-->
+<!--        #{centerpointy,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="centerpointz != null">-->
+<!--        #{centerpointz,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="remarks != null">-->
+<!--        #{remarks,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="srs != null">-->
+<!--        #{srs,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.basicspatialdata.ThreeDimensional">-->
+<!--    update basicSpatialData.threedimensional-->
+<!--    <set>-->
+<!--      <if test="name != null">-->
+<!--        name = #{name,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="url != null">-->
+<!--        url = #{url,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="keyvalue != null">-->
+<!--        keyvalue = #{keyvalue,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="scenename != null">-->
+<!--        scenename = #{scenename,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="maplayers != null">-->
+<!--        mapLayers = #{maplayers,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="layersdatatype != null">-->
+<!--        layersdatatype = #{layersdatatype,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="updatetime != null">-->
+<!--        updatetime = #{updatetime,jdbcType=DATE},-->
+<!--      </if>-->
+<!--      <if test="modifytime != null">-->
+<!--        modifytime = #{modifytime,jdbcType=DATE},-->
+<!--      </if>-->
+<!--      <if test="groupname != null">-->
+<!--        groupname = #{groupname,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="centerpointx != null">-->
+<!--        centerpointx = #{centerpointx,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="centerpointy != null">-->
+<!--        centerpointy = #{centerpointy,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="centerpointz != null">-->
+<!--        centerpointz = #{centerpointz,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="remarks != null">-->
+<!--        remarks = #{remarks,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="srs != null">-->
+<!--        srs = #{srs,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--    </set>-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.basicspatialdata.ThreeDimensional">-->
+<!--    update basicSpatialData.threedimensional-->
+<!--    set name = #{name,jdbcType=VARCHAR},-->
+<!--      url = #{url,jdbcType=VARCHAR},-->
+<!--      keyvalue = #{keyvalue,jdbcType=VARCHAR},-->
+<!--      scenename = #{scenename,jdbcType=VARCHAR},-->
+<!--      mapLayers = #{maplayers,jdbcType=VARCHAR},-->
+<!--      layersdatatype = #{layersdatatype,jdbcType=VARCHAR},-->
+<!--      updatetime = #{updatetime,jdbcType=DATE},-->
+<!--      modifytime = #{modifytime,jdbcType=DATE},-->
+<!--      groupname = #{groupname,jdbcType=VARCHAR},-->
+<!--      centerpointx = #{centerpointx,jdbcType=DOUBLE},-->
+<!--      centerpointy = #{centerpointy,jdbcType=DOUBLE},-->
+<!--      centerpointz = #{centerpointz,jdbcType=DOUBLE},-->
+<!--      remarks = #{remarks,jdbcType=VARCHAR},-->
+<!--      srs = #{srs,jdbcType=VARCHAR}-->
+<!--    where id = #{id,jdbcType=INTEGER}-->
+<!--  </update>-->
+
+
+</mapper>
