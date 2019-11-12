@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydl.mapper.LayerInfoMapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.LayerInfo">
+    <id column="gid" jdbcType="INTEGER" property="gid" />
+    <result column="yddm" jdbcType="VARCHAR" property="yddm" />
+    <result column="yddm_new" jdbcType="VARCHAR" property="yddmNew" />
+    <result column="ydmc" jdbcType="VARCHAR" property="ydmc" />
+    <result column="ssqy" jdbcType="VARCHAR" property="ssqy" />
+    <result column="mj" jdbcType="NUMERIC" property="mj" />
+    <result column="sjly" jdbcType="VARCHAR" property="sjly" />
+    <result column="clsj" jdbcType="DATE" property="clsj" />
+    <result column="bz" jdbcType="VARCHAR" property="bz" />
+    <result column="shape_leng" jdbcType="NUMERIC" property="shapeLeng" />
+    <result column="shape_area" jdbcType="NUMERIC" property="shapeArea" />
+    <result column="geom" jdbcType="OTHER" property="geom" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    gid, yddm, yddm_new, ydmc, ssqy, mj, sjly, clsj, bz, shape_leng, shape_area, geom
+  </sql>
+  <select id="getLayerInfo" parameterType="String" resultType="com.ydl.entity.LayerInfo">
+    select a.*,st_astext(a.${type}) as lastgeom
+    from ${tableName} as a
+    where ST_Intersects(a.${type},ST_GeomFromText('${point}')) = true;
+  </select>
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select -->
+<!--    <include refid="Base_Column_List" />-->
+<!--    from basicSpatialData.ghcg_zg_yzq-->
+<!--    where gid = #{gid,jdbcType=INTEGER}-->
+<!--  </select>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+<!--    delete from basicSpatialData.ghcg_zg_yzq-->
+<!--    where gid = #{gid,jdbcType=INTEGER}-->
+<!--  </delete>-->
+<!--  <insert id="insert" keyColumn="gid" keyProperty="gid" parameterType="com.ydl.entity.LayerInfo" useGeneratedKeys="true">-->
+<!--    insert into basicSpatialData.ghcg_zg_yzq (yddm, yddm_new, ydmc, -->
+<!--      ssqy, mj, sjly, clsj, -->
+<!--      bz, shape_leng, shape_area, -->
+<!--      geom)-->
+<!--    values (#{yddm,jdbcType=VARCHAR}, #{yddmNew,jdbcType=VARCHAR}, #{ydmc,jdbcType=VARCHAR}, -->
+<!--      #{ssqy,jdbcType=VARCHAR}, #{mj,jdbcType=NUMERIC}, #{sjly,jdbcType=VARCHAR}, #{clsj,jdbcType=DATE}, -->
+<!--      #{bz,jdbcType=VARCHAR}, #{shapeLeng,jdbcType=NUMERIC}, #{shapeArea,jdbcType=NUMERIC}, -->
+<!--      #{geom,jdbcType=OTHER})-->
+<!--  </insert>-->
+<!--  <insert id="insertSelective" keyColumn="gid" keyProperty="gid" parameterType="com.ydl.entity.LayerInfo" useGeneratedKeys="true">-->
+<!--    insert into basicSpatialData.ghcg_zg_yzq-->
+<!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--      <if test="yddm != null">-->
+<!--        yddm,-->
+<!--      </if>-->
+<!--      <if test="yddmNew != null">-->
+<!--        yddm_new,-->
+<!--      </if>-->
+<!--      <if test="ydmc != null">-->
+<!--        ydmc,-->
+<!--      </if>-->
+<!--      <if test="ssqy != null">-->
+<!--        ssqy,-->
+<!--      </if>-->
+<!--      <if test="mj != null">-->
+<!--        mj,-->
+<!--      </if>-->
+<!--      <if test="sjly != null">-->
+<!--        sjly,-->
+<!--      </if>-->
+<!--      <if test="clsj != null">-->
+<!--        clsj,-->
+<!--      </if>-->
+<!--      <if test="bz != null">-->
+<!--        bz,-->
+<!--      </if>-->
+<!--      <if test="shapeLeng != null">-->
+<!--        shape_leng,-->
+<!--      </if>-->
+<!--      <if test="shapeArea != null">-->
+<!--        shape_area,-->
+<!--      </if>-->
+<!--      <if test="geom != null">-->
+<!--        geom,-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--    <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--      <if test="yddm != null">-->
+<!--        #{yddm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="yddmNew != null">-->
+<!--        #{yddmNew,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="ydmc != null">-->
+<!--        #{ydmc,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="ssqy != null">-->
+<!--        #{ssqy,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="mj != null">-->
+<!--        #{mj,jdbcType=NUMERIC},-->
+<!--      </if>-->
+<!--      <if test="sjly != null">-->
+<!--        #{sjly,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="clsj != null">-->
+<!--        #{clsj,jdbcType=DATE},-->
+<!--      </if>-->
+<!--      <if test="bz != null">-->
+<!--        #{bz,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="shapeLeng != null">-->
+<!--        #{shapeLeng,jdbcType=NUMERIC},-->
+<!--      </if>-->
+<!--      <if test="shapeArea != null">-->
+<!--        #{shapeArea,jdbcType=NUMERIC},-->
+<!--      </if>-->
+<!--      <if test="geom != null">-->
+<!--        #{geom,jdbcType=OTHER},-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.LayerInfo">-->
+<!--    update basicSpatialData.ghcg_zg_yzq-->
+<!--    <set>-->
+<!--      <if test="yddm != null">-->
+<!--        yddm = #{yddm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="yddmNew != null">-->
+<!--        yddm_new = #{yddmNew,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="ydmc != null">-->
+<!--        ydmc = #{ydmc,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="ssqy != null">-->
+<!--        ssqy = #{ssqy,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="mj != null">-->
+<!--        mj = #{mj,jdbcType=NUMERIC},-->
+<!--      </if>-->
+<!--      <if test="sjly != null">-->
+<!--        sjly = #{sjly,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="clsj != null">-->
+<!--        clsj = #{clsj,jdbcType=DATE},-->
+<!--      </if>-->
+<!--      <if test="bz != null">-->
+<!--        bz = #{bz,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="shapeLeng != null">-->
+<!--        shape_leng = #{shapeLeng,jdbcType=NUMERIC},-->
+<!--      </if>-->
+<!--      <if test="shapeArea != null">-->
+<!--        shape_area = #{shapeArea,jdbcType=NUMERIC},-->
+<!--      </if>-->
+<!--      <if test="geom != null">-->
+<!--        geom = #{geom,jdbcType=OTHER},-->
+<!--      </if>-->
+<!--    </set>-->
+<!--    where gid = #{gid,jdbcType=INTEGER}-->
+<!--  </update>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.LayerInfo">-->
+<!--    update basicSpatialData.ghcg_zg_yzq-->
+<!--    set yddm = #{yddm,jdbcType=VARCHAR},-->
+<!--      yddm_new = #{yddmNew,jdbcType=VARCHAR},-->
+<!--      ydmc = #{ydmc,jdbcType=VARCHAR},-->
+<!--      ssqy = #{ssqy,jdbcType=VARCHAR},-->
+<!--      mj = #{mj,jdbcType=NUMERIC},-->
+<!--      sjly = #{sjly,jdbcType=VARCHAR},-->
+<!--      clsj = #{clsj,jdbcType=DATE},-->
+<!--      bz = #{bz,jdbcType=VARCHAR},-->
+<!--      shape_leng = #{shapeLeng,jdbcType=NUMERIC},-->
+<!--      shape_area = #{shapeArea,jdbcType=NUMERIC},-->
+<!--      geom = #{geom,jdbcType=OTHER}-->
+<!--    where gid = #{gid,jdbcType=INTEGER}-->
+<!--  </update>-->
+</mapper>

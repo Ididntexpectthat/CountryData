@@ -1,6 +1,6 @@
-package com.ydl.service.basicspatialdata;
+package com.ydl.service;
 
-import com.ydl.entity.basicspatialdata.LayerInfoUtil;
+import com.ydl.entity.LayerInfoUtil;
 
 import java.util.List;
 

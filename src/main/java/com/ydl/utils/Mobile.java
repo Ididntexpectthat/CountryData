@@ -7,6 +7,7 @@ import sun.security.provider.MD5;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,13 +29,18 @@ public class Mobile {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException, EncoderException {
-        MD5 md5 = new MD5();
-
-        String s1 = DigestUtils.md5Hex("123456!&你好");
-        String s2 = DigestUtils.md5Hex(s1);
-        System.out.println(s1);
-        System.out.println(s2);
-        final Base64.Encoder encoder = Base64.getEncoder();
-        System.out.println(encoder.encodeToString(s1.getBytes()));
+//        MD5 md5 = new MD5();
+//
+//        String s1 = DigestUtils.md5Hex("123456!&你好");
+//        String s2 = DigestUtils.md5Hex(s1);
+//        System.out.println(s1);
+//        System.out.println(s2);
+//        final Base64.Encoder encoder = Base64.getEncoder();
+//        System.out.println(encoder.encodeToString(s1.getBytes()));
+        String a = "ghcg_zg_yzq_dtz|ghcg_zg_yzq_mlz|ghcg_zg_yzq_rdz|ghcg_zg_yzq_rhz" ;
+        String[] strarr = a.split("\\|");
+        for(String s : strarr){
+            System.out.println(s);
+        }
     }
 }

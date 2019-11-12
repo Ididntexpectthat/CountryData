@@ -1,7 +1,5 @@
-package com.ydl.mapper.basicspatialdata;
+package com.ydl.mapper;
 
-import com.ydl.entity.basicspatialdata.LayerInfo;
-import com.ydl.entity.basicspatialdata.LayerInfoUtil;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 

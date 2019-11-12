@@ -1,4 +1,4 @@
-package com.ydl.entity.basicspatialdata;
+package com.ydl.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;

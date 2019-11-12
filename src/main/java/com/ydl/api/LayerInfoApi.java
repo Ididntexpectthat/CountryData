@@ -1,10 +1,8 @@
-package com.ydl.api.bigDataPlatform.basicspatialdata;
+package com.ydl.api;
 
 import com.ydl.annotation.UserLoginToken;
-import com.ydl.entity.LayersList;
-import com.ydl.entity.basicspatialdata.LayerInfo;
-import com.ydl.entity.basicspatialdata.LayerInfoUtil;
-import com.ydl.service.basicspatialdata.LayerInfoService;
+import com.ydl.entity.LayerInfoUtil;
+import com.ydl.service.LayerInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

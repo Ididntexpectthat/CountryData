@@ -1,4 +1,4 @@
-package com.ydl.api.arcgisPlatform;
+package com.ydl.api;
 
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.Page;

@@ -1,4 +1,4 @@
-package com.ydl.entity.basicspatialdata;
+package com.ydl.entity;
 
 public class LayerInfoUtil {
     private String tableName;
