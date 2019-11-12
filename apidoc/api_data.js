@@ -210,7 +210,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "JSON",
             "optional": false,
-            "field": "tablename",
+            "field": "tableName",
             "description": "<p>表名字</p>"
           },
           {

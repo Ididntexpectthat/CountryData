@@ -143,10 +143,16 @@ public class LayersListApi {
      */
     @UserLoginToken
     @PostMapping(value = "/classifiedQueryLayersList")
-    public Object classifiedQueryLayersList(@RequestBody LayersList layersList,HttpServletRequest httpServletRequest) {
+    public Object classifiedQueryLayersList(@RequestBody LayersList layersList,HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse) {
         String classificationType = httpServletRequest.getHeader("classificationType");
+        String pagenum = httpServletRequest.getHeader("pagenum");
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+        Page page = PageHelper.startPage(Integer.parseInt(pagenum), 10);
         List<LayersList> list = layersListService.classifiedQueryLayersList(layersList,classificationType);
+        PageInfo info = new PageInfo<>(page.getResult());
+        String pageCount = info.getPages() + "";
+        httpServletResponse.setHeader("pageCount", pageCount);
+
         return new ResponseEntity<List>(list, HttpStatus.OK);
     }
 

@@ -28,7 +28,7 @@ public class LayerInfoApi {
      * @apiGroup 基本空间数据
      * @apiVersion 0.0.2
      * @apiDescription 用于获取图层的信息
-     * @apiParam {JSON} tablename 表名字
+     * @apiParam {JSON} tableName 表名字
      * @apiParam {JSON} type 图层类型
      * @apiParam {JSON} point 处理后的点坐标
      * @apiParamExample {json} 请求样例：
