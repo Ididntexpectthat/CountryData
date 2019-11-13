@@ -456,7 +456,7 @@
       "examples": [
         {
           "title": "请求样例：",
-          "content": "{\n\t\"tableName\":\"经济数据.玉林市历年兴业县生产总值统计1998_2016\"\n}",
+          "content": "{\n\t\"tableName\":\"玉林市2014年县市区农村基本情况统计\"\n}",
           "type": "json"
         }
       ]
@@ -717,7 +717,7 @@
       "examples": [
         {
           "title": "请求样例：",
-          "content": "{\n\"tableName\":\"经济数据.玉林市历年兴业县生产总值统计1998_2016\"\n}",
+          "content": "{\n\"tableName\":\"玉林市历年兴业县生产总值统计1998_2016\"\n}",
           "type": "json"
         }
       ]
@@ -773,7 +773,7 @@
       "examples": [
         {
           "title": "请求样例：",
-          "content": "{\n* \t\"tableName\":\"经济数据.玉林市历年北流市农业主要经济指标统计2006_2014\"\n* }",
+          "content": "{\n* \t\"tableName\":\"玉林市历年北流市农业主要经济指标统计2006_2014\"\n* }",
           "type": "json"
         }
       ]
@@ -829,7 +829,7 @@
       "examples": [
         {
           "title": "请求样例：",
-          "content": "{\n\"tableName\":\"经济数据.玉林市历年各县市区农民人均纯收入统计2000_2016\"\n}",
+          "content": "{\n\"tableName\":\"玉林市历年各县市区农民人均纯收入统计2000_2016\"\n}",
           "type": "json"
         }
       ]

@@ -163,10 +163,16 @@ public class EconomicDataApi {
     public Object subRegion(@RequestBody EconomicData economicData) {
         JSONObject jsonObject = new JSONObject();
         List<EconomicData> economicDataList = economicDataService.getAllTableName(economicData);
-        List list = new ArrayList();
+        List<String> list = new ArrayList<>();
 
+        a:
         for (EconomicData economicData1 : economicDataList) {
 //            System.out.println(economicData1.getTableName().substring(5,8));
+            for (String s : list) {
+                if (s.equals(economicData1.getTableName().substring(5, 8))) {
+                    break a;
+                }
+            }
             list.add(economicData1.getTableName().substring(5, 8));
         }
         jsonObject.put("economicDataList", economicDataList);
