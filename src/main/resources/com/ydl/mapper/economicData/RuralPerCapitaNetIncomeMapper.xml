@@ -6,7 +6,7 @@
     <result column="年份" jdbcType="INTEGER" property="年份" />
     <result column="玉林市" jdbcType="INTEGER" property="玉林市" />
     <result column="玉州区" jdbcType="INTEGER" property="玉州区" />
-    <result column="福棉区" jdbcType="INTEGER" property="福棉区" />
+    <result column="福绵区" jdbcType="INTEGER" property="福绵区" />
     <result column="容县" jdbcType="INTEGER" property="容县" />
     <result column="陆川县" jdbcType="INTEGER" property="陆川县" />
     <result column="博白县" jdbcType="INTEGER" property="博白县" />
@@ -15,7 +15,7 @@
     <result column="玉东新区" jdbcType="INTEGER" property="玉东新区" />
   </resultMap>
   <sql id="Base_Column_List">
-    编号, 年份, 玉林市, 玉州区, 福棉区, 容县, 陆川县, 博白县, 兴业县, 北流市, 玉东新区</sql>
+    编号, 年份, 玉林市, 玉州区, 福绵区, 容县, 陆川县, 博白县, 兴业县, 北流市, 玉东新区</sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

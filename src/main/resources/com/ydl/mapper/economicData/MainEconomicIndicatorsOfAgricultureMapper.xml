@@ -10,7 +10,7 @@
     <result column="乡镇_村人口数_万人" jdbcType="REAL" property="乡镇村人口数万人" />
     <result column="乡镇_村劳动力_万人" jdbcType="REAL" property="乡镇村劳动力万人" />
     <result column="乡镇_村从业人员数_万人" jdbcType="REAL" property="乡镇村从业人员数万人" />
-    <result column="当机耕地面积_公顷" jdbcType="INTEGER" property="当机耕地面积公顷" />
+    <result column="当年耕地面积_公顷" jdbcType="INTEGER" property="当年耕地面积公顷" />
     <result column="农村用电量_万千瓦时" jdbcType="INTEGER" property="农村用电量万千瓦时" />
     <result column="化肥施用量_吨" jdbcType="INTEGER" property="化肥施用量吨" />
     <result column="肉类总产量_吨" jdbcType="INTEGER" property="肉类总产量吨" />
@@ -49,7 +49,7 @@
     <result column="红薯产量_吨" jdbcType="INTEGER" property="红薯产量吨" />
   </resultMap>
   <sql id="Base_Column_List">
-    编号, 年份, 乡镇_不包括街道_个, 村民委员会_个, 乡村户数_万户, 乡镇_村人口数_万人, 乡镇_村劳动力_万人, 乡镇_村从业人员数_万人, 当机耕地面积_公顷, 
+    编号, 年份, 乡镇_不包括街道_个, 村民委员会_个, 乡村户数_万户, 乡镇_村人口数_万人, 乡镇_村劳动力_万人, 乡镇_村从业人员数_万人, 当年耕地面积_公顷,
     农村用电量_万千瓦时, 化肥施用量_吨, 肉类总产量_吨, 牛存栏_头, 猪出栏_头, 猪肉产量_吨, 猪存栏_头, 家禽出栏_万只, 禽肉产量_吨, 家禽存栏_万只, 
     农林牧渔业总产值_万元, 农林牧渔业总产值指数, 农业产值_万元, 农业产值指数, 林业产值_万元, 林业产值指数, 牧业产值_万元, 牧业产值指数, 渔业产值_万元, 
     渔业产值指数, 水果产量_吨, 荔枝产量_吨, 龙眼产量_吨, 水产品产量_吨, 粮食种植面积_公顷, 粮食产量_吨, 早稻种植面积_公顷, 早稻产量_吨, 晚稻种植面积_公顷, 

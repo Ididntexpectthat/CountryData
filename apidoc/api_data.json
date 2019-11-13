@@ -579,9 +579,12 @@
           {
             "group": "Parameter",
             "type": "JSON",
+            "allowedValues": [
+              "农业主要经济指标，农村基本情况，生产总值统计，农民人均纯收入，社会经济基本情况"
+            ],
             "optional": false,
             "field": "tableName",
-            "description": "<p>分类名字(可选情况分为：农业主要经济指标，农村基本情况，生产总值统计，农民人均纯收入，社会经济基本情况)</p>"
+            "description": "<p>分类名字</p>"
           },
           {
             "group": "Parameter",

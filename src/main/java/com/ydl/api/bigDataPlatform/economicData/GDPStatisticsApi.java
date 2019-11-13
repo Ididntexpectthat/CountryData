@@ -34,7 +34,7 @@ public class GDPStatisticsApi {
      * @apiParam {JSON} tableName 表名字
      * @apiParamExample {json} 请求样例：
      * {
-     * "tableName":"经济数据.玉林市历年兴业县生产总值统计1998_2016"
+     * "tableName":"玉林市历年兴业县生产总值统计1998_2016"
      * }
      * @apiSuccess (200) {String} msg 信息
      * @apiSuccessExample {json} 返回样例:

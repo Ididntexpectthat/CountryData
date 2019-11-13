@@ -24,7 +24,7 @@ public class RuralPerCapitaNetIncomeApi {
      * @apiParam {JSON} tableName 分类名字
      * @apiParamExample {json} 请求样例：
      * {
-     * "tableName":"经济数据.玉林市历年各县市区农民人均纯收入统计2000_2016"
+     * "tableName":"玉林市历年各县市区农民人均纯收入统计2000_2016"
      * }
      * @apiSuccess (200) {String} msg 信息
      * @apiSuccessExample {json} 返回样例:
