@@ -24,13 +24,14 @@ define({
     "BasicSocialSituation_getDataByTableName",
     "Layers_classifiedQueryLayersList",
     "LayerInfo_getLayerInfo",
-    "ThreeDimensional_getThreeDimensional"
+    "ThreeDimensional_getThreeDimensional",
+    "ThreeDimensional_getAllNamePaging"
   ],
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2019-11-12T10:28:36.477Z",
+    "time": "2019-11-13T01:06:04.134Z",
     "url": "http://apidocjs.com",
     "version": "0.17.7"
   }

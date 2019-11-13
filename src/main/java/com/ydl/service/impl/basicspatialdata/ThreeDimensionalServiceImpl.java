@@ -6,6 +6,8 @@ import com.ydl.service.ThreeDimensionalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ThreeDimensionalServiceImpl implements ThreeDimensionalService {
     @Autowired
@@ -13,5 +15,10 @@ public class ThreeDimensionalServiceImpl implements ThreeDimensionalService {
     @Override
     public ThreeDimensional getThreeDimensional(ThreeDimensional threeDimensional) {
         return threeDimensionalMapper.getThreeDimensional(threeDimensional);
+    }
+
+    @Override
+    public List<String> getAllNamePaging() {
+        return threeDimensionalMapper.getAllNamePaging();
     }
 }

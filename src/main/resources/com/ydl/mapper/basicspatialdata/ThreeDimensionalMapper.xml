@@ -28,6 +28,10 @@
     from "basicSpatialData"."threedimensional"
     where keyvalue=#{param1.keyvalue,jdbcType=VARCHAR};
   </select>
+  <select id="getAllNamePaging" resultType="java.lang.String">
+    select name
+    from "basicSpatialData"."threedimensional"
+  </select>
 <!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
 <!--    select -->
 <!--    <include refid="Base_Column_List" />-->

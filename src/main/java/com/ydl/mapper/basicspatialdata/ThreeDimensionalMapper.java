@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper
 @Component("ThreeDimensionalMapper")
 public interface ThreeDimensionalMapper {
@@ -21,4 +23,6 @@ public interface ThreeDimensionalMapper {
 //    int updateByPrimaryKey(ThreeDimensional record);
 
     ThreeDimensional getThreeDimensional(@Param("param1") ThreeDimensional threeDimensional);
+
+    List<String> getAllNamePaging();
 }

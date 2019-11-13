@@ -64,8 +64,8 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 // 执行认证
                 System.out.println("token" + token);
 
-//                long time = redisTemplate.getExpire(username);
-//                System.out.println("剩余时间/s:"+time);
+                long time = redisTemplate.getExpire(username);
+                System.out.println("剩余时间/s:"+time);
                 String redistoken = redisTemplate.opsForValue().get(username);
                 System.out.println("redistoken:" + redistoken);
                 System.out.println(StringUtils.isEmpty(redistoken) || !redistoken.equals(token));

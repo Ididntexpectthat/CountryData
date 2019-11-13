@@ -59,4 +59,25 @@ public class ThreeDimensionalApi {
 //        threeDimensionalService.getThreeDimensional(threeDimensional);
         return new ResponseEntity(threeDimensionalService.getThreeDimensional(threeDimensional), HttpStatus.OK);
     }
+    /**
+     * @apiName ThreeDimensional_getAllNamePaging
+     * @api {POST} ThreeDimensional/getAllNamePaging 获取所有3D模型名字
+     * @apiGroup 基本空间数据
+     * @apiVersion 0.0.2
+     * @apiDescription 用于获取所有3D模型名字
+     * @apiSuccess (200) {String} msg 信息
+     * @apiSuccessExample {List} 返回样例:
+     *[
+     *     "玉林城区模型",
+     *     "樟木街道"
+     * ]
+     */
+    @UserLoginToken
+    @PostMapping(value = "/getAllNamePaging")
+    public Object getAllNamePaging(HttpServletResponse httpServletResponse) {
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+//        System.out.println(threeDimensional.getKeyvalue());
+//        threeDimensionalService.getThreeDimensional(threeDimensional);
+        return new ResponseEntity<List>(threeDimensionalService.getAllNamePaging(), HttpStatus.OK);
+    }
 }

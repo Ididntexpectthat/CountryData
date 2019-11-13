@@ -25,7 +25,8 @@
     "BasicSocialSituation_getDataByTableName",
     "Layers_classifiedQueryLayersList",
     "LayerInfo_getLayerInfo",
-    "ThreeDimensional_getThreeDimensional"
+    "ThreeDimensional_getThreeDimensional",
+    "ThreeDimensional_getAllNamePaging"
   ]
 }
 
