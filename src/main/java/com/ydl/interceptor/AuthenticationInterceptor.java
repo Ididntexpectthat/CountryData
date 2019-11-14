@@ -73,8 +73,8 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 System.out.println("redistoken:" + redistoken);
                 System.out.println(StringUtils.isEmpty(redistoken) || !redistoken.equals(token));
                 if (StringUtils.isEmpty(redistoken) || !redistoken.equals(token)) {
-                    System.out.println("登录失效，请重新登录！");
-                    throw new RuntimeException("登录失效，请重新登录！");
+//                    System.out.println("登录失效，请重新登录！");
+                    throw new RuntimeException("登录失效");
                 }
                 try {
                     if (!StringUtils.isEmpty(redistoken) && redistoken.equals(token)) {
@@ -85,7 +85,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                     }
                 } catch (Exception e) {
 //                    return false;
-                    throw new RuntimeException("未知错误，请与作者联系！");
+                    throw new RuntimeException("未知错误,请与作者联系！");
                 }
             }
         }
