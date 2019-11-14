@@ -31,6 +31,8 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
+        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+        httpServletResponse.addHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,ctoken,captcha,pagenum,pageCount,message,*");
         String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
         String username = httpServletRequest.getHeader("username");
         JSONObject jsonObject = new JSONObject();
@@ -54,6 +56,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             UserLoginToken userLoginToken = method.getAnnotation(UserLoginToken.class);
             if (userLoginToken.required()) {
                 if (StringUtils.isEmpty(token)) {
+//                    jsonObject.put("message","token不能为空，请输入token进行验证！");
 //                    return false;
                     throw new RuntimeException("token不能为空，请输入token进行验证！");
                 }
@@ -76,7 +79,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 try {
                     if (!StringUtils.isEmpty(redistoken) && redistoken.equals(token)) {
 //                        String Newtoken = UUID.randomUUID().toString().replaceAll("-", "");
-                        tokenService.redisSaveToken(username, redistoken, 30);
+                        tokenService.redisSaveToken(username, redistoken, 1);
                         System.out.println("校验成功");
                         return true;
                     }

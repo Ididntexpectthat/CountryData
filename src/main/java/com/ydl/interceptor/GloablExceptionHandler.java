@@ -2,6 +2,7 @@ package com.ydl.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author jinbin
  * @date 2018-07-08 22:37
  */
+@CrossOrigin
 @ControllerAdvice
 public class GloablExceptionHandler {
     @ResponseBody

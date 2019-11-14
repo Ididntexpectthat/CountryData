@@ -147,7 +147,7 @@
             "group": "Parameter",
             "type": "JSON",
             "optional": true,
-            "field": "keyValue",
+            "field": "keyVaClue",
             "description": "<p>表名(只可二选一)</p>"
           },
           {

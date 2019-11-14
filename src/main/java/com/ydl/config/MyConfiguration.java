@@ -27,7 +27,7 @@ public class MyConfiguration implements WebMvcConfigurer  {
             .allowedOrigins("*")
             // 放行哪些头部信息
             .allowedHeaders("*")
-            .exposedHeaders("ctoken,captcha,pagenum,pageCount,*")
+            .exposedHeaders("ctoken,captcha,pagenum,pageCount,message,*")
             // 放行哪些请求方式
             .allowedMethods("*")
             // 是否允许携带 cookie

@@ -65,8 +65,9 @@ public class LayersListApi {
      * @apiGroup 图层列表
      * @apiVersion 0.0.2
      * @apiDescription 用于分类搜索图层
-     * @apiParam {JSON} [keyValue] 表名(只可二选一)
+     * @apiParam {JSON} [keyVaClue] 表名(只可二选一)
      * @apiParam {JSON} [name] 名字
+     * @apiHeaderParam {JSON} pagenum 页数
      * @apiParamExample {json} 请求样例：
      *   {
      * 	"name":"交"
