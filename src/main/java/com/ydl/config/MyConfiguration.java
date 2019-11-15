@@ -23,15 +23,17 @@ public class MyConfiguration implements WebMvcConfigurer  {
    public void addCorsMappings(CorsRegistry registry) {
     // 添加映射路径
     registry.addMapping("/**")
-            // 放行哪些原始域
+            // 允许哪些域名来跨域来请求当前资源,可以使用通配符 *
             .allowedOrigins("*")
-            // 放行哪些头部信息
+            // 允许客户端请求携带的请求头
             .allowedHeaders("*")
-            .exposedHeaders("ctoken,captcha,pagenum,pageCount,message,*")
-            // 放行哪些请求方式
+            // 允许客户端访问的响应头
+            .exposedHeaders("Origin, X-Requested-With,Content-Type,Accept,Authorization,Content-Type, Connection, User-Agent, Cookie,ctoken,captcha,username,pagenum,pageCount,message")
+            // 允许客户端跨域请求的请求方式
             .allowedMethods("*")
-            // 是否允许携带 cookie
+            // 允许客户端请求提交cookie
             .allowCredentials(true)
+            // 预检测缓存时间
             .maxAge(3600);
     // test
    }

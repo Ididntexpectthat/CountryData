@@ -6,6 +6,7 @@ import com.ydl.mapper.TestMapper;
 import com.ydl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -53,8 +54,8 @@ public class TestApi {
      *
      */
     @UserLoginToken
-    @PostMapping(value = "/test1")
-    public Object queryAllUser(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    @PostMapping(value = "/error")
+    public Object queryAllUser(String s) {
 
         return "test is not ok!";
     }

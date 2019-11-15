@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ydl</groupId>
     <artifactId>NewName</artifactId>
-    <version>20</version>
+    <version>26</version>
     <name>kaptcha_jwt2</name>
     <packaging>jar</packaging>
     <description>Demo project for Spring Boot</description>

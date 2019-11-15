@@ -31,8 +31,16 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
-        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-        httpServletResponse.addHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,ctoken,captcha,pagenum,pageCount,message,*");
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+//        httpServletResponse.addHeader("Access-Control-Allow-Headers", "message");
+//        httpServletResponse.addHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With,Content-Type,Accept,captcha,pagenum,pageCount,message,ctoken,*");
+        //设置允许跨域访问
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+//        httpServletResponse.setHeader("Access-Control-Allow-Methods", "*");
+//        httpServletResponse.setHeader("Access-Control-Max-Age", "3600");
+//        httpServletResponse.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With,Content-Type,Accept,Authorization,Content-Type, Connection, User-Agent, Cookie,ctoken,captcha,username,pagenum,pageCount,message");
+//        response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Authorization,"
+//                + " Content-Type, Accept, Connection, User-Agent, Cookie");
         String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
         String username = httpServletRequest.getHeader("username");
         JSONObject jsonObject = new JSONObject();
@@ -48,6 +56,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         if (method.isAnnotationPresent(PassToken.class)) {
             PassToken passToken = method.getAnnotation(PassToken.class);
             if (passToken.required()) {
+                System.out.println("我进来了");
                 return true;
             }
         }
@@ -79,7 +88,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 try {
                     if (!StringUtils.isEmpty(redistoken) && redistoken.equals(token)) {
 //                        String Newtoken = UUID.randomUUID().toString().replaceAll("-", "");
-                        tokenService.redisSaveToken(username, redistoken, 1);
+                        tokenService.redisSaveToken(username, redistoken, 30);
                         System.out.println("校验成功");
                         return true;
                     }

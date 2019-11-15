@@ -37,6 +37,8 @@ public class CaptchaApi {
     @PostMapping("/getCaptcha")
     public void getcaptcha(HttpServletResponse httpServletResponse)
             throws Exception {
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+//        httpServletResponse.addHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,captcha,ctoken,*");
         byte[] captchaChallengeAsJpeg = null;
         ByteArrayOutputStream jpegOutputStream = new ByteArrayOutputStream();
         String cToken = UUID.randomUUID().toString();
@@ -44,7 +46,7 @@ public class CaptchaApi {
 
             // 生产验证码字符串并保存到redis中
             String createText = producer.createText();
-            System.out.println(cToken+createText);
+//            System.out.println(cToken+createText);
 //            httpServletRequest.getSession().setAttribute("rightCode", createText);
             // 使用生产的验证码字符串返回一个BufferedImage对象并转为byte写入到byte数组中
             BufferedImage challenge = producer.createImage(createText);
@@ -57,7 +59,8 @@ public class CaptchaApi {
         // 定义response输出类型为image/jpeg类型，使用response输出流输出图片的byte数组
         captchaChallengeAsJpeg = jpegOutputStream.toByteArray();
         httpServletResponse.setHeader("Cache-Control", "no-store");
-        httpServletResponse.setHeader("Pragma", "no-cache");
+//        httpServletResponse.setHeader("Pragma", "no-cache");
+        System.out.println(cToken);
         httpServletResponse.setHeader("ctoken", cToken);
         httpServletResponse.setDateHeader("Expires", 0);
         httpServletResponse.setContentType("image/jpeg");

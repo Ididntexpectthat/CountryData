@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @author jinbin
+ * 注册拦截器，拦截所有请求
  * @date 2018-07-08 22:33
  */
 @Configuration
