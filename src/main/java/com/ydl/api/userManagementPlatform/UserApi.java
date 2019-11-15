@@ -231,7 +231,7 @@ public class UserApi {
             String logintime = dateFormat.format(date);
             userService.updateLastLoginTime(logintime, user);
             String token = UUID.randomUUID().toString().replaceAll("-", "");
-            tokenService.redisSaveToken(user.getUsername(), token, 30);
+            tokenService.redisSaveToken(user.getUsername(), token, 60);
             List<Function> functions = functionService.findFunctionsByUsername(user.getUsername());
             jsonObject.put("function", functions);
             jsonObject.put("token", token);
