@@ -88,6 +88,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 try {
                     if (!StringUtils.isEmpty(redistoken) && redistoken.equals(token)) {
 //                        String Newtoken = UUID.randomUUID().toString().replaceAll("-", "");
+
                         tokenService.redisSaveToken(username, redistoken, 60);
                         System.out.println("校验成功");
                         return true;
@@ -98,6 +99,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 }
             }
         }
+
         return true;
     }
 
