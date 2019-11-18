@@ -335,7 +335,7 @@ public class UserApi {
     @UserLoginToken
     @PostMapping(value = "/fuzzyQuery")
     public Object fuzzyQuery(@RequestBody Map<String, Object> models) throws Exception {
-        FuzzySearch fuzzySearch  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("token"), FuzzySearch.class);
+        FuzzySearch fuzzySearch  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("fuzzysearch"), FuzzySearch.class);
         if (StringUtils.isEmpty(fuzzySearch.getKeyword())) {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("message", "关键词不能为空!");
