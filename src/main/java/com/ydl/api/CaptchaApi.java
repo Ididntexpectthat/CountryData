@@ -2,6 +2,8 @@ package com.ydl.api;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 
+import com.ydl.annotation.PassToken;
+import com.ydl.annotation.UserLoginToken;
 import com.ydl.mapper.CaptchaMapper;
 import com.ydl.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,7 @@ public class CaptchaApi {
      * @throws ServletException
      * @throws IOException
      */
+    @PassToken
     @PostMapping("/getCaptcha")
     public void getcaptcha(HttpServletResponse httpServletResponse)
             throws Exception {

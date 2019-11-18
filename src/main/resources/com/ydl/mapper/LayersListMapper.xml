@@ -30,6 +30,7 @@
         <if test="keyValue != null">
         key_value like concat('%',#{keyValue,jdbcType=VARCHAR},'%')
         </if>
+        order by id
     </select>
     <select id="findAllByOrderById" resultType="com.ydl.entity.LayersList">
         SELECT * FROM layersList order by id

@@ -13,6 +13,7 @@ import com.ydl.entity.User;
 import com.ydl.service.FunctionService;
 import com.ydl.service.TokenService;
 import com.ydl.service.UserService;
+import com.ydl.utils.HttpHelper;
 import com.ydl.utils.Mobile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -225,7 +226,7 @@ public class UserApi {
         }
         System.out.println(redisCaptcha);
         if (redisCaptcha.equalsIgnoreCase(captcha) && userForBase != null) {
-            redisTemplate.delete(user.getUsername());
+            redisTemplate.delete(ctoken);
             Date date = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
             String logintime = dateFormat.format(date);
@@ -237,7 +238,8 @@ public class UserApi {
             jsonObject.put("token", token);
             return new ResponseEntity(jsonObject, HttpStatus.OK);
         }
-        if (userForBase == null) {
+        if (redisCaptcha.equalsIgnoreCase(captcha) && userForBase == null) {
+            redisTemplate.delete(ctoken);
             jsonObject.put("message", "登录失败，用户名或者密码错误!");
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
         }
@@ -290,7 +292,8 @@ public class UserApi {
      */
     @UserLoginToken
     @PostMapping(value = "/queryByUsername")
-    public Object queryByUsername(@RequestBody User user) {
+    public Object queryByUsername(@RequestBody Map<String, Object> models,HttpServletRequest httpServletRequest) throws Exception {
+        User user = JsonXMLUtils.map2obj((Map<String, Object>) models.get("user"), User.class);
         if (StringUtils.isEmpty(user.getUsername())) {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("message", "用户名不能为空!");
@@ -307,8 +310,9 @@ public class UserApi {
      */
     @UserLoginToken
     @PostMapping("/updateUserByName")
-    public Object updateUserByName(@RequestBody Map<String, Object> models) {
+    public Object updateUserByName(@RequestBody Map<String, Object> models) throws Exception {
         JSONObject jsonObject = new JSONObject();
+
         User user1 = JsonXMLUtils.map2User((Map<String, Object>) models.get("user1"), User.class);
         User user2 = JsonXMLUtils.map2User((Map<String, Object>) models.get("user2"), User.class);
         if (StringUtils.isEmpty(user1.getUsername()) || StringUtils.isEmpty(user2.getUsername())) {

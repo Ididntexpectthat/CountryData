@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydl.mapper.LayerInfoMapper">
-  <resultMap id="BaseResultMap" type="com.ydl.entity.LayerInfo">
-    <id column="gid" jdbcType="INTEGER" property="gid" />
-    <result column="yddm" jdbcType="VARCHAR" property="yddm" />
-    <result column="yddm_new" jdbcType="VARCHAR" property="yddmNew" />
-    <result column="ydmc" jdbcType="VARCHAR" property="ydmc" />
-    <result column="ssqy" jdbcType="VARCHAR" property="ssqy" />
-    <result column="mj" jdbcType="NUMERIC" property="mj" />
-    <result column="sjly" jdbcType="VARCHAR" property="sjly" />
-    <result column="clsj" jdbcType="DATE" property="clsj" />
-    <result column="bz" jdbcType="VARCHAR" property="bz" />
-    <result column="shape_leng" jdbcType="NUMERIC" property="shapeLeng" />
-    <result column="shape_area" jdbcType="NUMERIC" property="shapeArea" />
-    <result column="geom" jdbcType="OTHER" property="geom" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    gid, yddm, yddm_new, ydmc, ssqy, mj, sjly, clsj, bz, shape_leng, shape_area, geom
-  </sql>
-  <select id="getLayerInfo" parameterType="String" resultType="com.ydl.entity.LayerInfo">
-    select a.*,st_astext(a.${type}) as lastgeom
+<!--  <resultMap id="BaseResultMap" type="com.ydl.entity.LayerInfo">-->
+<!--    <id column="gid" jdbcType="INTEGER" property="gid" />-->
+<!--    <result column="yddm" jdbcType="VARCHAR" property="yddm" />-->
+<!--    <result column="yddm_new" jdbcType="VARCHAR" property="yddmNew" />-->
+<!--    <result column="ydmc" jdbcType="VARCHAR" property="ydmc" />-->
+<!--    <result column="ssqy" jdbcType="VARCHAR" property="ssqy" />-->
+<!--    <result column="mj" jdbcType="NUMERIC" property="mj" />-->
+<!--    <result column="sjly" jdbcType="VARCHAR" property="sjly" />-->
+<!--    <result column="clsj" jdbcType="DATE" property="clsj" />-->
+<!--    <result column="bz" jdbcType="VARCHAR" property="bz" />-->
+<!--    <result column="shape_leng" jdbcType="NUMERIC" property="shapeLeng" />-->
+<!--    <result column="shape_area" jdbcType="NUMERIC" property="shapeArea" />-->
+<!--    <result column="geom" jdbcType="OTHER" property="geom" />-->
+<!--  </resultMap>-->
+<!--  <sql id="Base_Column_List">-->
+<!--    gid, yddm, yddm_new, ydmc, ssqy, mj, sjly, clsj, bz, shape_leng, shape_area, geom-->
+<!--  </sql>-->
+<!--  <select id="getLayerInfo" parameterType="String" resultType="com.ydl.entity.LayerInfo">-->
+<!--    select a.*,st_astext(a.${type}) as lastgeom-->
+<!--    from ${tableName} as a-->
+<!--    where ST_Intersects(a.${type},ST_GeomFromText('${point}')) = true;-->
+<!--  </select>-->
+  <select id="getLayerInfo" parameterType="String" resultType="java.util.HashMap">
+    select a.*
     from ${tableName} as a
     where ST_Intersects(a.${type},ST_GeomFromText('${point}')) = true;
   </select>
+<!--  <select id="getLayerInfo" parameterType="String" resultType="map">-->
+<!--    select a.*,st_astext(a.${type}) as lastgeom-->
+<!--    from ${tableName} as a-->
+<!--    where ST_Intersects(a.${type},ST_GeomFromText('${point}')) = true;-->
+<!--  </select>-->
+
 <!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
 <!--    select -->
 <!--    <include refid="Base_Column_List" />-->

@@ -1,0 +1,150 @@
+package com.ydl.interceptor;
+
+
+import com.alibaba.fastjson.JSONObject;
+import com.ydl.annotation.PassToken;
+import com.ydl.config.JsonXMLUtils;
+import com.ydl.entity.Token;
+import com.ydl.entity.User;
+import com.ydl.service.TokenService;
+import com.ydl.service.UserService;
+import com.ydl.utils.HttpHelper;
+import com.ydl.utils.RequestWrapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.method.HandlerMethod;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+@Component
+@WebFilter(urlPatterns = "/*", filterName = "HttpServletRequestReplacedFilter")
+public class HttpServletRequestReplacedFilter implements Filter {
+    @Autowired
+    UserService userService;
+    @Autowired
+    StringRedisTemplate redisTemplate;
+    @Autowired
+    TokenService tokenService;
+    private static final String[] excludePathPatterns = {"/Captcha/getCaptcha", "/User/login"};
+
+    @Override
+    public void destroy() {
+
+    }
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response,
+                         FilterChain chain) throws IOException, ServletException {
+//        System.out.println("我进来了");
+//        System.out.println(HttpHelper.getBodyString((HttpServletRequest) request));
+        String url = ((HttpServletRequest) request).getServletPath();
+        System.out.println("url:"+url);
+        ServletRequest requestWrapper = null;
+        Map<String, String> mapError = new HashMap<>();
+        // 如果不是映射到方法直接通过
+        for (String page : excludePathPatterns) {
+            System.out.println("page:"+page);
+            if (url.equals(page)) {
+                System.out.println("允许通过");
+                //放行，相当于第一种方法中LoginInterceptor返回值为true
+                chain.doFilter(request, response);
+            }
+            if(page.equals(excludePathPatterns[excludePathPatterns.length-1]) && !url.equals(page)){
+                if (request instanceof HttpServletRequest) {
+                    System.out.println("我在这里");
+                    requestWrapper = new RequestWrapper((HttpServletRequest) request);
+                    String s = HttpHelper.getBodyString((HttpServletRequest) requestWrapper);
+                    try {
+                        Map<String, Object> map = JsonXMLUtils.json2map(s);
+                        Token token1 = JsonXMLUtils.map2obj((Map<String, Object>) map.get("token"), Token.class);
+                        System.out.println("token" + token1.getToken());
+                        String token = token1.getToken();
+                        String username = token1.getUsername();
+                        if (StringUtils.isEmpty(token)) {
+                            mapError.put("message","token不能为空，请输入token进行验证！");
+//                            throw new RuntimeException("token不能为空，请输入token进行验证！");
+                            response.setCharacterEncoding("utf-8");
+                            response.getWriter().print(JSONObject.toJSON(mapError));
+
+                        }
+                        if (StringUtils.isEmpty(username)) {
+                            mapError.put("message","username，请输入username进行验证");
+//                            throw new RuntimeException("username，请输入username进行验证！");
+                            response.setCharacterEncoding("utf-8");
+                            response.getWriter().print(JSONObject.toJSON(mapError));
+                        }
+                        // 执行认证
+//                        System.out.println("token" + token);
+
+                        long time = redisTemplate.getExpire(username);
+                        System.out.println("剩余时间/s:" + time);
+                        String redistoken = redisTemplate.opsForValue().get(username);
+                        System.out.println("redistoken:" + redistoken);
+                        System.out.println(StringUtils.isEmpty(redistoken) || !redistoken.equals(token));
+                        if (StringUtils.isEmpty(redistoken) || !redistoken.equals(token)) {
+                            mapError.put("message","登录失效");
+//                            throw new RuntimeException("登录失效");
+                            response.setCharacterEncoding("utf-8");
+                            response.getWriter().print(JSONObject.toJSON(mapError));
+                        }
+                        if (!StringUtils.isEmpty(redistoken) && redistoken.equals(token)) {
+//                        String Newtoken = UUID.randomUUID().toString().replaceAll("-", "");
+
+                            tokenService.redisSaveToken(username, redistoken, 60);
+                            System.out.println("校验成功");
+                            chain.doFilter(requestWrapper, response);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    System.out.println(requestWrapper);
+                }
+            }
+        }
+
+
+
+
+
+//            System.out.println(requestWrapper.getReader());
+
+
+        //获取请求中的流如何，将取出来的字符串，再次转换成流，然后把它放入到新request对象中。
+        // 在chain.doFiler方法中传递新的request对象
+        //        if (!(object instanceof HandlerMethod)) {
+//            return true;
+//        }
+//        HandlerMethod handlerMethod = (HandlerMethod) object;
+//        Method method = handlerMethod.getMethod();
+//        //检查是否有passtoken注释，有则跳过认证
+//        if (method.isAnnotationPresent(PassToken.class)) {
+//            PassToken passToken = method.getAnnotation(PassToken.class);
+//            if (passToken.required()) {
+//                System.out.println("我进来了");
+//                return true;
+//            }
+//        }
+//        if (requestWrapper == null) {
+//            chain.doFilter(request, response);
+//        } else {
+//            System.out.println("OK!");
+//            chain.doFilter(requestWrapper, response);
+//        }
+
+    }
+
+    @Override
+    public void init(FilterConfig arg0) throws ServletException {
+
+    }
+}

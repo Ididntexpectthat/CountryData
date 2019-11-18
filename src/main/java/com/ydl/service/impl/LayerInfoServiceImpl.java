@@ -14,6 +14,7 @@ public class LayerInfoServiceImpl implements LayerInfoService {
     @Autowired
     LayerInfoMapper layerInfoMapper;
     @Override
+
     public List<Object> getLayerInfo(LayerInfoUtil layerInfoUtil) {
         String[] strArr = layerInfoUtil.getTableName().split("\\|");
         for (String  s: strArr){

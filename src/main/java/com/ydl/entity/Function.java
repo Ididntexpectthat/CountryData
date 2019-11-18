@@ -1,9 +1,10 @@
 package com.ydl.entity;
 
 import lombok.Data;
+
 @Data
 public class Function {
-
+    private int id;
     private String username;
     private String fun1;
     private String fun2;
