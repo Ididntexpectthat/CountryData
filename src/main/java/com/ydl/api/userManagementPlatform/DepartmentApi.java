@@ -35,12 +35,13 @@ public class DepartmentApi {
     /**
      * 添加新科室
      *
-     * @param department
+     * @param models
      * @return
      */
     @UserLoginToken
     @PostMapping(value = "/insert")
-    public Object insert(@RequestBody Department department) {
+    public Object insert(@RequestBody Map<String, Object> models) {
+        Department department = JsonXMLUtils.map2Department((Map<String, Object>) models.get("department"), Department.class);
         JSONObject jsonObject = new JSONObject();
         if (departmentService.findDeByname(department) == null) {
             departmentService.insertDepartment(department);
@@ -55,12 +56,13 @@ public class DepartmentApi {
     /**
      * 根据科室删除科室，用户，权限
      *
-     * @param department
+     * @param models
      * @return
      */
     @UserLoginToken
     @PostMapping(value = "/deleteDepartment")
-    public Object deleteDepartment(@RequestBody Department department) {
+    public Object deleteDepartment(@RequestBody Map<String, Object> models) {
+        Department department = JsonXMLUtils.map2Department((Map<String, Object>) models.get("department"), Department.class);
         JSONObject jsonObject = new JSONObject();
         try {
             departmentService.deleteDepartment(department);

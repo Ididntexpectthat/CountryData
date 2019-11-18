@@ -6,7 +6,9 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ydl.annotation.UserLoginToken;
 import com.ydl.config.JsonXMLUtils;
+import com.ydl.entity.LayerInfoUtil;
 import com.ydl.entity.LayersList;
+import com.ydl.entity.Token;
 import com.ydl.service.LayersListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,7 +32,7 @@ public class LayersListApi {
     //分页获取图层
     @UserLoginToken
     @PostMapping(value = "/getAllLayersListPaging")
-    public Object getAllLayersListPaging(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public Object getAllLayersListPaging(@RequestBody Map<String, Object> models,HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
         String pagenum = httpServletRequest.getHeader("pagenum");
         if (StringUtils.isEmpty(pagenum)) {
@@ -54,7 +56,7 @@ public class LayersListApi {
      */
     @UserLoginToken
     @PostMapping(value = "/getAllLayersList")
-    public Object getAllLayersList(HttpServletResponse httpServletResponse) {
+    public Object getAllLayersList(@RequestBody Map<String, Object> models, HttpServletResponse httpServletResponse) {
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
         List<LayersList> list = layersListService.getAllLayerList();
         return new ResponseEntity<List>(list, HttpStatus.OK);
@@ -144,7 +146,8 @@ public class LayersListApi {
      */
     @UserLoginToken
     @PostMapping(value = "/classifiedQueryLayersList")
-    public Object classifiedQueryLayersList(@RequestBody LayersList layersList,HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse) {
+    public Object classifiedQueryLayersList(@RequestBody Map<String, Object> models,HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse) throws Exception {
+        LayersList layersList  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("layers"), LayersList.class);
         String classificationType = httpServletRequest.getHeader("classificationType");
         String pagenum = httpServletRequest.getHeader("pagenum");
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
@@ -159,8 +162,9 @@ public class LayersListApi {
 
     @UserLoginToken
     @PostMapping(value = "/insertSelective")
-    public Object insertSelective(@RequestBody LayersList layersList) {
+    public Object insertSelective(@RequestBody Map<String, Object> models) throws Exception {
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+        LayersList layersList  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("layers"), LayersList.class);
         JSONObject jsonObject = new JSONObject();
 //        System.out.println(layersListService.selectByName(layersList));
 
@@ -203,7 +207,8 @@ public class LayersListApi {
 
     @UserLoginToken
     @PostMapping(value = "/deleteLayersByName")
-    public Object deleteLayersByName(@RequestBody LayersList layersList) {
+    public Object deleteLayersByName(@RequestBody Map<String, Object> models) throws Exception {
+        LayersList layersList  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("layers"), LayersList.class);
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
 
         JSONObject jsonObject = new JSONObject();

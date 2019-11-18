@@ -1,6 +1,7 @@
 package com.ydl.api.bigDataPlatform.economicData;
 
 import com.ydl.annotation.UserLoginToken;
+import com.ydl.config.JsonXMLUtils;
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.service.economicData.MainEconomicIndicatorsOfAgricultureService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("MainEconomicIndicatorsOfAgriculture")
@@ -456,7 +459,8 @@ public class MainEconomicIndicatorsOfAgricultureApi {
      */
     @UserLoginToken
     @PostMapping(value = "/getDataByTableName")
-    public Object data(@RequestBody EconomicData economicData) {
+    public Object data(@RequestBody Map<String, Object> models) throws Exception {
+        EconomicData economicData = JsonXMLUtils.map2obj((Map<String, Object>) models.get("economicdata"), EconomicData.class);
         System.out.println(economicData.getTableName());
         return mainEconomicIndicatorsOfAgricultureService.getDataByTableName(economicData);
     }

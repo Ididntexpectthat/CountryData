@@ -1,6 +1,9 @@
 package com.ydl.api;
 
 import com.ydl.annotation.UserLoginToken;
+import com.ydl.config.JsonXMLUtils;
+import com.ydl.entity.Function;
+import com.ydl.entity.LayerInfo;
 import com.ydl.entity.LayerInfoUtil;
 import com.ydl.service.LayerInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("LayerInfo")
@@ -60,7 +64,8 @@ public class LayerInfoApi {
 
     @UserLoginToken
     @PostMapping(value = "/getLayerInfo")
-    public Object getLayerInfo(@RequestBody LayerInfoUtil layerInfoUtil, HttpServletResponse httpServletResponse) {
+    public Object getLayerInfo(@RequestBody Map<String, Object> models, HttpServletResponse httpServletResponse) throws Exception {
+        LayerInfoUtil layerInfoUtil  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("layerinfo"), LayerInfoUtil.class);
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
         List<Object> list = layerInfoService.getLayerInfo(layerInfoUtil);
         return new ResponseEntity<List>(list, HttpStatus.OK);

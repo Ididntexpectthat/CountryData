@@ -5,6 +5,8 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ydl.annotation.UserLoginToken;
+import com.ydl.config.JsonXMLUtils;
+import com.ydl.entity.basicspatialdata.ThreeDimensional;
 import com.ydl.entity.demographicData.DemographicData;
 import com.ydl.service.demograhicData.DemographicDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("Demographicdata")
@@ -74,8 +77,9 @@ public class DemographicdataApi {
      */
     @UserLoginToken
     @PostMapping("/getAll")
-    public Object getAllDemograhicData(@RequestBody DemographicData demographicData) {
+    public Object getAllDemograhicData(@RequestBody Map<String, Object> models) throws Exception {
 //            return new ResponseEntity(demographicDataMapper.selectByPrimaryKey(demographicData.get编号()),HttpStatus.OK);
+        DemographicData demographicData = JsonXMLUtils.map2obj((Map<String, Object>) models.get("demographicdata"), DemographicData.class);
         return new ResponseEntity<List>(demographicDataService.getAllSelective(demographicData), HttpStatus.OK);
     }
 
@@ -325,7 +329,7 @@ public class DemographicdataApi {
      */
     @UserLoginToken
     @PostMapping("/getAllPaging")
-    public Object getAllDemograhicDataPaging(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public Object getAllDemograhicDataPaging(@RequestBody Map<String, Object> models,HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 //            return new ResponseEntity(demographicDataMapper.selectByPrimaryKey(demographicData.get编号()),HttpStatus.OK);
         String pagenum = httpServletRequest.getHeader("pagenum");
         if (StringUtils.isEmpty(pagenum)) {

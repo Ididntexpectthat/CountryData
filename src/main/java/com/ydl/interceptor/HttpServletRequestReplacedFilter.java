@@ -12,6 +12,8 @@ import com.ydl.utils.HttpHelper;
 import com.ydl.utils.RequestWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.method.HandlerMethod;
@@ -19,6 +21,7 @@ import org.springframework.web.method.HandlerMethod;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -34,7 +37,7 @@ public class HttpServletRequestReplacedFilter implements Filter {
     StringRedisTemplate redisTemplate;
     @Autowired
     TokenService tokenService;
-    private static final String[] excludePathPatterns = {"/Captcha/getCaptcha", "/User/login"};
+    private static final String[] excludePathPatterns = {"/Captcha/getCaptcha", "/User/login","/Department/getAllDepartment"};
 
     @Override
     public void destroy() {
@@ -46,6 +49,13 @@ public class HttpServletRequestReplacedFilter implements Filter {
                          FilterChain chain) throws IOException, ServletException {
 //        System.out.println("我进来了");
 //        System.out.println(HttpHelper.getBodyString((HttpServletRequest) request));
+//                设置允许跨域访问
+       HttpServletResponse res=(HttpServletResponse) response;
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Access-Control-Allow-Methods", "*");
+        res.setHeader("Access-Control-Max-Age", "3600");
+        res.addHeader(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS,"Origin, X-Requested-With,Content-Type,Accept,Authorization,Content-Type, Connection, User-Agent, Cookie,ctoken,captcha,username,pagenum,pageCount,message");
+        res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With,Content-Type,Accept,Authorization,Content-Type, Connection, User-Agent, Cookie,ctoken,captcha,username,pagenum,pageCount,message");
         String url = ((HttpServletRequest) request).getServletPath();
         System.out.println("url:"+url);
         ServletRequest requestWrapper = null;
@@ -74,13 +84,15 @@ public class HttpServletRequestReplacedFilter implements Filter {
 //                            throw new RuntimeException("token不能为空，请输入token进行验证！");
                             response.setCharacterEncoding("utf-8");
                             response.getWriter().print(JSONObject.toJSON(mapError));
+                            response.getWriter().close();
 
                         }
                         if (StringUtils.isEmpty(username)) {
-                            mapError.put("message","username，请输入username进行验证");
+                            mapError.put("message","username不能为空，请输入username进行验证");
 //                            throw new RuntimeException("username，请输入username进行验证！");
                             response.setCharacterEncoding("utf-8");
                             response.getWriter().print(JSONObject.toJSON(mapError));
+                            response.getWriter().close();
                         }
                         // 执行认证
 //                        System.out.println("token" + token);

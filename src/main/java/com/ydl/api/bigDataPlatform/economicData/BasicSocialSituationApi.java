@@ -1,6 +1,7 @@
 package com.ydl.api.bigDataPlatform.economicData;
 
 import com.ydl.annotation.UserLoginToken;
+import com.ydl.config.JsonXMLUtils;
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.service.economicData.BasicSocialSituationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("BasicSocialSituation")
@@ -403,7 +405,9 @@ public class BasicSocialSituationApi {
      */
     @UserLoginToken
     @PostMapping("getDataByTableName")
-    public Object getAllByTableName(@RequestBody EconomicData economicData) {
+    public Object getAllByTableName(@RequestBody Map<String, Object> models) throws Exception {
+        EconomicData economicData = JsonXMLUtils.map2obj((Map<String, Object>) models.get("economicdata"), EconomicData.class);
+
         return basicSocialSituationService.getDataByTableName(economicData);
     }
 }

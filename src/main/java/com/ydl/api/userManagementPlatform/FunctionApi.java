@@ -5,7 +5,9 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ydl.annotation.UserLoginToken;
+import com.ydl.config.JsonXMLUtils;
 import com.ydl.entity.Function;
+import com.ydl.entity.FuzzySearch;
 import com.ydl.service.FunctionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,7 +34,8 @@ public class FunctionApi {
     //查询某个用户的权限
     @UserLoginToken
     @PostMapping(value = "/queryFuncByName")
-    public Object queryFuncByName(@RequestBody Function function, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public Object queryFuncByName(@RequestBody Map<String, Object> models, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+        Function function  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("function"), Function.class);
         String pagenum = httpServletRequest.getHeader("pagenum");
         if (StringUtils.isEmpty(pagenum)) {
             JSONObject jsonObject = new JSONObject();
@@ -51,7 +54,8 @@ public class FunctionApi {
     //根据用户名编辑用户权限
     @UserLoginToken
     @PostMapping(value = "/updateFuncByName")
-    public ResponseEntity<Map<String, Object>> updateFuncByName(@RequestBody Function function) {
+    public ResponseEntity<Map<String, Object>> updateFuncByName(@RequestBody Map<String, Object> models) throws Exception {
+        Function function  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("function"), Function.class);
         JSONObject jsonObject = new JSONObject();
         if (StringUtils.isEmpty(function.getUsername())) {
             jsonObject.put("message", "编辑失败，用户名不能为空!");
@@ -65,7 +69,7 @@ public class FunctionApi {
     //分页获取图层
     @UserLoginToken
     @PostMapping(value = "/get")
-    public Object get(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public Object get(@RequestBody Map<String, Object> models,HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("message", "进来了");
         return new ResponseEntity(jsonObject, HttpStatus.OK);

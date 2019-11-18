@@ -5,6 +5,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ydl.annotation.UserLoginToken;
+import com.ydl.config.JsonXMLUtils;
 import com.ydl.entity.User;
 import com.ydl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @UserLoginToken
@@ -36,7 +38,7 @@ public class AdminApi {
      */
     @UserLoginToken
     @PostMapping(value = "/queryAllUser")
-    public Object queryAllUser(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public Object queryAllUser(@RequestBody Map<String, Object> models,HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String pagenum = httpServletRequest.getHeader("pagenum");
         if (StringUtils.isEmpty(pagenum)) {
             JSONObject jsonObject = new JSONObject();
@@ -54,12 +56,13 @@ public class AdminApi {
     /**
      * 根据用户名删除用户
      *
-     * @param user
+     * @param models
      * @return
      */
     @UserLoginToken
     @PostMapping(value = "/deleteUser")
-    public Object deleteUser(@RequestBody User user) {
+    public Object deleteUser(@RequestBody Map<String, Object> models) {
+        User user = JsonXMLUtils.map2User((Map<String, Object>) models.get("admin"), User.class);
         JSONObject jsonObject = new JSONObject();
         if (userService.findByUsername(user.getUsername()) == null) {
             jsonObject.put("message", "用户不存在!");

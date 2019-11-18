@@ -2,6 +2,7 @@ package com.ydl.api.bigDataPlatform.economicData;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ydl.annotation.UserLoginToken;
+import com.ydl.config.JsonXMLUtils;
 import com.ydl.entity.economicData.EconomicData;
 import com.ydl.service.economicData.EconomicDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -103,7 +105,8 @@ public class EconomicDataApi {
 
     @UserLoginToken
     @PostMapping("/classification")
-    public Object classification(@RequestBody EconomicData economicData) {
+    public Object classification(@RequestBody Map<String, Object> models) throws Exception {
+        EconomicData economicData = JsonXMLUtils.map2obj((Map<String, Object>) models.get("economicdata"), EconomicData.class);
         return new ResponseEntity<List>(economicDataService.getAllTableName(economicData), HttpStatus.OK);
     }
 
