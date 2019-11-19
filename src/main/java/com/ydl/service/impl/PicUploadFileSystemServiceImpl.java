@@ -40,9 +40,9 @@ public class PicUploadFileSystemServiceImpl implements PicUploadFileSystemServic
         String picUrl = StringUtils.replace(StringUtils.substringAfter(filePath,
                 "D:\\code\\test-upload\\images"),
                 "\\", "/");
-        System.out.println(StringUtils.substringAfter(filePath,
-                "D:/code/test-upload/images"));
+//        System.out.println(StringUtils.substringAfter(filePath, "D:/code/test-upload/images"));
         //访问路径
+        System.out.println("picUrl:"+picUrl);
         fileUploadResult.setName("localhost:8888/upload" + picUrl);
         File newFile = new File(filePath);
         // 写文件到磁盘
@@ -61,13 +61,13 @@ public class PicUploadFileSystemServiceImpl implements PicUploadFileSystemServic
     public String getFilePath(String sourceFileName,String username) {
         String baseFolder = "D:\\code\\test-upload" + File.separator
                 + "images";
-        System.out.println(File.separator);
+//        System.out.println(File.separator);
         Date nowDate = new Date();
         // yyyy/MM/dd
-        System.out.println("baseFolder :"+baseFolder);
+//        System.out.println("baseFolder :"+baseFolder);
         String fileFolder = baseFolder + File.separator +username;
         File file = new File(fileFolder);
-        System.out.println("fileFolder:"+fileFolder);
+//        System.out.println("fileFolder:"+fileFolder);
 
         if (!file.isDirectory()) {
             // 如果目录不存在，则创建目录

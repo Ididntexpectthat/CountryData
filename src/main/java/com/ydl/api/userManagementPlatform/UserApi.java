@@ -287,7 +287,7 @@ public class UserApi {
     /**
      * 根据用户名查询用户信息
      *
-     * @param user
+     * @param models
      * @return
      */
     @UserLoginToken
