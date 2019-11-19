@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @RestController
 @RequestMapping("LayerInfo")
@@ -67,7 +69,14 @@ public class LayerInfoApi {
     public Object getLayerInfo(@RequestBody Map<String, Object> models, HttpServletResponse httpServletResponse) throws Exception {
         LayerInfoUtil layerInfoUtil  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("layerinfo"), LayerInfoUtil.class);
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-        List<Object> list = layerInfoService.getLayerInfo(layerInfoUtil);
-        return new ResponseEntity<List>(list, HttpStatus.OK);
+        Map map = layerInfoService.getLayerInfo(layerInfoUtil);
+//        Set keySet = map.keySet();
+
+//        List<Object> list = new ArrayList<>();
+//        for(Object keyName:keySet){
+//            list.add(keyName);
+//        }
+//        map.put("list",list);
+        return new ResponseEntity(map, HttpStatus.OK);
     }
 }

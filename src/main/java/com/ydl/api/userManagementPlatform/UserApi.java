@@ -319,9 +319,9 @@ public class UserApi {
             jsonObject.put("message", "用户名不能为空！");
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
         }
-        System.out.println("我进来了");
-        System.out.println(user1.getUsername());
-        System.out.println(user2);
+//        System.out.println("我进来了");
+//        System.out.println(user1.getUsername());
+//        System.out.println(user2);
         userService.updateByUsernameSelective(user1, user2);
         jsonObject.put("message", "修改成功！");
         return new ResponseEntity(jsonObject, HttpStatus.OK);

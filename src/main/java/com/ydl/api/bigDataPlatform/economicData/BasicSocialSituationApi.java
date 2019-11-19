@@ -407,7 +407,6 @@ public class BasicSocialSituationApi {
     @PostMapping("getDataByTableName")
     public Object getAllByTableName(@RequestBody Map<String, Object> models) throws Exception {
         EconomicData economicData = JsonXMLUtils.map2obj((Map<String, Object>) models.get("economicdata"), EconomicData.class);
-
         return basicSocialSituationService.getDataByTableName(economicData);
     }
 }

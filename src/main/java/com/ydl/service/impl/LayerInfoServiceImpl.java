@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class LayerInfoServiceImpl implements LayerInfoService {
@@ -15,15 +17,21 @@ public class LayerInfoServiceImpl implements LayerInfoService {
     LayerInfoMapper layerInfoMapper;
     @Override
 
-    public List<Object> getLayerInfo(LayerInfoUtil layerInfoUtil) {
+    public Map getLayerInfo(LayerInfoUtil layerInfoUtil) {
         String[] strArr = layerInfoUtil.getTableName().split("\\|");
         for (String  s: strArr){
             if(!layerInfoMapper.getLayerInfo(s,layerInfoUtil.getPoint(),layerInfoUtil.getType()).isEmpty()){
-                return layerInfoMapper.getLayerInfo(s,layerInfoUtil.getPoint(),layerInfoUtil.getType());
+                Map map = layerInfoMapper.getLayerInfo(s,layerInfoUtil.getPoint(),layerInfoUtil.getType());
+                //删除geom
+                map.keySet().removeIf(key -> key.equals("geom"));
+                return map;
             }
         }
-        List list = new ArrayList();
-        list.add("没有找到");
-        return list;
+        Map map = new HashMap<>();
+        map.put("message","没有找到");
+        return map;
+//        List list = new ArrayList();
+//        list.add("没有找到");
+//        return list;
     }
 }
