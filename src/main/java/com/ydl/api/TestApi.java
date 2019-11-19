@@ -3,9 +3,13 @@ package com.ydl.api;
 import com.alibaba.fastjson.JSONObject;
 import com.ydl.annotation.UserLoginToken;
 import com.ydl.config.JsonXMLUtils;
+import com.ydl.entity.LayerInfoUtil;
 import com.ydl.entity.Token;
 import com.ydl.entity.User;
+import com.ydl.mapper.LayerInfoMapper;
+import com.ydl.mapper.LayersListMapper;
 import com.ydl.mapper.TestMapper;
+import com.ydl.service.LayersListService;
 import com.ydl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +31,10 @@ public class TestApi {
     UserService userService;
     @Autowired
     TestMapper testMapper;
+    @Autowired
+    LayersListService layersListService;
+    @Autowired
+    LayerInfoMapper layerInfoMapper;
 
     /*
     1.3.1
@@ -59,9 +67,17 @@ public class TestApi {
      */
     @UserLoginToken
     @PostMapping(value = "/error")
-    public Object queryAllUser(String s) {
-
-        return "test is not ok!";
+    public Object queryAllUser(@RequestBody Map<String, Object> models) throws Exception {
+        LayerInfoUtil layerInfoUtil  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("layerinfo"), LayerInfoUtil.class);
+        System.out.println("******"+layerInfoUtil.getKeyValue());
+        String dataType = layersListService.selectDataTypeByKeyValue(layerInfoUtil.getKeyValue());
+        String[] strArr = dataType.split("\\|");
+        String s = null;
+        for(String s1 : strArr){
+            s = s1;
+        }
+        System.out.println(layerInfoMapper.getLayerInfo(s,layerInfoUtil.getPoint(),layerInfoUtil.getType())==null);
+        return    layerInfoMapper.getLayerInfo(s,layerInfoUtil.getPoint(),layerInfoUtil.getType());
     }
 
     /**

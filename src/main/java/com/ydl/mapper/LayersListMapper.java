@@ -25,4 +25,6 @@ public interface LayersListMapper {
     int deleteLayersByName(LayersList layersList);
 
     List<LayersList> classifiedQueryLayersList(LayersList layersList);
+
+    String selectDataTypeByKeyValue(String keyValue);
 }

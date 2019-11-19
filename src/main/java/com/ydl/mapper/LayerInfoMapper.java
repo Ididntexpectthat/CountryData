@@ -3,6 +3,7 @@ package com.ydl.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 
 @Mapper
@@ -22,5 +23,5 @@ public interface LayerInfoMapper {
 
 //    List<Object> getLayerInfo(LayerInfoUtil layerInfoUtil);
 
-    Map getLayerInfo(String tableName, String point, String type);
+    List<Map> getLayerInfo(String tableName, String point, String type);
 }

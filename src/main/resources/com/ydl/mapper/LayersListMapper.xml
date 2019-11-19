@@ -44,6 +44,12 @@
         from layerslist
         where name = #{name,jdbcType=VARCHAR}
     </select>
+    <select id="selectDataTypeByKeyValue" parameterType="java.lang.String" resultType="java.lang.String">
+        select
+        datatype
+        from layerslist
+        where key_value = #{keyValue,jdbcType=VARCHAR}
+    </select>
     <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ydl.entity.LayersList" useGeneratedKeys="true">
     insert into layerslist
     <trim prefix="(" suffix=")" suffixOverrides=",">

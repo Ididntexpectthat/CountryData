@@ -57,5 +57,10 @@ public class LayersListServiceImpl implements LayersListService {
 //        }
     }
 
+    @Override
+    public String selectDataTypeByKeyValue(String keyValue) {
+        return layersListMapper.selectDataTypeByKeyValue(keyValue);
+    }
+
 
 }

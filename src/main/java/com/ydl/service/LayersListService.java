@@ -25,4 +25,6 @@ public interface LayersListService {
     int deleteLayersByName(LayersList layersList);
 
     List<LayersList> classifiedQueryLayersList(LayersList layersList, String classificationType);
+
+    String selectDataTypeByKeyValue(String keyValue);
 }

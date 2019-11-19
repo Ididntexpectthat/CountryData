@@ -1,5 +1,6 @@
 package com.ydl.api;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ydl.annotation.UserLoginToken;
 import com.ydl.config.JsonXMLUtils;
 import com.ydl.entity.Function;
@@ -69,7 +70,7 @@ public class LayerInfoApi {
     public Object getLayerInfo(@RequestBody Map<String, Object> models, HttpServletResponse httpServletResponse) throws Exception {
         LayerInfoUtil layerInfoUtil  = JsonXMLUtils.map2obj((Map<String, Object>) models.get("layerinfo"), LayerInfoUtil.class);
 //        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-        Map map = layerInfoService.getLayerInfo(layerInfoUtil);
+        List<Map> jsonObject = layerInfoService.getLayerInfo(layerInfoUtil);
 //        Set keySet = map.keySet();
 
 //        List<Object> list = new ArrayList<>();
@@ -77,6 +78,6 @@ public class LayerInfoApi {
 //            list.add(keyName);
 //        }
 //        map.put("list",list);
-        return new ResponseEntity(map, HttpStatus.OK);
+        return new ResponseEntity(jsonObject, HttpStatus.OK);
     }
 }
