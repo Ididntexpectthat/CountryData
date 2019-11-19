@@ -57,7 +57,7 @@ public class HttpServletRequestReplacedFilter implements Filter {
         // 允许客户端访问的响应头
         res.addHeader(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Origin, X-Requested-With,Content-Type,Accept,Authorization,Content-Type, Connection, User-Agent, Cookie,ctoken,captcha,username,pagenum,pageCount,message");
         // 允许客户端请求携带的请求头
-        res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With,Content-Type,Accept,Authorization,Content-Type, Connection, User-Agent, Cookie,ctoken,captcha,username,pagenum,token");
+        res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With,Content-Type,Accept,Authorization,Content-Type, Connection, User-Agent, Cookie,ctoken,captcha,username,pagenum");
         String url = ((HttpServletRequest) request).getServletPath();
         System.out.println("url:" + url);
         ServletRequest requestWrapper = null;
