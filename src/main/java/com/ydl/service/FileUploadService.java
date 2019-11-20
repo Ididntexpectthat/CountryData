@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 
-public interface PicUploadFileSystemService {
+public interface FileUploadService {
 
     FileUploadResult upload(MultipartFile uploadFile, String username);
 

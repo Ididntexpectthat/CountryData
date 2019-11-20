@@ -1,7 +1,7 @@
 package com.ydl.service.impl;
 
 import com.ydl.entity.FileUploadResult;
-import com.ydl.service.PicUploadFileSystemService;
+import com.ydl.service.FileUploadService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Date;
 
 @Service
-public class PicUploadFileSystemServiceImpl implements PicUploadFileSystemService {
+public class FileUploadServiceImpl implements FileUploadService {
     // 允许上传的格式
     private static final String[] IMAGE_TYPE = new String[]{".bmp", ".jpg",
             ".jpeg", ".gif", ".png"};
