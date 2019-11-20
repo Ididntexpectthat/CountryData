@@ -1,7 +1,7 @@
 package com.ydl.api.userManagementPlatform;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ydl.entity.PicUploadResult;
+import com.ydl.entity.FileUploadResult;
 import com.ydl.service.PicUploadFileSystemService;
 import com.ydl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +27,12 @@ public class PicUploadApi {
     @PostMapping("/upload")
     public Object upload(@RequestParam("file") MultipartFile uploadFile, @RequestParam("username") String username) throws Exception {
         JSONObject jsonObject = new JSONObject();
-        PicUploadResult picUploadResult = picUploadFileSystemService.upload(uploadFile, username);
-        if (picUploadResult.getStatus().equals("noexpected")) {
+        FileUploadResult fileUploadResult = picUploadFileSystemService.upload(uploadFile, username);
+        if (fileUploadResult.getStatus().equals("noexpected")) {
             jsonObject.put("message", "请上传符合格式的图片");
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
         }
-        if (picUploadResult.getStatus().equals("error")) {
+        if (fileUploadResult.getStatus().equals("error")) {
             jsonObject.put("message", "上传失败");
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
         }
@@ -40,12 +40,12 @@ public class PicUploadApi {
             jsonObject.put("message", "用户不存在！");
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
         }
-        if (picUploadResult.getStatus().equals("done")) {
-            if (picUploadResult.getName() != null) {
-                System.out.println(picUploadResult.getName());
-                userService.updatePicUrl(picUploadResult.getName(), username);
+        if (fileUploadResult.getStatus().equals("done")) {
+            if (fileUploadResult.getName() != null) {
+                System.out.println(fileUploadResult.getName());
+                userService.updatePicUrl(fileUploadResult.getName(), username);
                 jsonObject.put("message", "上传成功");
-                jsonObject.put("pic_url", picUploadResult.getName());
+                jsonObject.put("pic_url", fileUploadResult.getName());
                 return new ResponseEntity(jsonObject, HttpStatus.OK);
             }
         }

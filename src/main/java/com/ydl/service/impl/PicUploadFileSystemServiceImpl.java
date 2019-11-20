@@ -1,6 +1,6 @@
 package com.ydl.service.impl;
 
-import com.ydl.entity.PicUploadResult;
+import com.ydl.entity.FileUploadResult;
 import com.ydl.service.PicUploadFileSystemService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class PicUploadFileSystemServiceImpl implements PicUploadFileSystemServic
     // 允许上传的格式
     private static final String[] IMAGE_TYPE = new String[]{".bmp", ".jpg",
             ".jpeg", ".gif", ".png"};
-    public PicUploadResult upload(MultipartFile uploadFile, String username) {
+    public FileUploadResult upload(MultipartFile uploadFile, String username) {
         //校验图片格式
         boolean isLegal = false;
         for (String type : IMAGE_TYPE) {
@@ -26,7 +26,7 @@ public class PicUploadFileSystemServiceImpl implements PicUploadFileSystemServic
             }
         }
         // 封装Result对象，并且将文件的byte数组放置到result对象中
-        PicUploadResult fileUploadResult = new PicUploadResult();
+        FileUploadResult fileUploadResult = new FileUploadResult();
         if (!isLegal) {
             fileUploadResult.setStatus("noexpected");
             return fileUploadResult;
@@ -38,7 +38,7 @@ public class PicUploadFileSystemServiceImpl implements PicUploadFileSystemServic
         System.out.println("filepath:"+filePath);
         // 生成图片的绝对引用地址
         String picUrl = StringUtils.replace(StringUtils.substringAfter(filePath,
-                "D:\\code\\test-upload\\images"),
+                "F:\\code\\test-upload"),
                 "\\", "/");
 //        System.out.println(StringUtils.substringAfter(filePath, "D:/code/test-upload/images"));
         //访问路径
@@ -59,7 +59,7 @@ public class PicUploadFileSystemServiceImpl implements PicUploadFileSystemServic
         return fileUploadResult;
     }
     public String getFilePath(String sourceFileName,String username) {
-        String baseFolder = "D:\\code\\test-upload" + File.separator
+        String baseFolder = "F:\\code\\test-upload" + File.separator
                 + "images";
 //        System.out.println(File.separator);
         Date nowDate = new Date();
@@ -67,7 +67,7 @@ public class PicUploadFileSystemServiceImpl implements PicUploadFileSystemServic
 //        System.out.println("baseFolder :"+baseFolder);
         String fileFolder = baseFolder + File.separator +username;
         File file = new File(fileFolder);
-//        System.out.println("fileFolder:"+fileFolder);
+        System.out.println("fileFolder:"+fileFolder);
 
         if (!file.isDirectory()) {
             // 如果目录不存在，则创建目录

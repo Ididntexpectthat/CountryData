@@ -3,7 +3,7 @@ package com.ydl.entity;
 import lombok.Data;
 
 @Data
-public class PicUploadResult {
+public class FileUploadResult {
     // 文件唯一标识
     private String uid;
     // 文件名
