@@ -35,7 +35,7 @@ spring:
       max-file-size: 45MB
       max-request-size: 50MB
   fileupload:
-    destination : F:\code\test-upload
+    destination : D:\code\upload
 mybatis:
   config-location: classpath:mybatis.xml
   mapper-locations: classpath*:com/ydl/mapper/*.xml

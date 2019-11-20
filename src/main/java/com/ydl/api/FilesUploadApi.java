@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ydl.entity.FileUploadResult;
+import com.ydl.service.FileUploadService;
 import com.ydl.utils.FileSaveUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,11 +30,13 @@ public class FilesUploadApi {
     // 读取application.properties文件中的自定义配置项
     @Value("${spring.fileupload.destination}")
     private String destination;
+    @Autowired
+    FileUploadService fileUploadService;
 
-    @RequestMapping("/files")
-    public String index() {
-        return "uploads";
-    }
+//    @RequestMapping("/files")
+//    public String index() {
+//        return "uploads";
+//    }
 
     /**
      * 多文件上传类
@@ -47,7 +51,7 @@ public class FilesUploadApi {
      */
     @PostMapping("/upload")
     public Object filesUpload(HttpServletRequest request,
-                              @RequestParam("files") MultipartFile[] files) throws IllegalStateException, IOException {
+                              @RequestParam("files") MultipartFile[] files,@RequestParam("name")String name) throws IllegalStateException, IOException {
 
         // 获取文件描述参数 description，纯粹测试使用
 //		if (null != descriptions && descriptions.length > 0) {
@@ -72,7 +76,8 @@ public class FilesUploadApi {
                 System.out.println("文件组件名称Name=" + file.getName());
                 System.out.println("文件原名称OriginalFileName=" + file.getOriginalFilename());
                 System.out.println("文件大小Size=" + file.getSize() + "byte or " + file.getSize() / 1024 + "KB");
-                FileUploadResult fileUploadResult = FileSaveUtil.saveFile(file, destionation, "鬼子村");
+                FileUploadResult fileUploadResult = fileUploadService.fileUpload(file,destination,name);
+//                FileUploadResult fileUploadResult = FileSaveUtil.saveFile(file, destionation, "鬼子村");
                 i++;
                 if(fileUploadResult.getStatus().equals("done") && file!=files[files.length-1]){
                     jsonObject.put("pic_url"+"_"+i, fileUploadResult.getName());

@@ -2,9 +2,10 @@ package com.ydl.api.userManagementPlatform;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ydl.entity.FileUploadResult;
-import com.ydl.service.PicUploadFileSystemService;
+import com.ydl.service.FileUploadService;
 import com.ydl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +17,12 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("Pic")
 public class PicUploadApi {
+    // 读取application.properties文件中的自定义配置项
+    @Value("${spring.fileupload.destination}")
+    private String destination;
 
     @Autowired
-    private PicUploadFileSystemService picUploadFileSystemService;
+    private FileUploadService fileUploadService;
     //    @Autowired
 //    UserDao userDao;
     @Autowired
@@ -27,7 +31,7 @@ public class PicUploadApi {
     @PostMapping("/upload")
     public Object upload(@RequestParam("file") MultipartFile uploadFile, @RequestParam("username") String username) throws Exception {
         JSONObject jsonObject = new JSONObject();
-        FileUploadResult fileUploadResult = picUploadFileSystemService.upload(uploadFile, username);
+        FileUploadResult fileUploadResult = fileUploadService.picUpload(uploadFile,destination, username);
         if (fileUploadResult.getStatus().equals("noexpected")) {
             jsonObject.put("message", "请上传符合格式的图片");
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);

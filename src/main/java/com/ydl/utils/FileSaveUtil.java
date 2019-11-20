@@ -23,7 +23,7 @@ public class FileSaveUtil {
             File file1 = new File(destination + File.separator + name);
             String filePath = file1.getPath()+File.separator+filename;
             String FileUrl = StringUtils.replace(StringUtils.substringAfter(filePath,
-                    "F:\\code\\test-upload"),
+                    "F:\\code\\upload"),
                     "\\", "/");
             fileUploadResult.setName("localhost:8888/upload" + FileUrl);
             System.out.println("filePath:"+filePath);

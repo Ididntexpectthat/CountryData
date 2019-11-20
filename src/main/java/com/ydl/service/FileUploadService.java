@@ -7,7 +7,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface FileUploadService {
 
-    FileUploadResult upload(MultipartFile uploadFile, String username);
+    FileUploadResult picUpload(MultipartFile uploadFile,String destination, String username);
 
-    String getFilePath(String sourceFileName,String suername);
+    FileUploadResult fileUpload(MultipartFile uploadFile,String destination, String username);
+
+
 }
