@@ -23,7 +23,7 @@ public class GloablExceptionHandler {
     @ExceptionHandler(Exception.class)
     public Object handleException(HttpServletRequest req, HttpServletResponse res,Exception e) {
         System.out.println(e);
-        res.addHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN,"*");
+//        res.addHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN,"*");
         String msg = e.getMessage();
         if (msg == null || msg.equals("")) {
             msg = "服务器出错";

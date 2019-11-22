@@ -19,11 +19,12 @@ public class FileSaveUtil {
     public static FileUploadResult saveFile(MultipartFile file, String destination, String name) {
             FileUploadResult fileUploadResult = new FileUploadResult();
             // 获取上传的文件名称，并结合存放路径，构建新的文件名称
-            String filename = file.getOriginalFilename();
+             String filename = "icon.jpg";
+//            String filename = file.getOriginalFilename();
             File file1 = new File(destination + File.separator + name);
             String filePath = file1.getPath()+File.separator+filename;
             String FileUrl = StringUtils.replace(StringUtils.substringAfter(filePath,
-                    "F:\\code\\upload"),
+                    "D:\\code\\upload"),
                     "\\", "/");
             fileUploadResult.setName("localhost:8888/upload" + FileUrl);
             System.out.println("filePath:"+filePath);

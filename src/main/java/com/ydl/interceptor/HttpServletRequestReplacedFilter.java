@@ -37,7 +37,7 @@ public class HttpServletRequestReplacedFilter implements Filter {
     StringRedisTemplate redisTemplate;
     @Autowired
     TokenService tokenService;
-    private static final String[] excludePathPatterns = {"/Captcha/getCaptcha", "/User/login", "/Department/getAllDepartment", "/Pic/upload","/User/exitLogin","/Files/upload", "/upload/"};
+    private static final String[] excludePathPatterns = {"/Captcha/getCaptcha", "/User/login","/User/register", "/Department/getAllDepartment", "/Pic/upload","/User/exitLogin","/Files/upload", "/upload/"};
 
     @Override
     public void destroy() {

@@ -59,6 +59,8 @@ public class UserApi {
         String captcha = httpServletRequest.getHeader("captcha");
         String captchaForBase = redisTemplate.opsForValue().get(ctoken);
         System.out.println(captchaForBase);
+        System.out.println("*****************"+user);
+        System.out.println("**************"+user.getPassword());
         if (StringUtils.isEmpty(captchaForBase)) {
             jsonObject.put("message", "注册失败，验证码失效");
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
@@ -84,23 +86,7 @@ public class UserApi {
         jsonObject.put("message", "未知错误，请联系作者！");
         return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
     }
-    @UserLoginToken
-    @PostMapping(value = "/addUser")
-    public Object addUser(@RequestBody User user) {
-        User userForBase = userService.findByUsername(user.getUsername());
-        JSONObject jsonObject = new JSONObject();
-        if (userForBase != null) {
-            jsonObject.put("message", "注册失败,用户已存在");
-            return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
-        }
-        if(userForBase == null){
-            userService.insertUserSelective(user);
-            jsonObject.put("message","添加成功");
-            return new ResponseEntity(jsonObject, HttpStatus.OK);
-        }
-        jsonObject.put("message", "未知错误，请联系作者！");
-        return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
-    }
+
 
     /**
      * 登录,从header中取ctoken和captcha，公共
@@ -247,11 +233,31 @@ public class UserApi {
         return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
     }
 
+    //添加用户
+    @UserLoginToken
+    @PostMapping(value = "/addUser")
+    public Object addUser(@RequestBody Map<String, Object> models) {
+        System.out.println("****************************进来了");
+        User user = JsonXMLUtils.map2User((Map<String, Object>) models.get("user"), User.class);
+        User userForBase = userService.findByUsername(user.getUsername());
+        JSONObject jsonObject = new JSONObject();
+        if (userForBase != null) {
+            jsonObject.put("message", "添加失败,用户已存在");
+            return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
+        }
+        if(userForBase == null){
+            userService.insertUserSelective(user);
+            jsonObject.put("message","添加成功");
+            return new ResponseEntity(jsonObject, HttpStatus.OK);
+        }
+        jsonObject.put("message", "未知错误，请联系作者！");
+        return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
+    }
 
     /**
      * //查询某个部门的所有成员信息,公共
      *
-     * @param user
+     * @param models
      * @param httpServletRequest
      * @param
      * @return
@@ -259,7 +265,8 @@ public class UserApi {
 
     @UserLoginToken
     @PostMapping(value = "/queryByDepartment")
-    public Object queryByDepartment(@RequestBody User user, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public Object queryByDepartment(@RequestBody Map<String, Object> models, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+        User user = JsonXMLUtils.map2User((Map<String, Object>) models.get("user"), User.class);
         String pagenum = httpServletRequest.getHeader("pagenum");
         if (StringUtils.isEmpty(pagenum)) {
             JSONObject jsonObject = new JSONObject();

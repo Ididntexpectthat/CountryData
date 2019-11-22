@@ -4,6 +4,7 @@ import com.ydl.entity.User;
 import com.ydl.mapper.FunctionMapper;
 import com.ydl.mapper.UserMapper;
 import com.ydl.service.UserService;
+import com.ydl.utils.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +20,7 @@ public class UserServiceImpl implements UserService {
     FunctionMapper functionMapper;
 
     public User login(User user){
+        user.setPassword(MD5Util.MD5Encode(user.getPassword(),"UTF-8"));
         return userMapper.login(user.getUsername(),user.getPassword());
     }
     public User findByUsername(String username){
@@ -30,11 +32,13 @@ public class UserServiceImpl implements UserService {
     }
 
     public void insertUser(String username,String password,String department,String gender,String tel) {
+
         userMapper.insertUser(username,password,department,gender,tel);
     }
 
     @Override
     public void insertUserSelective(User user) {
+        user.setPassword(MD5Util.MD5Encode(user.getPassword(),"UTF-8"));
         userMapper.insertUserSelective(user);
     }
 
@@ -60,6 +64,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateByUsernameSelective(User user1, User user2) {
+        user2.setPassword(MD5Util.MD5Encode(user2.getPassword(),"UTF-8"));
         userMapper.updateByUsernameSelective(user1.getUsername(),user2);
     }
 
