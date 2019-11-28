@@ -2,8 +2,6 @@ package com.ydl.api.bigDataPlatform.basicspatialdata;
 
 import com.ydl.annotation.UserLoginToken;
 import com.ydl.config.JsonXMLUtils;
-import com.ydl.entity.LayerInfoUtil;
-import com.ydl.entity.LayersList;
 import com.ydl.entity.basicspatialdata.ThreeDimensional;
 import com.ydl.service.ThreeDimensionalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,4 +84,6 @@ public class ThreeDimensionalApi {
 //        threeDimensionalService.getThreeDimensional(threeDimensional);
         return new ResponseEntity<List>(threeDimensionalService.getAllNamePaging(), HttpStatus.OK);
     }
+
+
 }

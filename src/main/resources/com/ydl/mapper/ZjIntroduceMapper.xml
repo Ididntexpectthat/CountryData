@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydl.mapper.ZjIntroduceMapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.ZjIntroduce">
+    <result column="gid" jdbcType="INTEGER" property="gid" />
+    <result column="xjdm" jdbcType="VARCHAR" property="xjdm" />
+    <result column="qxm" jdbcType="VARCHAR" property="qxm" />
+    <result column="zm" jdbcType="VARCHAR" property="zm" />
+    <result column="centerpointx" jdbcType="DOUBLE" property="centerpointx" />
+    <result column="centerpointy" jdbcType="DOUBLE" property="centerpointy" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="filepath" jdbcType="VARCHAR" property="filepath" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <select id="getZmMessage" resultType="com.ydl.entity.ZjIntroduce">
+    SELECT * from jc_zxqh_zj_introduce where zm = #{zm}
+  </select>
+<!--  <insert id="insert" keyColumn="gid" keyProperty="gid" parameterType="com.ydl.entity.ZjIntroduce" useGeneratedKeys="true">-->
+<!--    insert into jc_zxqh_zj_introduce (xjdm, qxm, zm, -->
+<!--      centerpointx, centerpointy, introduce, -->
+<!--      filepath, remarks)-->
+<!--    values (#{xjdm,jdbcType=VARCHAR}, #{qxm,jdbcType=VARCHAR}, #{zm,jdbcType=VARCHAR}, -->
+<!--      #{centerpointx,jdbcType=DOUBLE}, #{centerpointy,jdbcType=DOUBLE}, #{introduce,jdbcType=VARCHAR}, -->
+<!--      #{filepath,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR})-->
+<!--  </insert>-->
+<!--  <insert id="insertSelective" keyColumn="gid" keyProperty="gid" parameterType="com.ydl.entity.ZjIntroduce" useGeneratedKeys="true">-->
+<!--    insert into jc_zxqh_zj_introduce-->
+<!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--      <if test="xjdm != null">-->
+<!--        xjdm,-->
+<!--      </if>-->
+<!--      <if test="qxm != null">-->
+<!--        qxm,-->
+<!--      </if>-->
+<!--      <if test="zm != null">-->
+<!--        zm,-->
+<!--      </if>-->
+<!--      <if test="centerpointx != null">-->
+<!--        centerpointx,-->
+<!--      </if>-->
+<!--      <if test="centerpointy != null">-->
+<!--        centerpointy,-->
+<!--      </if>-->
+<!--      <if test="introduce != null">-->
+<!--        introduce,-->
+<!--      </if>-->
+<!--      <if test="filepath != null">-->
+<!--        filepath,-->
+<!--      </if>-->
+<!--      <if test="remarks != null">-->
+<!--        remarks,-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--    <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--      <if test="xjdm != null">-->
+<!--        #{xjdm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="qxm != null">-->
+<!--        #{qxm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="zm != null">-->
+<!--        #{zm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="centerpointx != null">-->
+<!--        #{centerpointx,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="centerpointy != null">-->
+<!--        #{centerpointy,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="introduce != null">-->
+<!--        #{introduce,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="filepath != null">-->
+<!--        #{filepath,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="remarks != null">-->
+<!--        #{remarks,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--  </insert>-->
+</mapper>

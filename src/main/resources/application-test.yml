@@ -33,6 +33,8 @@ spring:
       max-request-size: 50MB
   fileupload:
     destination : D:\code\upload
+  mvc:
+    static-path-pattern: /**
 
 mybatis:
   config-location: classpath:mybatis.xml
@@ -55,3 +57,5 @@ logging:
   file: log/log.log
   level:
     com.fishpro.log: debug
+
+

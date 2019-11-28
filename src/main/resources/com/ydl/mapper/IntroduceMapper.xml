@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydl.mapper.IntroduceMapper">
+  <resultMap id="BaseResultMap" type="com.ydl.entity.Introduce">
+    <id column="xzqdm" jdbcType="VARCHAR" property="xzqdm" />
+    <result column="gid" jdbcType="INTEGER" property="gid" />
+    <result column="xzqmc" jdbcType="VARCHAR" property="xzqmc" />
+    <result column="qxm" jdbcType="VARCHAR" property="qxm" />
+    <result column="zm" jdbcType="VARCHAR" property="zm" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="centerpointx" jdbcType="DOUBLE" property="centerpointx" />
+    <result column="centerpointy" jdbcType="DOUBLE" property="centerpointy" />
+    <result column="filepath" jdbcType="VARCHAR" property="filepath" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    xzqdm, gid, xzqmc, qxm, zm, introduce, centerpointx, centerpointy, filepath, remarks
+  </sql>
+  <select id="getZmAndCmByQxm" resultType="Map">
+    SELECT zm,string_agg(xzqmc,' ') from jc_xzqh_cj_introduce GROUP BY zm,qxm HAVING qxm = #{qxm}
+  </select>
+
+  <select id="getCmMessage" resultType="com.ydl.entity.Introduce">
+    SELECT * from jc_xzqh_cj_introduce where zm = #{zm} and xzqmc = #{xzqmc}
+  </select>
+
+  <select id="getQxm" resultType="Map">
+    SELECT  distinct qxm from jc_xzqh_cj_introduce
+  </select>
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">-->
+<!--    select -->
+<!--    <include refid="Base_Column_List" />-->
+<!--    from basicSpatialData.jc_xzqh_cj_introduce-->
+<!--    where xzqdm = #{xzqdm,jdbcType=VARCHAR}-->
+<!--  </select>-->
+<!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">-->
+<!--    delete from basicSpatialData.jc_xzqh_cj_introduce-->
+<!--    where xzqdm = #{xzqdm,jdbcType=VARCHAR}-->
+<!--  </delete>-->
+<!--  <insert id="insert" keyColumn="gid" keyProperty="gid" parameterType="com.ydl.entity.Introduce" useGeneratedKeys="true">-->
+<!--    insert into basicSpatialData.jc_xzqh_cj_introduce (xzqdm, xzqmc, qxm, -->
+<!--      zm, introduce, centerpointx, -->
+<!--      centerpointy, filepath, remarks-->
+<!--      )-->
+<!--    values (#{xzqdm,jdbcType=VARCHAR}, #{xzqmc,jdbcType=VARCHAR}, #{qxm,jdbcType=VARCHAR}, -->
+<!--      #{zm,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}, #{centerpointx,jdbcType=DOUBLE}, -->
+<!--      #{centerpointy,jdbcType=DOUBLE}, #{filepath,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}-->
+<!--      )-->
+<!--  </insert>-->
+<!--  <insert id="insertSelective" keyColumn="gid" keyProperty="gid" parameterType="com.ydl.entity.Introduce" useGeneratedKeys="true">-->
+<!--    insert into basicSpatialData.jc_xzqh_cj_introduce-->
+<!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--      <if test="xzqdm != null">-->
+<!--        xzqdm,-->
+<!--      </if>-->
+<!--      <if test="xzqmc != null">-->
+<!--        xzqmc,-->
+<!--      </if>-->
+<!--      <if test="qxm != null">-->
+<!--        qxm,-->
+<!--      </if>-->
+<!--      <if test="zm != null">-->
+<!--        zm,-->
+<!--      </if>-->
+<!--      <if test="introduce != null">-->
+<!--        introduce,-->
+<!--      </if>-->
+<!--      <if test="centerpointx != null">-->
+<!--        centerpointx,-->
+<!--      </if>-->
+<!--      <if test="centerpointy != null">-->
+<!--        centerpointy,-->
+<!--      </if>-->
+<!--      <if test="filepath != null">-->
+<!--        filepath,-->
+<!--      </if>-->
+<!--      <if test="remarks != null">-->
+<!--        remarks,-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--    <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--      <if test="xzqdm != null">-->
+<!--        #{xzqdm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="xzqmc != null">-->
+<!--        #{xzqmc,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="qxm != null">-->
+<!--        #{qxm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="zm != null">-->
+<!--        #{zm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="introduce != null">-->
+<!--        #{introduce,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="centerpointx != null">-->
+<!--        #{centerpointx,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="centerpointy != null">-->
+<!--        #{centerpointy,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="filepath != null">-->
+<!--        #{filepath,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="remarks != null">-->
+<!--        #{remarks,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--  </insert>-->
+<!--  <update id="updateByPrimaryKeySelective" parameterType="com.ydl.entity.Introduce">-->
+<!--    update basicSpatialData.jc_xzqh_cj_introduce-->
+<!--    <set>-->
+<!--      <if test="gid != null">-->
+<!--        gid = #{gid,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="xzqmc != null">-->
+<!--        xzqmc = #{xzqmc,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="qxm != null">-->
+<!--        qxm = #{qxm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="zm != null">-->
+<!--        zm = #{zm,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="introduce != null">-->
+<!--        introduce = #{introduce,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="centerpointx != null">-->
+<!--        centerpointx = #{centerpointx,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="centerpointy != null">-->
+<!--        centerpointy = #{centerpointy,jdbcType=DOUBLE},-->
+<!--      </if>-->
+<!--      <if test="filepath != null">-->
+<!--        filepath = #{filepath,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="remarks != null">-->
+<!--        remarks = #{remarks,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--    </set>-->
+<!--    where xzqdm = #{xzqdm,jdbcType=VARCHAR}-->
+<!--  </update>-->
+<!--  <update id="updateByPrimaryKey" parameterType="com.ydl.entity.Introduce">-->
+<!--    update basicSpatialData.jc_xzqh_cj_introduce-->
+<!--    set gid = #{gid,jdbcType=INTEGER},-->
+<!--      xzqmc = #{xzqmc,jdbcType=VARCHAR},-->
+<!--      qxm = #{qxm,jdbcType=VARCHAR},-->
+<!--      zm = #{zm,jdbcType=VARCHAR},-->
+<!--      introduce = #{introduce,jdbcType=VARCHAR},-->
+<!--      centerpointx = #{centerpointx,jdbcType=DOUBLE},-->
+<!--      centerpointy = #{centerpointy,jdbcType=DOUBLE},-->
+<!--      filepath = #{filepath,jdbcType=VARCHAR},-->
+<!--      remarks = #{remarks,jdbcType=VARCHAR}-->
+<!--    where xzqdm = #{xzqdm,jdbcType=VARCHAR}-->
+<!--  </update>-->
+</mapper>

@@ -37,7 +37,7 @@ public class HttpServletRequestReplacedFilter implements Filter {
     StringRedisTemplate redisTemplate;
     @Autowired
     TokenService tokenService;
-    private static final String[] excludePathPatterns = {"/Captcha/getCaptcha", "/User/login","/User/register", "/Department/getAllDepartment", "/Pic/upload","/User/exitLogin","/Files/upload", "/upload/"};
+    private static final String[] excludePathPatterns = {"/Captcha/getCaptcha", "/User/login","/User/register","/Department/getAllDepartment", "/Pic/upload","/User/exitLogin","/Files/upload", "/upload/"};
 
     @Override
     public void destroy() {
@@ -71,8 +71,10 @@ public class HttpServletRequestReplacedFilter implements Filter {
                 chain.doFilter(request, response);
             }
             //头像获取通过
-            if (page.equals(excludePathPatterns[excludePathPatterns.length - 1]) && page.equals(url.substring(0, 8))) {
-                chain.doFilter(request, response);
+            if(url.length()>=8){
+                if (page.equals(excludePathPatterns[excludePathPatterns.length - 1]) && page.equals(url.substring(0, 8))) {
+                    chain.doFilter(request, response);
+                }
             }
             if (page.equals(excludePathPatterns[excludePathPatterns.length - 1]) && !url.equals(page)) {
                 if (request instanceof HttpServletRequest) {
