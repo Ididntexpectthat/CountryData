@@ -4,9 +4,9 @@
   <resultMap id="BaseResultMap" type="com.ydl.entity.Introduce">
     <id column="xzqdm" jdbcType="VARCHAR" property="xzqdm" />
     <result column="gid" jdbcType="INTEGER" property="gid" />
+    <result column="zm" jdbcType="VARCHAR" property="zm" />
     <result column="xzqmc" jdbcType="VARCHAR" property="xzqmc" />
     <result column="qxm" jdbcType="VARCHAR" property="qxm" />
-    <result column="zm" jdbcType="VARCHAR" property="zm" />
     <result column="introduce" jdbcType="VARCHAR" property="introduce" />
     <result column="centerpointx" jdbcType="DOUBLE" property="centerpointx" />
     <result column="centerpointy" jdbcType="DOUBLE" property="centerpointy" />
@@ -17,15 +17,15 @@
     xzqdm, gid, xzqmc, qxm, zm, introduce, centerpointx, centerpointy, filepath, remarks
   </sql>
   <select id="getZmAndCmByQxm" resultType="Map">
-    SELECT zm,string_agg(xzqmc,' ') from jc_xzqh_cj_introduce GROUP BY zm,qxm HAVING qxm = #{qxm}
+    SELECT xzqdm,zm,string_agg(xzqmc,' ') from jc_xzqh_cj_introduce GROUP BY xzqdm,zm,qxm HAVING qxm = #{qxm}
   </select>
 
-  <select id="getCmMessage" resultType="com.ydl.entity.Introduce">
-    SELECT * from jc_xzqh_cj_introduce where zm = #{zm} and xzqmc = #{xzqmc}
+  <select id="getCmMessage" resultType="Map">
+    SELECT xzqdm,qxm,zm,xzqmc,centerpointx,centerpointy,remarks,introduce from jc_xzqh_cj_introduce where zm = #{zm} and xzqmc = #{xzqmc}
   </select>
 
   <select id="getQxm" resultType="Map">
-    SELECT  distinct qxm from jc_xzqh_cj_introduce
+    SELECT  qxm,zm,string_agg(xzqmc,' ') from jc_xzqh_cj_introduce GROUP BY qxm,zm
   </select>
 <!--  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">-->
 <!--    select -->

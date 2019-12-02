@@ -19,7 +19,7 @@ public interface IntroduceMapper {
 //    int updateByPrimaryKey(Introduce record);
     List<Map> getZmAndCmByQxm(Introduce introduce);
 
-    Introduce getCmMessage(Introduce introduce);
+    Map getCmMessage(Introduce introduce);
 
     List<Map> getQxm();
 }

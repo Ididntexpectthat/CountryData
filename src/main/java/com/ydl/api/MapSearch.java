@@ -43,7 +43,7 @@ public class MapSearch {
     }
 
     @PostMapping(value = "getZmMessage")
-    public ZjIntroduce getZmMessage(@RequestBody Map<String,Object> models) throws Exception {
+    public Object getZmMessage(@RequestBody Map<String,Object> models) throws Exception {
         ZjIntroduce zjIntroduce = JsonXMLUtils.map2obj((Map<String,Object>)models.get("ZjIntroduce"),ZjIntroduce.class);
 
         return zjIntroduceMapper.getZmMessage(zjIntroduce);
