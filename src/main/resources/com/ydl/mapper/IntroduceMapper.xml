@@ -25,7 +25,7 @@
   </select>
 
   <select id="getQxm" resultType="Map">
-    SELECT  qxm,zm,string_agg(xzqmc,' ') from jc_xzqh_cj_introduce GROUP BY qxm,zm
+    SELECT  qxm,zm,string_agg(xzqmc,' ') as xzqmcStr,string_agg(xzqdm,' ') as xzqdmStr from jc_xzqh_cj_introduce GROUP BY qxm,zm
   </select>
 <!--  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">-->
 <!--    select -->
