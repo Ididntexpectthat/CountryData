@@ -51,7 +51,7 @@ public class FilesUploadApi {
      */
     @PostMapping("/upload")
     public Object filesUpload(HttpServletRequest request,
-                              @RequestParam("files") MultipartFile[] files,@RequestParam("name")String name) throws IllegalStateException, IOException {
+                              @RequestParam("file") MultipartFile[] files,@RequestParam("name")String name) throws IllegalStateException, IOException {
 
         // 获取文件描述参数 description，纯粹测试使用
 //		if (null != descriptions && descriptions.length > 0) {
@@ -69,7 +69,7 @@ public class FilesUploadApi {
         int i = 0;//取文件下标
         // 如果文件不为空，写入上传路径，进行文件上传
         if (null != files && files.length > 0) {
-            System.out.println("???");
+//            System.out.println("???");
             for (MultipartFile file : files) {
                 // 测试MultipartFile接口的各个方法
                 System.out.println("文件类型ContentType=" + file.getContentType());

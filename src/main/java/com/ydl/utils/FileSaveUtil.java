@@ -16,13 +16,13 @@ public class FileSaveUtil {
      * @throws IOException
      * @throws IllegalStateException
      */
-    public static FileUploadResult saveFile(MultipartFile file, String destination, String name) {
+    public static FileUploadResult saveFile(MultipartFile file, String destination, String name,String fileName) {
             FileUploadResult fileUploadResult = new FileUploadResult();
             // 获取上传的文件名称，并结合存放路径，构建新的文件名称
-             String filename = "icon.jpg";
+//             String filename = "icon.jpg";
 //            String filename = file.getOriginalFilename();
             File file1 = new File(destination + File.separator + name);
-            String filePath = file1.getPath()+File.separator+filename;
+            String filePath = file1.getPath()+File.separator+fileName;
             String FileUrl = StringUtils.replace(StringUtils.substringAfter(filePath,
                     "D:\\code\\upload"),
                     "\\", "/");

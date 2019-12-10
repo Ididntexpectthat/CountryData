@@ -5,8 +5,8 @@
     <id column="xzqdm" jdbcType="VARCHAR" property="xzqdm" />
     <result column="gid" jdbcType="INTEGER" property="gid" />
     <result column="zm" jdbcType="VARCHAR" property="zm" />
-    <result column="xzqmc" jdbcType="VARCHAR" property="xzqmc" />
     <result column="qxm" jdbcType="VARCHAR" property="qxm" />
+    <result column="xzqmc" jdbcType="VARCHAR" property="xzqmc" />
     <result column="introduce" jdbcType="VARCHAR" property="introduce" />
     <result column="centerpointx" jdbcType="DOUBLE" property="centerpointx" />
     <result column="centerpointy" jdbcType="DOUBLE" property="centerpointy" />
@@ -16,16 +16,23 @@
   <sql id="Base_Column_List">
     xzqdm, gid, xzqmc, qxm, zm, introduce, centerpointx, centerpointy, filepath, remarks
   </sql>
-  <select id="getZmAndCmByQxm" resultType="Map">
-    SELECT xzqdm,zm,string_agg(xzqmc,' ') from jc_xzqh_cj_introduce GROUP BY xzqdm,zm,qxm HAVING qxm = #{qxm}
+  <select id="getZmAndCmByQxm" resultType="java.util.LinkedHashMap">
+    SELECT string_agg(xzqdm,' ') as xzqdm_str,zm,string_agg(xzqmc,' ') as xzqmc_str from jc_xzqh_cj_introduce GROUP BY xzqdm,zm,qxm HAVING qxm = #{qxm}
   </select>
 
-  <select id="getCmMessage" resultType="Map">
-    SELECT xzqdm,qxm,zm,xzqmc,centerpointx,centerpointy,remarks,introduce from jc_xzqh_cj_introduce where zm = #{zm} and xzqmc = #{xzqmc}
+<!--  <select id="getCmMessage" resultType="Map">-->
+<!--    SELECT xzqdm,qxm,zm,xzqmc,centerpointx,centerpointy,remarks,introduce from jc_xzqh_cj_introduce where zm = #{zm} and xzqmc = #{xzqmc}-->
+<!--  </select>-->
+  <select id="getCmMessage" resultType="java.util.LinkedHashMap">
+    SELECT qxm,zm,xzqmc,xzqdm,introduce,remarks,centerpointx,centerpointy from jc_xzqh_cj_introduce where xzqdm = #{xzqdm}
   </select>
 
-  <select id="getQxm" resultType="Map">
-    SELECT  qxm,zm,string_agg(xzqmc,' ') as xzqmcStr,string_agg(xzqdm,' ') as xzqdmStr from jc_xzqh_cj_introduce GROUP BY qxm,zm
+  <select id="getAllCm" resultType="java.util.LinkedHashMap">
+    SELECT xzqdm as xzqdm_str,zm,xzqmc as xzqmc_str from jc_xzqh_cj_introduce where xzqmc like concat('%',#{xzqmc},'%')
+  </select>
+
+  <select id="getQxm" resultType="java.util.LinkedHashMap">
+    SELECT  qxm,zm,string_agg(xzqmc,' ') as xzqmc_str,string_agg(xzqdm,' ') as xzqdm_str from jc_xzqh_cj_introduce GROUP BY qxm,zm
   </select>
 <!--  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">-->
 <!--    select -->

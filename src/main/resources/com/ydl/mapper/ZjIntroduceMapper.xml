@@ -12,8 +12,8 @@
     <result column="filepath" jdbcType="VARCHAR" property="filepath" />
     <result column="remarks" jdbcType="VARCHAR" property="remarks" />
   </resultMap>
-  <select id="getZmMessage" resultType="Map">
-    SELECT xjdm,qxm,zm,centerpointx,centerpointy,introduce,remarks from jc_zxqh_zj_introduce where zm = #{zm}
+  <select id="getZmMessage" resultType="java.util.LinkedHashMap">
+    SELECT qxm,zm,xjdm,introduce,remarks,centerpointx,centerpointy from jc_zxqh_zj_introduce where zm = #{zm}
   </select>
 <!--  <insert id="insert" keyColumn="gid" keyProperty="gid" parameterType="com.ydl.entity.ZjIntroduce" useGeneratedKeys="true">-->
 <!--    insert into jc_zxqh_zj_introduce (xjdm, qxm, zm, -->

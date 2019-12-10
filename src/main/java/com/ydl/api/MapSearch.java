@@ -48,4 +48,11 @@ public class MapSearch {
 
         return zjIntroduceMapper.getZmMessage(zjIntroduce);
     }
+
+    @PostMapping(value = "getAllCm")
+    public Object getAllCm(@RequestBody Map<String,Object> models) throws Exception {
+        Introduce introduce = JsonXMLUtils.map2obj((Map<String,Object>)models.get("Introduce"),Introduce.class);
+
+        return introduceMapper.getAllCm(introduce);
+    }
 }

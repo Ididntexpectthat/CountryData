@@ -2,6 +2,7 @@ package com.ydl.mapper;
 
 import com.ydl.entity.Introduce;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,9 +18,11 @@ public interface IntroduceMapper {
 //    int updateByPrimaryKeySelective(Introduce record);
 //
 //    int updateByPrimaryKey(Introduce record);
-    List<Map> getZmAndCmByQxm(Introduce introduce);
+    List<LinkedHashMap> getZmAndCmByQxm(Introduce introduce);
 
-    Map getCmMessage(Introduce introduce);
+    LinkedHashMap getCmMessage(Introduce introduce);
 
-    List<Map> getQxm();
+    List<LinkedHashMap> getQxm();
+
+    List<LinkedHashMap> getAllCm(Introduce introduce);
 }

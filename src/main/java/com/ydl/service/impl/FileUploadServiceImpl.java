@@ -32,7 +32,7 @@ public class FileUploadServiceImpl implements FileUploadService {
             fileUploadResult.setStatus("noexpected");
         }
         if(isLegal){
-            fileUploadResult = FileSaveUtil.saveFile(uploadFile,destination+File.separator+"avatar",username);
+            fileUploadResult = FileSaveUtil.saveFile(uploadFile,destination+File.separator+"avatar",username,"icon.jpg");
         }
         return fileUploadResult;
 
@@ -65,9 +65,10 @@ public class FileUploadServiceImpl implements FileUploadService {
 //        return fileUploadResult;
     }
 
+    //多文件上传
     @Override
     public FileUploadResult fileUpload(MultipartFile uploadFile, String destination, String username) {
-        return FileSaveUtil.saveFile(uploadFile,destination+File.separator+"files",username);
+        return FileSaveUtil.saveFile(uploadFile,destination+File.separator+"files",username,uploadFile.getOriginalFilename());
     }
 
 //    public String getFilePath(String sourceFileName,String username) {
