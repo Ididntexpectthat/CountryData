@@ -13,8 +13,29 @@
     <result column="remarks" jdbcType="VARCHAR" property="remarks" />
   </resultMap>
   <select id="getZmMessage" resultType="java.util.LinkedHashMap">
-    SELECT qxm,zm,xjdm,introduce,remarks,centerpointx,centerpointy from jc_zxqh_zj_introduce where zm = #{zm}
+    SELECT gid,qxm,zm,xjdm,introduce,remarks,centerpointx,centerpointy from jc_zxqh_zj_introduce where zm = #{zm}
   </select>
+  <update id="updateZmByzm" parameterType="com.ydl.entity.ZjIntroduce">
+    update jc_zxqh_zj_introduce
+    <set>
+      <if test="qxm != null">
+        qxm = #{qxm,jdbcType=INTEGER},
+      </if>
+      <if test="zm != null">
+        zm = #{zm,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="xjdm != null">
+        xjdm = #{xjdm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where gid = #{gid,jdbcType=VARCHAR}
+  </update>
 <!--  <insert id="insert" keyColumn="gid" keyProperty="gid" parameterType="com.ydl.entity.ZjIntroduce" useGeneratedKeys="true">-->
 <!--    insert into jc_zxqh_zj_introduce (xjdm, qxm, zm, -->
 <!--      centerpointx, centerpointy, introduce, -->

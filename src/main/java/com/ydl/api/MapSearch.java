@@ -55,4 +55,20 @@ public class MapSearch {
 
         return introduceMapper.getAllCm(introduce);
     }
+
+    @PostMapping(value = "updateCmByxzqdm")
+    public Object updateCmByxzqdm(@RequestBody Map<String,Object> models) throws Exception {
+        Introduce introduce = JsonXMLUtils.map2obj((Map<String,Object>)models.get("Introduce"),Introduce.class);
+
+        return introduceMapper.updateCmByxzqdm(introduce);
+    }
+
+    @PostMapping(value = "updateZmByzm")
+    public Object updateZmByzm(@RequestBody Map<String,Object> models) throws Exception {
+        ZjIntroduce zjIntroduce = JsonXMLUtils.map2obj((Map<String,Object>)models.get("ZjIntroduce"),ZjIntroduce.class);
+        Introduce introduce = JsonXMLUtils.map2obj((Map<String,Object>)models.get("Introduce"),Introduce.class);
+//        zjIntroduceMapper.updateZmByzm(zjIntroduce);
+//        introduceMapper.updateCmByZm(zjIntroduce,introduce.getZm());
+        return zjIntroduceMapper.updateZmByzm(zjIntroduce) + introduceMapper.updateCmByZm(introduce.getZm(),zjIntroduce.getZm());
+    }
 }

@@ -1,6 +1,8 @@
 package com.ydl.mapper;
 
 import com.ydl.entity.Introduce;
+import com.ydl.entity.ZjIntroduce;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -25,4 +27,8 @@ public interface IntroduceMapper {
     List<LinkedHashMap> getQxm();
 
     List<LinkedHashMap> getAllCm(Introduce introduce);
+
+    int updateCmByxzqdm(Introduce introduce);
+
+    int updateCmByZm(@Param("oldZm") String oldZm,String zm);
 }

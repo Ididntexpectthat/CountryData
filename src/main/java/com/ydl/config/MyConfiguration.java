@@ -8,8 +8,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @Auther: wyx
- * @Date: 2019-05-09 21:25
+ * @Auther: ydl
+ * @Date: 2019-11-00 21:25
  * @Description: 添加对跨域访问的支持
  */
 @Configuration

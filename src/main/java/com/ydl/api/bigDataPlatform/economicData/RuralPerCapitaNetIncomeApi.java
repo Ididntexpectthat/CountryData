@@ -14,6 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("RuralPerCapitaNetIncome")
+//农民人均纯收入
 public class RuralPerCapitaNetIncomeApi {
     @Autowired
     RuralPerCapitaNetIncomeService rural;

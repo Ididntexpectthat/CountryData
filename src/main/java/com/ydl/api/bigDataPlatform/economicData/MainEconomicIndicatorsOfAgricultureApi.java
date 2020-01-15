@@ -14,6 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("MainEconomicIndicatorsOfAgriculture")
+//农业主要经济指标
 public class MainEconomicIndicatorsOfAgricultureApi {
     @Autowired
     MainEconomicIndicatorsOfAgricultureService mainEconomicIndicatorsOfAgricultureService;

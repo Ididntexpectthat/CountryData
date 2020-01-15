@@ -207,11 +207,14 @@ public class UserApi {
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
         }
         if (!redisCaptcha.equalsIgnoreCase(captcha)) {
+            //删除保存的验证码
+            redisTemplate.delete(ctoken);
             jsonObject.put("message", "登录失败，验证码错误!");
             return new ResponseEntity(jsonObject, HttpStatus.UNAUTHORIZED);
         }
         System.out.println(redisCaptcha);
         if (redisCaptcha.equalsIgnoreCase(captcha) && userForBase != null) {
+            //删除保存的验证码
             redisTemplate.delete(ctoken);
             Date date = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");

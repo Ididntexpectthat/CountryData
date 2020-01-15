@@ -10,4 +10,6 @@ public interface ZjIntroduceMapper {
 //
 //    int insertSelective(ZjIntroduce record);
     LinkedHashMap getZmMessage(ZjIntroduce zjIntroduce);
+
+    int updateZmByzm(ZjIntroduce zjIntroduce);
 }
