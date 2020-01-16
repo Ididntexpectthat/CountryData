@@ -68,15 +68,15 @@
     where xzqdm = #{xzqdm,jdbcType=VARCHAR}
   </update>
 
-  <update id="updateCmByZm" parameterType="com.ydl.entity.Introduce">
-    update jc_xzqh_cj_introduce
-    <set>
-      <if test="zm != null">
-        zm = #{zm,jdbcType=INTEGER},
-      </if>
-    </set>
-    where zm = #{oldZm,jdbcType=VARCHAR}
-  </update>
+<!--  <update id="updateCmByZm" parameterType="com.ydl.entity.Introduce">-->
+<!--    update jc_xzqh_cj_introduce-->
+<!--    <set>-->
+<!--      <if test="zm != null">-->
+<!--        zm = #{zm,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--    </set>-->
+<!--    where zm = #{oldZm,jdbcType=VARCHAR}-->
+<!--  </update>-->
 <!--  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">-->
 <!--    select -->
 <!--    <include refid="Base_Column_List" />-->
